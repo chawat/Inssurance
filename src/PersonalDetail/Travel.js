@@ -107,7 +107,12 @@ offering the same benefits with different Medical Expenses limits:
                 <li>This Insurance Plan covers Third Party Liability | Material Damages and/or Bodily Injuries depending on the Destination Country Conditions.</li>
               </ul> */}
               
-              <button className="request-quote-button">REQUEST A QUOTE</button>
+              
+          <button className="request-quote-button" onClick={() => window.location.href="/QuoteTravel"}>
+    <p className="forp">
+        Request A Quote
+    </p>
+</button>
             </div>
           </div>
         </div>

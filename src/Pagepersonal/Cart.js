@@ -65,7 +65,7 @@ const products = [
 		price: 85,
 		image: Travel,
     type:"Travel",
-	typee:"/MotorQu",
+	typee:"/QuoteTravel",
 	},
 	{
 		id: 6,

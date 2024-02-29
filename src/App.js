@@ -13,6 +13,7 @@ import HealthcareInsurance from './PersonalDetail/HealthcareInsurance';
 import BQDetail from './BusQuote/BQDetail';
 import PQMDetail from './QuotePersonal/PQMDetail';
 import QuoteTermL from './QuotePersonal/QuoteTermL';
+import QuoteTravel from './QuotePersonal/QuoteTravel';
 import QuotePerAc from './QuotePersonal/QuotePerAc';
 import QuoteHouse from './QuotePersonal/QuoteHouse';
 import Footer from './Footer/Footer';
@@ -58,6 +59,7 @@ function App() {
          <Route path="/MotorFleet" element={<MotorFleet/>} />
          <Route path="/BuQuote" element={<BuQuote/>} />
          <Route path="/QuoteTermL" element={<QuoteTermL/>} />
+         <Route path="/QuoteTravel" element={<QuoteTravel/>} />
          <Route path="/QuotePerAc" element={<QuotePerAc/>} />
          <Route path="/QuoteHouse" element={<QuoteHouse/>} />
       </Routes>
