@@ -1,0 +1,12 @@
+<svg id="Component_80_1" data-name="Component 80 – 1" xmlns="http://www.w3.org/2000/svg" width="55" height="55" viewBox="0 0 55 55">
+  <g id="Rectangle_1655" data-name="Rectangle 1655" fill="none" stroke="#034992" stroke-width="1">
+    <rect width="55" height="55" stroke="none"/>
+    <rect x="0.5" y="0.5" width="54" height="54" fill="none"/>
+  </g>
+  <g id="Group_1161" data-name="Group 1161" transform="translate(17 16)">
+    <g id="Group_1079" data-name="Group 1079" transform="translate(0 0)">
+      <path id="Path_1257" data-name="Path 1257" d="M178.19,84.312h4.817V99.784H178.19Zm2.409-7.69a2.789,2.789,0,1,1-2.79,2.788,2.794,2.794,0,0,1,2.79-2.788" transform="translate(-177.809 -76.622)" fill="#034992"/>
+      <path id="Path_1258" data-name="Path 1258" d="M181.175,80h4.611v2.117h.063a5.062,5.062,0,0,1,4.555-2.5c4.868,0,5.766,3.2,5.766,7.37v8.486h-4.8V87.949c0-1.794-.037-4.1-2.5-4.1-2.5,0-2.888,1.951-2.888,3.969v7.653h-4.8Z" transform="translate(-172.958 -72.308)" fill="#034992"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,108 @@
+/* @import url("https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;700&display=swap");
+
+* {
+	padding: 0;
+	margin: 0;
+	font-family: "Titillium Web", sans-serif;
+	box-sizing: border-box;
+}
+
+:root {
+	--main-color: #065a82;
+	--text-color: #232323;
+	--secondary-color: #0797b0;
+}
+main {
+	width: 100%;
+	margin: auto;
+	padding: 2rem 0;
+}
+.container {
+    max-width: 100%;
+    margin: 0 auto;
+   
+  }
+  
+
+ 
+  .content {
+    display: flex;
+    align-items: flex-start;
+    margin-left: 20px; 
+  }
+  
+  .description {
+    flex: 2;
+    padding-left: 20px;
+    padding-right: 200px;
+    margin-left: 20px; 
+    margin-right: 100px; 
+  }
+  .blueee{
+    color: #0056b3;
+  }
+  .image-container {
+    width: 100%;
+    height: 500px;
+    flex: 1;
+    max-width: 10000px;
+  }
+  
+  .image-container img {
+    width: 100%; 
+    height: 100%; 
+  }
+ 
+  
+  h1, h3 {
+    color: #333;
+  }
+  .namee {
+    color: blue; 
+  }
+  
+  .category {
+    color: blue; 
+  }
+  .haner ul {
+    padding-left: 20px;
+  }
+  
+  .list {
+    padding-left: 0; 
+  }
+  .haner li::marker {
+    color: black; 
+  }
+  .list li {
+    margin-bottom: 5px; 
+  }
+  
+  .request-quote-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+  
+  .request-quote-button:hover {
+    background-color: #0056b3;
+  }
+
+  .request-quote-button a{
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+  .request-quote-button a:hover {
+    background-color: #0056b3;
+  }
+  
+   */

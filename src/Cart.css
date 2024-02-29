@@ -1,0 +1,40 @@
+/* Cart.css */
+
+.cart {
+    background-color: #ffffff;
+    border: 1px solid #050505;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    margin: 10px;
+    display: flex;
+    /* Set fixed dimensions */
+    width: 300px; /* Adjust as needed */
+    height: 400px; /* Adjust as needed */
+  }
+  
+  .icon {
+    margin-right: 10px;
+  }
+  
+  .content {
+    flex-grow: 1;
+   
+  }
+  
+  h3 {
+    margin: 0;
+  }
+  
+  p {
+    margin: 5px 0;
+  }
+  /* .linkee {
+    text-decoration: none; 
+    color: inherit; 
+    padding: ;
+    margin: 0;
+  } */
+  .bluee{
+    color: blue;
+  }

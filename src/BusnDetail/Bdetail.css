@@ -1,0 +1,97 @@
+/* Health.css */
+
+.container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* .content {
+    display: flex;
+    align-items: flex-start;
+    margin-left: 60px;
+  } */
+  .contentt {
+    display: flex;
+    align-items: flex-start;
+    margin-left: 20px; 
+  }
+  
+  .descriptionn {
+    flex: 2;
+    padding-left: 20px;
+    padding-right: 200px;
+    padding-bottom: 30px;
+    margin-top: 200px;
+    margin-left: 20px; 
+    margin-right: 100px; 
+  }
+  .blueee{
+    color: #0056b3;
+  }
+  
+  .image-container {
+    width: 100%;
+    height: 500px;
+    flex: 1;
+    max-width: 10000px;
+  }
+  
+  .image-container img {
+    width: 100%; /* Adjust width to fill the container */
+    height: 100%; /* Maintain aspect ratio */
+  }
+  
+  /* .description {
+    flex: 2;
+    padding-left: 20px;
+    margin-top: 20px;
+    margin-left: 20px;
+  } */
+  
+  h1, h3 {
+    color: #333;
+  }
+  
+  .namee {
+    color: blue; /* Set h2 color to blue */
+  }
+  
+  .haner ul {
+    padding-left: 20px; /* Add padding to align bullet points */
+  }
+  
+  .haner li {
+    margin-bottom: 10px;
+  }
+  
+  .haner li::marker {
+    color: black; /* Set the color of the list marker */
+  }
+  
+  .request-quote-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+  
+  .request-quote-button:hover {
+    background-color: #0056b3;
+  }
+  .request-quote-button a{
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+  .request-quote-button a:hover {
+    background-color: #0056b3;
+  }
+  

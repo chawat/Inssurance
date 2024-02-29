@@ -1,0 +1,103 @@
+@import url("https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;700&display=swap");
+
+* {
+	padding: 0;
+	margin: 0;
+	font-family: "Titillium Web", sans-serif;
+	box-sizing: border-box;
+}
+
+:root {
+	--main-color: #065a82;
+	--text-color: #232323;
+	--secondary-color: #0797b0;
+}
+main {
+	width: 100%;
+	margin: auto;
+	padding: 2rem 0;
+}
+.container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+ 
+ 
+  .content {
+    display: flex;
+    align-items: flex-start;
+  }
+  
+  .description {
+    flex: 2;
+    padding-left: 30px;
+    padding-right: 30px; /* Adjust as needed */
+    padding-bottom: 30px;
+    margin-top: 20px;
+  }
+ 
+  .image-container {
+    width: 100%;
+    height: 500px;
+    flex: 1;
+    max-width: 10000px;
+  }
+  
+  .image-container img {
+    width: 100%; /* Adjust width to fill the container */
+    height: 100%; /* Maintain aspect ratio */
+  }
+  
+  
+  h1, h3 {
+    color: #333;
+  }
+ 
+  
+  .category {
+    color: blue; /* Set h2 color to blue */
+  }
+  .haner ul {
+    padding-left: 20px; /* Add padding to align bullet points */
+  }
+  
+  .list {
+    padding-left: 0; /* Remove default padding */
+  }
+  .haner li::marker {
+    color: black; /* Set the color of the list marker */
+  }
+  .list li {
+    margin-bottom: 5px; /* Reduce margin between list items */
+  }
+  
+  .request-quote-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+  
+  .request-quote-button:hover {
+    background-color: #0056b3;
+  }
+
+  .request-quote-button a{
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+  .request-quote-button a:hover {
+    background-color: #0056b3;
+  }
+  
+  

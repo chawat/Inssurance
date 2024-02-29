@@ -1,0 +1,23 @@
+<svg id="Component_82_1" data-name="Component 82 – 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="163.018" height="167.712" viewBox="0 0 163.018 167.712">
+  <defs>
+    <clipPath id="clip-path">
+      <circle id="Ellipse_139" data-name="Ellipse 139" cx="81.509" cy="81.509" r="81.509" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="Group_1306" data-name="Group 1306" transform="translate(-135.648 -239.475)">
+    <circle id="Ellipse_138" data-name="Ellipse 138" cx="81.509" cy="81.509" r="81.509" transform="translate(135.648 244.168)" fill="#cbe9fe"/>
+    <rect id="Rectangle_1676" data-name="Rectangle 1676" width="2.075" height="53.446" transform="translate(215.236 239.474)" fill="#583c1c"/>
+    <path id="Path_1307" data-name="Path 1307" d="M458.239,246.852s19.164-1.95,17.855,1.761,12.21,4.067,18.613,2.288c0,0-1.423,5.692-2.846,13.519s-23.124,3.2-21.345,0-12.188-1.779-12.188-1.779Z" transform="translate(-241.017 -5.13)" fill="#034992"/>
+    <g id="Group_1305" data-name="Group 1305" transform="translate(135.648 244.168)">
+      <g id="Group_1304" data-name="Group 1304" transform="translate(0 0)" clip-path="url(#clip-path)">
+        <path id="Path_1308" data-name="Path 1308" d="M484.747,584.772,438.141,677.31h93.213Z" transform="translate(-361.649 -502.15)" fill="#f0cb6d"/>
+        <path id="Path_1309" data-name="Path 1309" d="M669.057,677.31l-46.607-92.538V677.31Z" transform="translate(-499.353 -502.15)" fill="#272425" opacity="0.14"/>
+        <path id="Path_1310" data-name="Path 1310" d="M455.213,408.5V542.26h56.625Z" transform="translate(-374.404 -370.453)" fill="#f0cb6d"/>
+        <path id="Path_1311" data-name="Path 1311" d="M135.97,553.37,89.363,645.908h93.213Z" transform="translate(-101.067 -478.689)" fill="#f0cb6d"/>
+        <path id="Path_1312" data-name="Path 1312" d="M320.28,645.908,273.673,553.37v92.538Z" transform="translate(-238.771 -478.689)" fill="#272425" opacity="0.14"/>
+        <path id="Path_1313" data-name="Path 1313" d="M286.848,407.069,230.069,541.189H287V407.431Z" transform="translate(-206.193 -369.383)" fill="#f0cb6d"/>
+        <path id="Path_1314" data-name="Path 1314" d="M455.213,408.5V542.26h56.625Z" transform="translate(-374.404 -370.453)" fill="#272425" opacity="0.14"/>
+      </g>
+    </g>
+  </g>
+</svg>
