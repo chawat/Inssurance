@@ -1,7 +1,5 @@
 import express from 'express';
 import mongoose from 'mongoose';
-
-
 import {Personal} from '../src/mongoose/schemas/personal.mjs';
 import {PersonalInsurance} from '../src/mongoose/schemas/perosonalInsurance.mjs';
 import {TermLifeInsurance} from '../src/mongoose/schemas/termLife.mjs';
@@ -10,10 +8,22 @@ import {HouseInsurance} from '../src/mongoose/schemas/houseInsurance.mjs';
 import {TravelInsurance}  from '../src/mongoose/schemas/travelInsurance.mjs';
 import {HealthCareInsurance} from '../src/mongoose/schemas/healthcareInsurance.mjs';
 import {BusinessInsurance} from '../src/mongoose/schemas/business.mjs';
+import cors from  "cors";
+
+
 
 const app=express();
+app.use(cors());
 app.use(express.json());
 const url = "mongodb://localhost:27017/insurance";
+// personal.mjs
+
+
+const PORT = process.env.PORT || 3003;
+app.listen(PORT, () => {
+  console.log(`Running on Port ${PORT}`);
+});
+
 mongoose.connect(url).then((ans) => { 
     console.log("Connected Successful") 
 }).catch((err) => { 
@@ -99,6 +109,7 @@ app.post("/motorinsurance",async (request,response)=>{
     }
 })
 
+
 //house insurance
 app.post("/houseinsurance",async (request,response)=>{
     const {body}=request;
@@ -155,7 +166,3 @@ app.post("/businessinsurance",async (request,response)=>{
 })
 
 
-const PORT=process.env.PORT || 3003;
-app.listen(PORT, ()=>{
-console.log( 'Running on Port ${PORT}');
-});
