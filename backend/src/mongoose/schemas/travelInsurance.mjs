@@ -10,7 +10,7 @@ const travelInsuranceSchema=new mongoose.Schema({
   CountryOfDeparture:mongoose.Schema.Types.String,
   ContactOfPersonEmergency: mongoose.Schema.Types.Number,
   ContactOfPerson: mongoose.Schema.Types.Number,
-  OptionalCover: mongoose.Schema.Types.String,
+  OptionalCover: [mongoose.Schema.Types.String],
   PlanType:mongoose.Schema.Types.String,
   GeographicalZone:mongoose.Schema.Types.String,
   TripDuration:mongoose.Schema.Types.String,

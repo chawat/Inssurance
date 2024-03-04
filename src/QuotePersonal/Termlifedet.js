@@ -35,13 +35,14 @@ const Termlifedet = () => {
     });
   };
   const handleOptionChange1 = (value) => {
-    // Convert the value to a number before updating the state if it's not "other"
-    const numericValue = value === "other" ? formData1.SumInsured : parseInt(value, 10);
-    setFormData1({
-      ...formData1,
-      SumInsured: numericValue,
-    });
+    // Update the state differently for the "Other" option
+    if (value === "other") {
+      setFormData1({ ...formData1, SumInsured: "other" });
+    } else {
+      setFormData1({ ...formData1, SumInsured: parseInt(value, 10) });
+    }
   };
+  
   
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -277,7 +278,6 @@ const Termlifedet = () => {
         value={formData1.OtherValue || ""}
         onChange={(e) => setFormData1({ ...formData1, OtherValue: e.target.value })}
       />
-      <button onClick={() => handleOptionChange1(formData1.OtherValue)}>Submit</button>
     </div>
   )}
       </div>

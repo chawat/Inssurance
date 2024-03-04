@@ -16,6 +16,7 @@ import QuoteTermL from './QuotePersonal/QuoteTermL';
 import QuoteTravel from './QuotePersonal/QuoteTravel';
 import QuotePerAc from './QuotePersonal/QuotePerAc';
 import QuoteHouse from './QuotePersonal/QuoteHouse';
+import QuoteHealth from './QuotePersonal/QuoteHealth';
 import Footer from './Footer/Footer';
 import Motor from './PersonalDetail/Motor';
 import House from './PersonalDetail/House';
@@ -62,6 +63,7 @@ function App() {
          <Route path="/QuoteTravel" element={<QuoteTravel/>} />
          <Route path="/QuotePerAc" element={<QuotePerAc/>} />
          <Route path="/QuoteHouse" element={<QuoteHouse/>} />
+         <Route path="/QuoteHealth" element={<QuoteHealth/>} />
       </Routes>
       <Footer />
     </div>

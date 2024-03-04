@@ -124,7 +124,7 @@ const Housedet = () => {
   
 
   return (
-    <div>
+    <div className='container'>
       <h2>GET A QUOTE FOR HOUSEHOLD MULTI-RISKS</h2>
       <form onSubmit={handleSubmit}>
       <div className="motor-insurance-quote-container">

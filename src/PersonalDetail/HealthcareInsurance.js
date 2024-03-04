@@ -65,7 +65,11 @@ const HealthcareInsurance = () => {
             ))}
           </ul>
           
-          <button className="request-quote-button">REQUEST A QUOTE</button>
+          <button className="request-quote-button" onClick={() => window.location.href="/QuoteHealth"}>
+    <p className="forp">
+        Request A Quote
+    </p>
+</button>
         </div>
       </div>
     </div>

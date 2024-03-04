@@ -6,7 +6,8 @@
     max-width: 6770px; /* Adjust max-width to fit your design */
     margin: 0 auto;
     overflow: hidden; /* Hide overflowing content */
-    border: 1px solid #ccc; /* Optional: add border for better visualization */
+    border: 0px solid #ccc; /* Optional: add border for better visualization */
+   
   }
   .greeen{
     background-color: gray;
@@ -17,8 +18,9 @@
     height: 100%; /* Maintain aspect ratio */
     object-fit: cover; /* Ensure the image covers the entire container */
     transition: transform 0.5s ease; /* Smooth transition effect */
+    
   }
-  
+ 
   .image-slider:hover img {
     transform: scale(1.1); /* Scale image on hover */
   }
@@ -37,3 +39,6 @@
     max-width: 600px;
     margin: 0 auto;
   }
+  /* .home{
+    height: 100%;
+  } */

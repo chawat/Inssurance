@@ -6,6 +6,8 @@ import image1 from './images/termlife.jpeg';
 import image2 from './images/travel.jpg';
 import image3 from './images/healthcare.jpg';
 import './Home.css'; // Import CSS file
+import Travel from './images/Traveleee.jpg';
+
 
 const Home = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -24,7 +26,7 @@ const Home = () => {
   }, [images.length]);
 
   return (
-    <div>
+    <div className='home'>
       <div className="image-slider">
         <img src={images[currentImageIndex]} alt={`Image ${currentImageIndex + 1}`} />
       </div>
@@ -44,6 +46,21 @@ const Home = () => {
           desc="ethgrs"
         /> */}
       </div>
+      <div className="image-slider">
+      <div className="image-container">
+        <img src={Travel}  />
+        <div className="text-overlay">
+          <h1>Planning your next trip?</h1>
+          <p> 
+Get  Travel Insurance Plans & Roam the world worry-free!</p>
+<button className="request-quote-button" onClick={() => window.location.href="/QuoteTravel"}>
+    <p className="forp">
+        Request A Quote
+    </p>
+</button>
+        </div>
+      </div>
+    </div>
     </div>
   );
 };

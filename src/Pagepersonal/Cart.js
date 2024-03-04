@@ -21,7 +21,7 @@ const products = [
 		price: 199,
 		image: Healthh,
     type:"/HealthcareInsurance",
-	typee:"/MotorQu",
+	typee:"/QuoteHealth",
 	},
 	{
 		id: 2,
