@@ -8,6 +8,7 @@ import {HouseInsurance} from '../src/mongoose/schemas/houseInsurance.mjs';
 import {TravelInsurance}  from '../src/mongoose/schemas/travelInsurance.mjs';
 import {HealthCareInsurance} from '../src/mongoose/schemas/healthcareInsurance.mjs';
 import {BusinessInsurance} from '../src/mongoose/schemas/business.mjs';
+import {ContactUs} from '../src/mongoose/schemas/ContactUs.mjs';
 import cors from  "cors";
 
 
@@ -164,5 +165,17 @@ app.post("/businessinsurance",async (request,response)=>{
      return response.sendStatus(400);
     }
 })
-
+//post contact message
+app.post("/contactus",async (request,response)=>{
+    const {body}=request;
+    const  Newcontactus=new ContactUs(body);
+   try{
+        const savedcontactus= await Newcontactus.save();
+        return response.status(201).send(savedcontactus);
+   }
+   catch(err){
+     console.log(err);
+     return response.sendStatus(400);
+    }
+})
 

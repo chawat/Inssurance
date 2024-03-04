@@ -6,16 +6,12 @@ import { HiMail } from "react-icons/hi";
 import { useState } from "react";
 import Cont from '../images/contact.svg';
 const ContactForm = () => {
-  const [name, setName] = useState("Anshu");
-  const [email, setEmail] = useState("support@dosomecoding.com");
-  const [text, setText] = useState("Subscribe to this channel");
+
 
   const onSubmit = (event) => {
     event.preventDefault();
 
-    setName(event.target[0].value);
-    setEmail(event.target[1].value);
-    setText(event.target[2].value);
+   
   };
 
   return (
@@ -56,11 +52,11 @@ const ContactForm = () => {
             <Button text="SUBMIT" />
           </div>
 
-          <div>{name + " " + email + " " + text}</div>
+   
         </form>
       </div>
       <div className={styles.contact_image}>
-        <img src={Cont} alt="contact image" />
+        <img src={Cont} alt="contact " />
       </div>
     </section>
   );
