@@ -2,7 +2,7 @@
 /* Home.css */
 .image-slider {
     width: 100%;
-    height: 400px;
+    height: 100%;
     max-width: 6770px; /* Adjust max-width to fit your design */
     margin: 0 auto;
     overflow: hidden; /* Hide overflowing content */

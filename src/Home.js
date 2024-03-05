@@ -2,9 +2,9 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Cart from './Pagepersonal/Cart'; // Import the Cart component
-import image1 from './images/termlife.jpeg';
-import image2 from './images/travel.jpg';
-import image3 from './images/healthcare.jpg';
+import image1 from './images/R.jpeg';
+import image2 from './images/R.jpeg';
+import image3 from './images/R.jpeg';
 import './Home.css'; // Import CSS file
 import Travel from './images/Traveleee.jpg';
 

@@ -66,13 +66,33 @@ main {
 	margin: auto;
 	padding: 2rem 0;
 }
-
+.titleee {
+	text-align: center;
+}
 .title {
 	margin: 2rem 0;
     font-size: 2rem;
-    color: #065a82;
+    color: blue;
+	text-align: center;
+	border-bottom: 2px solid blue; /* Adjust the border style and color as needed */
+	padding-bottom: 10px; /* Add padding to create space between the text and the line */
+	display: inline-block;
+	
 }
-
+.title h2 {
+	margin: 0; /* Remove default margin for the heading */
+	position: relative; /* Make the position relative to the container */
+  }
+  
+  .title h2::after {
+	content: ''; /* Add content for the pseudo-element */
+	position: absolute; /* Position the line relative to the heading */
+	left: 0; /* Align the line with the left edge of the heading */
+	bottom: -5px; /* Adjust the distance of the line from the bottom of the heading */
+	width: 100%; /* Set the width of the line to be the same as the heading */
+	height: 2px; /* Set the height of the line */
+	background-color: #333; /* Set the color of the line */
+  }
 .products {
 	display: flex;
 	align-items: center;

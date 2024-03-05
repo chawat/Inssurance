@@ -141,9 +141,11 @@ const Cart = () => {
 	return (
 		<div className="App">
 			<main>
+				<div className="titleee">
 				<h2 className="title">
         INSURANCE ESSENTIALS
 				</h2>
+				</div>
 				<div className="products">
 					{products.map((product) => (
 						<div
