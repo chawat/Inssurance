@@ -14,7 +14,7 @@ const Navbar = () => {
   return (
     <div className="navbar">
       {/* <h2 className="logo"> <img src={logo} alt="Healthcare Insurance" /></h2> */}
-      <h2 className="logo"> Inssssss</h2>
+      <h2 className="logo"> NEXTGUARD</h2>
       <ul>
         <li><Link to="/" className={activeLink === 'home' ? 'active' : ''} onClick={() => handleClick('home')}>HOME</Link></li>
         <li><Link to="/aboutus" className={activeLink === 'about' ? 'active' : ''} onClick={() => handleClick('about')}>ABOUT US</Link></li>

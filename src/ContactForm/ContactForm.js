@@ -3,16 +3,47 @@ import styles from "./Contact.module.css";
 import { MdMessage } from "react-icons/md";
 import { FaPhoneAlt } from "react-icons/fa";
 import { HiMail } from "react-icons/hi";
-import { useState } from "react";
+import React, { useState } from "react";
 import Cont from '../images/contact.svg';
+import axios from 'axios';
 const ContactForm = () => {
 
-
-  const onSubmit = (event) => {
-    event.preventDefault();
-
-   
+const [formData2, setFormData2] = useState({
+    FullName: "",
+    Email: "", 
+    Mobile: "",
+    Message:"",
+  });
+  const handleInputChange2 = (e) => {
+    const { name, value } = e.target;
+    setFormData2({
+      ...formData2,
+      [name]: value
+    });
   };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+  
+    try {
+      const personalResponse = await axios.post('http://localhost:3003/contactus', formData2);
+      const personalData = personalResponse.data;
+      console.log(personalData);
+      
+      // Check if the 'success' property exists and has a value of true
+      if (personalData ) {
+        alert('Personal details saved successfully!');
+        
+        // Proceed with house insurance details only if personal details are successfully saved
+        
+      } else {
+        console.error('Failed to save personal details:', personalData.message);
+      }
+    } catch (error) {
+      console.error('Error during form submission:', error);
+    }
+  };
+
 
   return (
     <section className={styles.container}>
@@ -30,18 +61,23 @@ const ContactForm = () => {
           icon={<HiMail fontSize="24px" />}
         />
 
-        <form onSubmit={onSubmit}>
+        <form onSubmit={handleSubmit}>
+          
           <div className={styles.form_control}>
-            <label htmlFor="name">Name</label>
-            <input type="text" name="name" />
-          </div>
+          <label htmlFor="firstName">Full Name*:</label>
+              <input type="text" id="fullName" name="FullName" value={formData2.FullName} onChange={handleInputChange2} required />
+            </div>
           <div className={styles.form_control}>
             <label htmlFor="email">Email</label>
-            <input type="email" name="email" />
+            <input type="email" name="Email" value={formData2.Email} onChange={handleInputChange2} required/>
           </div>
           <div className={styles.form_control}>
-            <label htmlFor="text">Text</label>
-            <textarea name="text" rows="8" />
+            <label htmlFor="name">Mobile</label>
+            <input type="number" name="Mobile" value={formData2.Mobile} onChange={handleInputChange2} required/>
+          </div>
+          <div className={styles.form_control}>
+            <label htmlFor="text">Message</label>
+            <textarea type="text" name="Message" rows="8"  value={formData2.Message} onChange={handleInputChange2}/>
           </div>
           <div
             style={{
