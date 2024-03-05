@@ -37,7 +37,7 @@ const GroupPersonal = () => {
           <p className='namee'>Tailor-made Solutions that fit your Business Needs are available.</p>
           
           
-          <button className="request-quote-button" onClick={() => window.location.href="/BQDetail"}>
+          <button className="request-quote-button" onClick={() => window.location.href=`/BQDetail?Type=${encodeURIComponent('Group Personal')}`}>
     <p className="forp">
         Request A Quote
     </p>

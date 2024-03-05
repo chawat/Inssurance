@@ -35,7 +35,7 @@ const MotorFleet = () => {
           <p className='blueee'>The Motor Fleet Insurance Plan from AROPE is a Valuable Solution for your Business that can be tailor-made to fit your Needs offering a wide choice of Covers with Special Discounts.</p>
           
           
-          <button className="request-quote-button" onClick={() => window.location.href="/BQDetail"}>
+          <button className="request-quote-button" onClick={() => window.location.href=`/BQDetail?Type=${encodeURIComponent('MotorFleet')}`}>
     <p className="forp">
         Request A Quote
     </p>

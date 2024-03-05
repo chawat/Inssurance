@@ -37,7 +37,7 @@ const Money = () => {
           <p className='namee'>We, at AROPE Insurance, are eager to offer you the Best Solutions that fit your Business Needs.</p>
           
           
-          <button className="request-quote-button" onClick={() => window.location.href="/BQDetail"}>
+          <button className="request-quote-button" onClick={() => window.location.href=`/BQDetail?Type=${encodeURIComponent('Money')}`}>
     <p className="forp">
         Request A Quote
     </p>

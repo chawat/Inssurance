@@ -21,7 +21,8 @@ const products = [
 		price: 199,
 		image: GroupP,
     type:"/GroupPersonal",
-    typee:"/BQDetail"
+    typee:"/BQDetail",
+	nameee:"Group Personal Insurance",
 	},
 	{
 		id: 2,
@@ -32,7 +33,8 @@ const products = [
 		price: 229,
 		image: GroupP,
     type:"/GroupHealth",
-    typee:"/BQDetail"
+    typee:"/BQDetail",
+	nameee:"Group Healthcare Insurance",
 	},
 	{
 		id: 3,
@@ -43,7 +45,8 @@ const products = [
 		price: 99,
 		image: Cargo,
     type:"/Cargo",
-    typee:"/BQDetail"
+    typee:"/BQDetail",
+	nameee:"Cargo"
 	},
 	{
 		id: 4,
@@ -54,7 +57,8 @@ const products = [
 		price: 119,
 		image: Money,
     type:"/Money",
-    typee:"/BQDetail"
+    typee:"/BQDetail",
+	nameee:"Money Inssurance"
 	},
 	{
 		id: 5,
@@ -65,7 +69,8 @@ const products = [
 		price: 85,
 		image: Machinery,
     type:"/Machine",
-    typee:"/BQDetail"
+    typee:"/BQDetail",
+	nameee:"Machinery Breakdown Insurance"
 	},
 	{
 		id: 6,
@@ -75,7 +80,8 @@ const products = [
 			" Protect Motor Vehicles used for your Business Activity against the Unforeseen Accidents that might occur and cause Material Damages or Bodily Injuries to the Drivers or Third Parties.",
 		image: MotorGr,
     type:"/MotorFleet",
-    typee:"/BQDetail"
+    typee:"/BQDetail",
+	nameee:"Motor"
 	},
 ];
 const Cart = () => {
@@ -181,13 +187,9 @@ const Cart = () => {
 								</p>
                
                 </Link>
-                <Link to={product.typee} className="btn" >
-                
-								<p className="forp">
-									Request A Quote
-								</p>
-                
-                </Link>
+				<Link to={`/BQDetail?Type=${encodeURIComponent(product.nameee)}`} className="btn">
+  <p className="forp">Request A Quote</p>
+</Link>
 
 							</div>
               </div>

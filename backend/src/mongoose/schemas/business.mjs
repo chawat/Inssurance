@@ -2,10 +2,11 @@ import mongoose from "mongoose";
  
 const businessSchema=new mongoose.Schema({
   
-    IdService: {
-        type: mongoose.Schema.Types.ObjectId, // Referencing business servive collection 
-        ref: "BusinessService" // Referencing the "Businessservice" model
-      },
+    // IdService: {
+    //     type: mongoose.Schema.Types.ObjectId, // Referencing business servive collection 
+    //     ref: "BusinessService" // Referencing the "Businessservice" model
+    //   },
+  Type:mongoose.Schema.Types.String,
   CompanyName:mongoose.Schema.Types.String,
   BusinessType:mongoose.Schema.Types.String,
   NumberOfEmployees:mongoose.Schema.Types.Number,

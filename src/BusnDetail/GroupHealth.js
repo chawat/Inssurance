@@ -37,7 +37,7 @@ const GroupHealth = () => {
           <p className='namee'>A New Medicare Plan is now available for Individuals wishing to remain insured at AROPE Insurance after leaving a Group. For more information, please contact our Call Center on 1219.</p>
           
           
-          <button className="request-quote-button" onClick={() => window.location.href="/BQDetail"}>
+          <button className="request-quote-button" onClick={() => window.location.href=`/BQDetail?Type=${encodeURIComponent('Group Health')}`}>
     <p className="forp">
         Request A Quote
     </p>

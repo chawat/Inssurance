@@ -7,7 +7,7 @@ import Home from './Home';
 import Aboutus from'./AboutUs/Aboutus';
 import PersonalServices from'./Pagepersonal/PersonalServices';
 import BusinessServices from'./PageBusn/BusinessServices';
-import BuQuote from './BusQuote/BuQuote';
+// import BuQuote from './BusQuote/BuQuote';
 import ContactUs from'./ContactUs/Contactus';
 import HealthcareInsurance from './PersonalDetail/HealthcareInsurance';
 import BQDetail from './BusQuote/BQDetail';
@@ -58,7 +58,7 @@ function App() {
          <Route path="/Money" element={<Money/>} />
          <Route path="/Machine" element={<Machine/>} />
          <Route path="/MotorFleet" element={<MotorFleet/>} />
-         <Route path="/BuQuote" element={<BuQuote/>} />
+         {/* <Route path="/BuQuote" element={<BuQuote/>} /> */}
          <Route path="/QuoteTermL" element={<QuoteTermL/>} />
          <Route path="/QuoteTravel" element={<QuoteTravel/>} />
          <Route path="/QuotePerAc" element={<QuotePerAc/>} />

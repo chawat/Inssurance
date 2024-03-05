@@ -36,7 +36,7 @@ const Machine = () => {
           <p className='namee'>Tailor-made Solutions that fit your Business Needs are available.</p>
           
           
-          <button className="request-quote-button" onClick={() => window.location.href="/BQDetail"}>
+          <button className="request-quote-button" onClick={() => window.location.href=`/BQDetail?Type=${encodeURIComponent('Machine')}`}>
     <p className="forp">
         Request A Quote
     </p>
