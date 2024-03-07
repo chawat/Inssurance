@@ -1,0 +1,26 @@
+.circle {
+    position: fixed;
+    width: 25px;
+    height: 25px;
+    background-color: transparent; /* Set the background color to transparent */
+    border: 1px solid rgb(73, 150, 212); /* Border color */
+    border-radius: 50%;
+    pointer-events: none; /* Ensure the circle doesn't interfere with mouse events */
+    transition: transform 0.1s ease; /* Add a transition effect */
+    z-index: 9999; /* Set a high z-index value to ensure the circle is displayed on top */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .circle::before {
+    content: '';
+    position: absolute;
+    width: 10px; /* Adjust the size of the inner circle */
+    height: 10px; /* Adjust the size of the inner circle */
+    background-color: rgb(112, 190, 243); /* Color of the inner circle */
+    border-radius: 50%;
+    top: 50%; /* Position the inner circle vertically in the center */
+    left: 50%; /* Position the inner circle horizontally in the center */
+    transform: translate(-50%, -50%); /* Move the inner circle to the center */
+  }

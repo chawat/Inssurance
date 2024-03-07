@@ -3,6 +3,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 import Navbar from './Navbar/Navbar';
+import MouseCircle from './MouseCircle';
 import Home from './Home';
 import Aboutus from'./AboutUs/Aboutus';
 import PersonalServices from'./Pagepersonal/PersonalServices';
@@ -35,6 +36,7 @@ function App() {
   return (
     <Router>
     <div>
+    <MouseCircle />
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />

@@ -1,5 +1,5 @@
 import React from 'react';
-import insuranceImage from '../images/travel.jpg';
+import insuranceImage from '../images/travel.png';
 import './Health.css'; // Corrected CSS file name
 const Travel = () => {
     const basicCovers = [

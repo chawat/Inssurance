@@ -1,5 +1,5 @@
 import React from 'react';
-import insuranceImage from '../images/personaldetail.jpg';
+import insuranceImage from '../images/PersonalAcc.png';
 import './Health.css';
 
 const Personal = () => {

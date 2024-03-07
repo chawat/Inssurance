@@ -2,9 +2,9 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Cart from './Pagepersonal/Cart'; // Import the Cart component
-import image1 from './images/R.jpeg';
-import image2 from './images/R.jpeg';
-import image3 from './images/R.jpeg';
+import image1 from './images/FORhh.png';
+import image2 from './images/FORhh.png';
+import image3 from './images/FORhh.png';
 import './Home.css'; // Import CSS file
 import Travel from './images/Traveleee.jpg';
 
@@ -30,21 +30,10 @@ const Home = () => {
       <div className="image-slider">
         <img src={images[currentImageIndex]} alt={`Image ${currentImageIndex + 1}`} />
       </div>
-      {/* <h1>INSURANCE ESSENTIALS</h1> */}
+      
       <div >
         <Cart/>
-        {/* <Cart
-             icon=<img src="/images/HE.png" alt="Description of the image" />
-          desc=<p><h2 className='bluee'>HealthcareInsurance </h2><br />Safeguard your Quality of life by<br/>considering the Health Protection<br/>Plans provided by Insurance!</p>
-        />
-        <Cart
-          title="Cart 2"
-          desc="gdbfsd"
-        />
-        <Cart
-          title="Cart 3"
-          desc="ethgrs"
-        /> */}
+        
       </div>
       <div className="image-slider">
       <div className="image-container">
