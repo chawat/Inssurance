@@ -28,6 +28,7 @@ const Navbar = () => {
 
   return (
     <div className={`navbar ${navbarBg === 'white' ? 'scrolled' : ''}`}>
+       {/* <div className='navbar'> */}
       <img src={logo} alt="Healthcare Insurance" className='logo-img' />
       <ul>
         <li><Link to="/" className={activeLink === 'home' ? 'active' : ''} onClick={() => handleClick('home')}>HOME</Link></li>

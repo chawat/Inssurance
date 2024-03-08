@@ -7,19 +7,16 @@ import image2 from './images/FORhh.png';
 import image3 from './images/FORhh.png';
 import './Home.css'; // Import CSS file
 import Travel from './images/Traveleee.jpg';
-
+import ParallaxImage from './ParallaxImage'; 
+import forrig from './images/forright.png';
 
 const Home = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const images = [
-    image1,
-    image2,
-    image3,
-  ];
+  const images = [image1, image2, image3];
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+      setCurrentImageIndex(prevIndex => (prevIndex + 1) % images.length);
     }, 3000);
 
     return () => clearInterval(interval);
@@ -31,25 +28,37 @@ const Home = () => {
         <img src={images[currentImageIndex]} alt={`Image ${currentImageIndex + 1}`} />
       </div>
       
-      <div >
+      <div>
         <Cart/>
-        
       </div>
-      <div className="image-slider">
-      <div className="image-container">
-        <img src={Travel}  />
-        <div className="text-overlay">
-          <h1>Planning your next trip?</h1>
-          <p> 
-Get  Travel Insurance Plans & Roam the world worry-free!</p>
-<button className="request-quote-button" onClick={() => window.location.href="/QuoteTravel"}>
-    <p className="forp">
-        Request A Quote
-    </p>
-</button>
+      
+      <div className='image-slider'>
+        <div className="image-container">
+          <ParallaxImage src={Travel} />
+          <div className="ovverlay"></div>
+          <div className="texte-overlay">
+            <h1>Planning your next trip?</h1>
+            <p>Get Travel Insurance Plans & Roam the world worry-free!</p>
+            <button className="buttoon" onClick={() => window.location.href="/QuoteTravel"}>
+              <p className="forp">Request A Quote</p>
+            </button>
+          </div>
         </div>
       </div>
-    </div>
+      
+      <div className='image-slider'>
+        <div className="image-right-container">
+          <ParallaxImage src={forrig} />
+          <div className="ovverlay"></div>
+          <div className="texte-overlay">
+            <h1>Creating a better future for your loved once</h1>
+            <p>We're in this business since 1988 and we provide the best services.</p>
+            <button className="buttoon" onClick={() => window.location.href="/PersonalServices"}>
+              <p className="forp">Let's Get started</p>
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

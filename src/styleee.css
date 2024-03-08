@@ -18,18 +18,7 @@
 	flex-direction: column;
 }
 
-/* .navbar {
-	flex-basis: 100%;
-	background-color: var(--main-color);
-	padding: 15px 2rem;
-	display: flex;
-	justify-content: space-between;
-}
 
-.navbar .logo {
-	color: #fff;
-	text-transform: uppercase;
-} */
 
 .btn {
 	border: none;
@@ -99,6 +88,7 @@ main {
 	justify-content: flex-start;
 	flex-wrap: wrap;
 	width: 100%;
+	padding-left: 30px;
 }
 .product {
 	display: flex;
@@ -107,18 +97,42 @@ main {
 	cursor: pointer;
 	height: 300px;
 	flex-basis: 25%;
-	padding: 10px;
+	/* padding: 10px; */
 	position: relative;
 	overflow: hidden;
 	transition: background-color 0.3s ease; 
-	border-radius: 13.5%; /* Make the border rounded */
+	 
   }
+  .productt {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	height: 300px;
+	flex-basis: 25%;
+	position: relative;
+	overflow: hidden;
+	transition: background-color 0.3s ease;
+	font-family: Arial, sans-serif; /* Choose a suitable font family */
+  }
+  
+  .productt span {
+	font-size: 28px; /* Adjust font size as needed */
+	color: #2c3e50; /* Dark gray color for better readability */
+	margin: 0 10px; /* Adjust margin between words */
+	text-transform: uppercase; /* Convert text to uppercase for emphasis */
+	font-weight: bold; /* Make text bold for better visibility */
+  }
+  
+  
 
 
 .product img {
 	width: 100%;
 	height: 100%; /* Make the image occupy the entire height of the container */
 	object-fit: cover;
+	
 }
 
 .product-image {
@@ -127,6 +141,9 @@ main {
 	height: 100%;
 	object-fit: contain;
 	background-color: #fff;
+	padding: 10px;
+	padding-top: 10px;
+	
 }
 .overlayy {
 	position: absolute;
@@ -134,37 +151,29 @@ main {
 	left: 0;
 	width: 100%;
 	height: 300px;
-	/* background-color: rgba(0, 0, 0, 0.9);  */
-	background-color: black;
-	/* transition: background-color 0.5s;  */
-	opacity: 0.7;
+	
+	background-color: rgba(0, 0, 0, 0.5);
 	
   }
   
-  @keyframes gradientAnimation {
-	0% {
-	  background-color: rgba(0, 0, 0, 0.7); /* Start with semi-transparent */
-	}
-	100% {
-	  background-color: rgba(0, 0, 0, 0.9); /* End with fully opaque */
-	}
-  }
-  
-  .product:hover .overlayy {
-	animation: gradientAnimation 2s ease forwards;
-	background-color: rgba(0, 0, 0, 0.9); /* Ensure the final color is fully opaque */
-  }
+ 
 
   
 
-  .product:hover::before {
+  .product::before {
 	content: "";
 	position: absolute;
-	top: calc(100% - 40px); left: 0;
+	top: 100%;
+	left: 0;
 	width: 100%;
-	height: 40px; background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 100%);
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5); /* Transparent dark color */
+	transition: top 0.5s ease; /* Smooth transition animation */
+	z-index: 1; /* Ensure the overlay appears above the product */
   }
-
+  .product:hover::before {
+	top: 0; /* Move the overlay to cover the product on hover */
+  }
   
   
   .product:hover img {
@@ -216,37 +225,44 @@ main {
 
 .buttons {
 	position: absolute;
-	top: 0;
-	left: 0;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
 	transition: opacity 0.5s;
 	opacity: 0;
 	width: 100%;
 	height: 100%;
-	background-color: #00000044;
+	background-color: transparent;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	gap: 10px;
-}
-
-.product:hover .buttons {
+	z-index: 2;
+  }
+  
+  .product:hover .buttons {
 	opacity: 1;
-}
-
-.buttons  .btn {
-	/* margin-right: 1rem; */
+  }
+  
+  .buttons .btn {
 	background-color: #dddddd;
 	padding: 10px 20px;
 	width: 50%;
 	font-size: 1rem;
 	border-radius: 3px;
-}
-
-.buttons  .btn:hover {
+	transition: background-color 0.3s ease, color 0.3s ease; /* Add transition */
+  }
+  
+  .buttons .btn:hover {
 	background-color: var(--main-color);
 	color: #fff;
-}
+  }
+  
+  .buttons:hover {
+	opacity: 1; /* Ensure buttons remain visible when hovering over them */
+  }
+  
 .buttons .linkee{
 	background-color: #dddddd;
 	width: 50%;
@@ -266,3 +282,47 @@ main {
 		height: 55%;
 		object-fit: contain;
 	  }
+
+	  .buttoon {
+		display: inline-block;
+		padding: 10px 20px;
+		font-size: 18px;
+		background-color: #191a1b;
+		color: #fff;
+		border: none;
+		cursor: pointer;
+		position: relative;
+		overflow: hidden;
+		font-family: Arial, Helvetica, sans-serif;
+	  }
+	  
+	  .buttoon::before,
+	  .buttoon::after {
+		content: '';
+		position: absolute;
+		top: 0;
+		width: 100%;
+		font-family: Arial, Helvetica, sans-serif;
+		height: 100%;
+		background-color: rgba(21, 117, 241, 0.5); /* Transparent dark color */
+		transition: width 0.3s ease; /* Smooth transition animation */
+	  }
+	  
+	  .buttoon::before {
+		left: 50%;
+		transform: translateX(-50%);
+	  }
+	  
+	  .buttoon::after {
+		right: 50%;
+		transform: translateX(50%);
+	  }
+	  
+	  .buttoon:hover::before {
+		width: 0%; /* Shrink the left half of the background color on hover */
+	  }
+	  
+	  .buttoon:hover::after {
+		width: 0%; /* Shrink the right half of the background color on hover */
+	  }
+	  

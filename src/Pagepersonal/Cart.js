@@ -148,6 +148,12 @@ const Cart = () => {
 				</h2>
 				</div>
 				<div className="products">
+				<div className="productt">
+  <span>Covering all</span><br/>
+  
+  <span>insurance</span><br/>
+  <span>fields</span>
+</div>
 					{products.map((product) => (
 						<div
 							className="product"
@@ -186,13 +192,14 @@ const Cart = () => {
 								</p>
                
                 </Link>
-                <Link to={product.typee} className="btn" >
+              <Link to={product.typee} className="btn" >
                 
 								<p className="forp">
 									Request A Quote
 								</p>
                 
                 </Link>
+				
 
 							</div>
               </div>
