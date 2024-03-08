@@ -1,39 +1,47 @@
-import image1 from '../images/forquote.png';
-// import './Home.css'; // Import CSS file
-// import './BQ.css';
-import React, { useState, useEffect } from 'react';
+import image1 from '../images/about.jpg';
+import handshake from '../images/handshake.jpg';
+import React from 'react';
 import "./about.css";
 import Carteee from './Cartabout';
 
 const Aboutus = () => {
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const images = [
-    image1,
-    // image2,
-    // image3,
-  ];
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 3000);
-
-    return () => clearInterval(interval);
-  }, [images.length]);
 
   return ( 
-    <div className='body-div'>
-    <div className="image-slider">
+  <div className='body-div'>
+    <div className="img-slider">
       <div className="image-container">
-        <img src={images[currentImageIndex]} alt={`Image ${currentImageIndex + 1}`} />
-        <div className="text-overlay">
-          <h1>Our Company</h1>
-          <p> Established in 1944, NextGuard Insurance Company has left an indelible mark across 8 Arab countries, boasting a heritage built on trust and 79 years of unparalleled regional expertise. We pride ourselves on being a cornerstone of customer engagement, offering tailored solutions that cater to the unique needs of our diverse clientele.</p>
+        <img src={image1} alt="Thank you for your trust" />
+        <div className='text'>
+        <h1> Protecting Your Peace of Mind </h1>
+        <h2> At any cost</h2>
         </div>
       </div>
     </div>
-    <div>
+  <div>
+  <div className='Container'>
+     
+        <div className='imgdesc'>
+        <img src={handshake} alt="img"></img>
+             <div className='borderline'></div>
+            
+        </div>     
+       
+        
+       <div className='desc'>
+            <h2>PERFECT INSURANCE SERVICES</h2>
+            <div>At NextGuard,we understand that life is full of uncertainties.That's why we're dedicated to providing reliable insurance solutions tailored to meet you unique needs.From protecting your home and belongings to safeguarding your family's future,we are here to offer peace of mind every step of the way.
+              With a commitment to exceptional service and comprehensive coverage,we strive to be your trusted partner in safeguarding what matters most to you.Discover the confidence that comes with knowing you are protected with NextGuard
+            </div>
+
+        </div>
+  </div> 
+    
     <Carteee/>
+    
+    
+    
+    
     </div>
     </div>
   );

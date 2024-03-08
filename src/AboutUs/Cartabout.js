@@ -1,8 +1,5 @@
 
-import React, {
-	useState,
-	useEffect,
-} from "react";
+
 import "./about.css";
 import Motor from '../images/vision.svg';
 import House from '../images/growth.svg';

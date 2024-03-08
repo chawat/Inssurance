@@ -52,8 +52,8 @@
 }
 
 .image-slider:hover img {
-  transform: scale(1.1); /* Scale image on hover */
-}
+  transform: scale(1.1);} /* Scale image on hover */
+
 
 /* Cart container styles */
 .cart-container {
