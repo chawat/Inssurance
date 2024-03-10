@@ -20,10 +20,35 @@ main {
 .container {
     max-width: 100%;
     margin: 0 auto;
-    padding: 20px;
+    padding: 0px;
   }
   
  
+  .ccoontainer{
+    display: flex;
+	/* margin: 8%; */
+  padding-left: 70px;
+
+  }
+  .imgdescc{
+    width: 400px;
+	height:400px;
+	/* margin-left: 40px; */
+	margin-top: 10px;
+	margin-bottom: 10px;
+  padding-left: 30px;
+  }
+  .imgdescc img{
+    width: 100%;
+    height:100%;
+    border-radius: 20px;
+    z-index: 1;
+    position: relative;
+  }
+  .descri{
+    margin-left:10%;
+    flex: 1;
+  }
  
   .content {
     display: flex;
@@ -100,4 +125,9 @@ main {
     background-color: #0056b3;
   }
   
-  
+  .descdet{
+    margin-left:30px;
+    flex: 1;
+    width: 720px;
+    margin-right: 100px;
+  }

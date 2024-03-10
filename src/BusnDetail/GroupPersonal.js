@@ -1,42 +1,20 @@
 import React from 'react';
-import insuranceImage from '../images/groupPersonal.jpg';
+import insuranceImage from '../images/gr.png';
 import './Bdetail.css';;
 
 const GroupPersonal = () => {
-  const basicCovers = [
-    "Death: Natural, Accidental or due to Sickness"
-  ];
-
-  const optionalCovers = [
-    "Total Permanent Disability due to Sickness",
-    "Total or Partial Permanent Disability due to an Accident ",
-    "Passive War Risk for Death and Disability Covers",
-    "Additional Indemnity in case of Accidental Death",
-    "Terrorism Cover"
-  ];
-
-  const eligibilityCriteria = [
-    "Applicant Entry Age should be between 18 & 70 Years",
-    "Applicant should be a Lebanese Citizen or a Permanent Resident in Lebanon",
-  ];
-
-
 
   return (
-    <div className="container">
-      <div className="contentt">
-        <div className="image-container">
+    <div >
+      <div className="ccoontainer">
+      <div className="imgdescc">
           <img src={insuranceImage} alt="Healthcare Insurance" />
         </div>
-        <div className="descriptionn">
-          <h1 className='blueee'>GROUP PERSONAL ACCIDENT INSURANCE</h1>
-          {/* <h2>Enjoy Life Worry Less!</h2> */}
-          <p className='blueee'>Protect your Employees from Unpredictable Accidents that might happen anytime and anywhere.</p>
-          <p className='blueee'>AROPE Group PA Insurance Plan gives you the opportunity to secure your Personnel and to offer them a Valuable Benefit at reasonable cost.</p>
-          <p className='blueee'> Securing the future of your Employees' Dependents will increase their loyalty and help you as Business Owner to attract and retain Good Members.</p>
-          <p className='namee'>Tailor-made Solutions that fit your Business Needs are available.</p>
-          
-          
+        <div className="descdet">
+          <h2>GROUP PERSONAL ACCIDENT INSURANCE</h2>
+          <div>
+          Group personal accident insurance is essential for protecting your employees from unpredictable accidents that can occur anytime and anywhere. With AROPE Group PA Insurance Plan, you have the opportunity to secure your personnel and offer them a valuable benefit at a reasonable cost. By securing the future of your employees' dependents, you can increase their loyalty and attract and retain good members as a business owner. We provide tailor-made solutions that align with your business needs to ensure comprehensive coverage.
+            </div> 
           <button className="request-quote-button" onClick={() => window.location.href=`/BQDetail?Type=${encodeURIComponent('Group Personal')}`}>
     <p className="forp">
         Request A Quote

@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Cart from './CartB'; // Import the Cart component
-import image1 from '../images/forbus.png';
+import image1 from '../images/wab.png';
 import '../Home.css'; // Import CSS file
 
 const BusinessServices = () => {

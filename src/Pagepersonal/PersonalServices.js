@@ -2,10 +2,11 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Cart from './Cart'; // Import the Cart component
-import image1 from '../images/forpersonal.png';
+// import image1 from '../images/forpersonal.png';
 // import image2 from './images/travel.jpg';
 // import image3 from './images/termlife.jpeg';
 import '../Home.css'; // Import CSS file
+import image1 from '../images/per1.png';
 
 const PersonalServices = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -24,9 +25,11 @@ const PersonalServices = () => {
   }, [images.length]);
 
   return (
-    <div>
-      <div className="image-slider">
+    <div className='body-div'>
+    <div className="img-slider">
+      <div className="image-container">
         <img src={images[currentImageIndex]} alt={`Image ${currentImageIndex + 1}`} />
+      </div>
       </div>
       {/* <h1>INSURANCE ESSENTIALS</h1> */}
       <div >

@@ -6,11 +6,11 @@ import React, {
 import "../styleee.css";
 import { Link } from 'react-router-dom';
 import { GiShoppingBag } from "react-icons/gi";
-import Machinery from '../images/machinery.jpg';
-import Money from '../images/money.jpg';
-import Cargo from '../images/cargo.jpg';
-import GroupP from '../images/groupPersonal.jpg';
-import MotorGr from '../images/motorGr.jpg';
+import Machinery from '../images/mac.png';
+import Money from '../images/bm.png';
+import Cargo from '../images/co.png';
+import GroupP from '../images/gr.png';
+import MotorGr from '../images/mf.jpg';
 const products = [
 	{
 		id: 1,
@@ -20,7 +20,7 @@ const products = [
 			"Protect your Employees from Unpredictable Accidents that might happen anytime and anywhere.",
 		price: 199,
 		image: GroupP,
-    type:"/GroupPersonal",
+    type:"/DetailB",
     typee:"/BQDetail",
 	nameee:"Group Personal Insurance",
 	},
@@ -28,11 +28,11 @@ const products = [
 		id: 2,
 		name: "GROUP HEALTHCARE INSURANCE",
 		rating: 4.2,
-		description:
-			"Protect your Employees and their Family Members by fulfilling their Medical Needs whether they benefit from the National Social Security Fund (NSSF) or not.",
-		price: 229,
+		// description:
+		// 	"Protect your Employees and their Family Members by fulfilling their Medical Needs whether they benefit from the National Social Security Fund (NSSF) or not.",
+		// price: 229,
 		image: GroupP,
-    type:"/GroupHealth",
+    type:"/DetailB",
     typee:"/BQDetail",
 	nameee:"Group Healthcare Insurance",
 	},
@@ -40,46 +40,43 @@ const products = [
 		id: 3,
 		name: "CARGO INSURANCE",
 		rating: 3.2,
-		description:
-			"Protect your Shipment of Goods against Perils that might arise during its Transportation by Air, by Sea or via Land Transit.",
-		price: 99,
+		// description:
+		// 	"Protect your Shipment of Goods against Perils that might arise during its Transportation by Air, by Sea or via Land Transit.",
+		// price: 99,
 		image: Cargo,
-    type:"/Cargo",
+    type:"/DetailB",
     typee:"/BQDetail",
 	nameee:"Cargo"
 	},
 	{
 		id: 4,
 		name: "MONEY INSURANCE",
-		rating: 4.8,
-		description:
-			"Protect your Money against Potential Risks arising from Burglary, Employee Fraudulent Behavior... ",
-		price: 119,
+		// rating: 4.8,
+		// description:
+		// 	"Protect your Money against Potential Risks arising from Burglary, Employee Fraudulent Behavior... ",
+		// price: 119,
 		image: Money,
-    type:"/Money",
+    type:"/DetailB",
     typee:"/BQDetail",
 	nameee:"Money Inssurance"
 	},
 	{
 		id: 5,
 		name: "MACHINERY BREAKDOWN INSURANCE",
-		rating: 4.5,
-		description:
-			"Protect your Machinery Assets against Failures and Breakdowns that might affect negatively your Business Cycle.",
-		price: 85,
+		// rating: 4.5,
+		// description:
+		// 	"Protect your Machinery Assets against Failures and Breakdowns that might affect negatively your Business Cycle.",
+		// price: 85,
 		image: Machinery,
-    type:"/Machine",
+    type:"/DetailB",
     typee:"/BQDetail",
 	nameee:"Machinery Breakdown Insurance"
 	},
 	{
 		id: 6,
 		name: "MOTOR FLEET INSURANCE",
-		rating: 3.8,
-		description:
-			" Protect Motor Vehicles used for your Business Activity against the Unforeseen Accidents that might occur and cause Material Damages or Bodily Injuries to the Drivers or Third Parties.",
 		image: MotorGr,
-    type:"/MotorFleet",
+    type:"/DetailB",
     typee:"/BQDetail",
 	nameee:"Motor"
 	},
@@ -146,10 +143,17 @@ const Cart = () => {
 	return (
 		<div className="App">
 			<main>
-				<h2 className="title">
+				<h2 className="titleee">
         INSURANCE ESSENTIALS
 				</h2>
 				<div className="products">
+				<div className="productt">
+            <span>Covering all</span>
+            <br />
+            <span>insurance</span>
+            <br />
+            <span>fields</span>
+          </div>
 					{products.map((product) => (
 						<div
 							className="product"
@@ -163,6 +167,7 @@ const Cart = () => {
 									product.image
 								}
 							/>
+							<div className="overlay"></div>
 							<h4 className="product-name">
 								{product.name}
 							</h4>
@@ -171,14 +176,14 @@ const Cart = () => {
 									product.rating
 								}
 							/> */}
-							<p>
+							{/* <p>
 								{
 									product.description
 								}
 							</p>
 							<span className="product-price">
 								{product.price}$
-							</span>
+							</span> */}
               <div className="buttons"> 
               <Link to={product.type} className="btn" >
 							

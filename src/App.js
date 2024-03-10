@@ -32,6 +32,8 @@ import Money from './BusnDetail/Money';
 import Machine from './BusnDetail/Machine';
 import MotorFleet from './BusnDetail/MotorFleet';
 import Login from './Login/Login';
+import Detail from './Detail';
+import DetailB from './DetailB';
 function App() {
   return (
     <Router>
@@ -66,6 +68,8 @@ function App() {
          <Route path="/QuotePerAc" element={<QuotePerAc/>} />
          <Route path="/QuoteHouse" element={<QuoteHouse/>} />
          <Route path="/QuoteHealth" element={<QuoteHealth/>} />
+         <Route path="/Detail" element={<Detail/>} />
+         <Route path="/DetailB" element={<DetailB/>} />
       </Routes>
       <Footer />
     </div>

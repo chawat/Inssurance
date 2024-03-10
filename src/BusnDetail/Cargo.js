@@ -1,5 +1,5 @@
 import React from 'react';
-import insuranceImage from '../images/cargo.jpg';
+import insuranceImage from '../images/co.png';
 
 import './Bdetail.css';
 
@@ -7,17 +7,16 @@ const Cargo = () => {
  
   
   return (
-    <div className="container">
-      <div className="contentt">
-        <div className="image-container">
+    <div >
+      <div className="ccoontainer">
+        <div className="imgdescc">
           <img src={insuranceImage} alt="Healthcare Insurance" />
         </div>
-        <div className="descriptionn">
-          <h1 className='blueee'>CARGO INSURANCE</h1>
-          
-          <p className='blueee'>Protect your Shipment of Goods against Perils that might arise during its Transportation by Air, by Sea or via Land Transit.</p>
-          <p className='blueee'>AROPE Cargo Insurance Plan is the Solution that provides you with Peace of Mind for all your Import or Export Activity all over the Globe.</p>
-          <p className='namee'>Tailor-made Solutions that fit your Business Needs are available.</p>
+        <div className='descdet'>
+          <h2>CARGO INSURANCE</h2>
+          <div>
+          Cargo insurance offers protection for your shipment of goods against perils that might arise during transportation by air, sea, or land transit. With AROPE Cargo Insurance Plan, you can have peace of mind for all your import or export activities worldwide. Our tailor-made solutions are designed to fit your specific business needs, ensuring comprehensive coverage and security for your valuable cargo throughout its journey.  
+          </div>
          
           <button className="request-quote-button" onClick={() => window.location.href=`/BQDetail?Type=${encodeURIComponent('Cargo')}`}>
     <p className="forp">

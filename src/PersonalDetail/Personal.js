@@ -3,31 +3,31 @@ import insuranceImage from '../images/PersonalAcc.png';
 import './Health.css';
 
 const Personal = () => {
-  const basicCovers = [
-    "Accidental Death"
-  ];
+  // const basicCovers = [
+  //   "Accidental Death"
+  // ];
 
-  const optionalCovers = [
-    "Total or Partial Permanent Disability due to an Accident",
-    "Passive War Risk for Death & Disability Covers",
-    "Weekly Indemnity in case of Temporary Disability following Accident",
-    "Medical Expenses caused directly by a covered Accident"
-  ];
+  // const optionalCovers = [
+  //   "Total or Partial Permanent Disability due to an Accident",
+  //   "Passive War Risk for Death & Disability Covers",
+  //   "Weekly Indemnity in case of Temporary Disability following Accident",
+  //   "Medical Expenses caused directly by a covered Accident"
+  // ];
 
-  const eligibilityCriteria = [
-    "Applicant Entry Age should be between 18 & 64 Years",
-    "BApplicant should be a Lebanese Citizen or a Permanent Resident in Lebanon",
-  ];
+  // const eligibilityCriteria = [
+  //   "Applicant Entry Age should be between 18 & 64 Years",
+  //   "BApplicant should be a Lebanese Citizen or a Permanent Resident in Lebanon",
+  // ];
 
 
 
   return (
-    <div className="container">
-      <div className="content">
-        <div className="image-container">
+    <div >
+      <div className="ccoontainer">
+        <div className="imgdescc">
           <img src={insuranceImage} alt="Healthcare Insurance" />
         </div>
-        <div className="description">
+        {/* <div className="descri">
           <h1>PERSONAL INSURANCE</h1>
           <h2>Live Happily Ever After!</h2>
           <p>AROPE Personal Accident Insurance Plan provides a Guaranteed Worldwide Cover to protect you
@@ -55,7 +55,13 @@ and your Family from any unforeseen event that might occur.
             {eligibilityCriteria.map((criteria, index) => (
               <li key={index}>{criteria}</li>
             ))}
-          </ul>
+          </ul> */}
+          <div className='descdet'>
+           <h2>PERSONAL INSURANCE</h2>
+            <div>Secure your happiness and peace of mind with AROPE's Personal Accident Insurance Plan. Offering guaranteed worldwide coverage, our plan protects you and your family from unexpected events that may arise. The basic cover includes protection against accidental death, while optional covers provide additional layers of security. These options include coverage for total or partial permanent disability resulting from an accident, passive war risk for death and disability, weekly indemnity for temporary disability following an accident, and medical expenses directly caused by a covered accident. To be eligible, applicants must be between 18 and 64 years old, and either Lebanese citizens or permanent residents in Lebanon.
+            </div>
+
+
           
           <button className="request-quote-button" onClick={() => window.location.href="/QuotePerAc"}>
     <p className="forp">
