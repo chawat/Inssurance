@@ -285,7 +285,7 @@ const PersonalAcdet = () => {
           {/* reCAPTCHA component */}
         </div>
 
-        <button type="submit">Submit</button>
+        <button className='buttoonperQ' type="submit">Submit</button>
         </div>
        
       </form>

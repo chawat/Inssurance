@@ -1,42 +1,21 @@
 import React from 'react';
-import insuranceImage from '../images/machinery.jpg';
+import insuranceImage from '../images/mac.png';
 import './Bdetail.css';
 
 const Machine = () => {
-  const basicCovers = [
-    "Death: Natural, Accidental or due to Sickness"
-  ];
-
-  const optionalCovers = [
-    "Total Permanent Disability due to Sickness",
-    "Total or Partial Permanent Disability due to an Accident ",
-    "Passive War Risk for Death and Disability Covers",
-    "Additional Indemnity in case of Accidental Death",
-    "Terrorism Cover"
-  ];
-
-  const eligibilityCriteria = [
-    "Applicant Entry Age should be between 18 & 70 Years",
-    "Applicant should be a Lebanese Citizen or a Permanent Resident in Lebanon",
-  ];
-
-
-
+  
   return (
-    <div className="container">
-      <div className="contentt">
-        <div className="image-container">
+    <div >
+      <div className="ccoontainer">
+      <div className="imgdescc">
           <img src={insuranceImage} alt="Healthcare Insurance" />
         </div>
-        <div className="descriptionn">
-          <h1 className='blueee'>MACHINERY BREAKDOWN INSURANCE</h1>
-          {/* <h2>Enjoy Life Worry Less!</h2> */}
-          <p className='blueee'>Protect your Machinery Assets against Failures and Breakdowns that might affect negatively your Business Cycle.</p>
-          <p className='blueee'>AROPE Machinery Breakdown Insurance Plan is the Right Solution that will provide you with a Secured Protection to encounter Eventual Losses that might arise following a Mechanical Failure or Breakdown in the Business Equipment.</p>
-          <p className='namee'>Tailor-made Solutions that fit your Business Needs are available.</p>
-          
-          
-          <button className="request-quote-button" onClick={() => window.location.href=`/BQDetail?Type=${encodeURIComponent('Machine')}`}>
+        <div className="descdet">
+          <h2>MACHINERY BREAKDOWN INSURANCE</h2>
+         <div>
+         Machinery breakdown insurance is essential for safeguarding your machinery assets against failures and breakdowns that could disrupt your business cycle. With AROPE Machinery Breakdown Insurance Plan, you'll have the right solution to protect your business from potential losses resulting from mechanical failures or breakdowns in your equipment. Our insurance plan offers secured protection to help you mitigate any adverse impacts on your business operations. We provide tailor-made solutions that are customized to meet the specific needs of your business, ensuring comprehensive coverage and peace of mind.
+         </div>
+          <button className="buttoonbus" onClick={() => window.location.href=`/BQDetail?Type=${encodeURIComponent('Machine')}`}>
     <p className="forp">
         Request A Quote
     </p>

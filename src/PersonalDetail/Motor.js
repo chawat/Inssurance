@@ -84,7 +84,7 @@ This Insurance Plan covers Third Party Liability | Material Damages and/or Bodil
             <div>Ensure a safe drive on the roads with AROPE's Motor Insurance Plans, tailored to meet your needs and provide peace of mind. The Motor All Risks plan offers comprehensive coverage including own damage, fire, theft, third party liability for material damage and bodily injuries, replacement car, road assistance service, and more. AROPE also offers Motor Third Party Liability Insurance, covering material damages and bodily injuries caused to third parties by your vehicle. The basic covers include compulsory insurance for bodily injuries and material damages, coverage for driver and family passengers, and road assistance services. Optional covers such as excess bodily injury are available. Additionally, AROPE offers the Motor Orange Card, which extends coverage for third party liability arising from vehicle accidents outside Lebanon, covering countries such as Syria, Jordan, and Egypt. The Orange Card is available for private and commercial vehicles and can be purchased for various durations.
             </div>
           
-          <button className="request-quote-button" onClick={() => window.location.href="/PQMDetail"}>
+          <button className="buttoonper" onClick={() => window.location.href="/PQMDetail"}>
     <p className="forp">
         Request A Quote
     </p>

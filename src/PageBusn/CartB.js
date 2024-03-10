@@ -185,14 +185,14 @@ const Cart = () => {
 								{product.price}$
 							</span> */}
               <div className="buttons"> 
-              <Link to={product.type} className="btn" >
+              <Link to={product.type} className="buttoon" >
 							
 								<p className="forp">
 									Detail
 								</p>
                
                 </Link>
-				<Link to={`/BQDetail?Type=${encodeURIComponent(product.nameee)}`} className="btn">
+				<Link to={`/BQDetail?Type=${encodeURIComponent(product.nameee)}`} className="buttoon">
   <p className="forp">Request A Quote</p>
 </Link>
 

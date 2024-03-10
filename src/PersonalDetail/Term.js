@@ -62,7 +62,7 @@ const Term = () => {
            <h2>TERM LIFE INSURANCE</h2>
             <div>Protect your loved ones and enjoy peace of mind with AROPE's Term Life Insurance Plan. Designed to ensure a superior life for you and your family, even during challenging times, this solution offers worldwide protection with a wide range of covers. The basic cover includes protection against natural, accidental, or sickness-related death. Optional covers provide additional security, such as total permanent disability due to sickness or accident, passive war risk for death and disability, additional indemnity in case of accidental death, and terrorism cover. To be eligible, applicants must be between 18 and 70 years old and either Lebanese citizens or permanent residents in Lebanon.
             </div>
-          <button className="request-quote-button" onClick={() => window.location.href="/QuoteTermL"}>
+          <button className="buttoonper" onClick={() => window.location.href="/QuoteTermL"}>
     <p className="forp">
         Request A Quote
     </p>

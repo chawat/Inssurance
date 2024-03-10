@@ -250,7 +250,7 @@ main {
 	background-color: #dddddd;
 	padding: 10px 20px;
 	width: 50%;
-	font-size: 1rem;
+	font-size: 1.8rem;
 	border-radius: 3px;
 	transition: background-color 0.3s ease, color 0.3s ease; /* Add transition */
   }
@@ -307,6 +307,7 @@ main {
 		height: 100%;
 		background-color: rgba(21, 117, 241, 0.5); /* Transparent dark color */
 		transition: width 0.3s ease; /* Smooth transition animation */
+		color: #333;
 	  }
 	  
 	  .buttoon::before {
@@ -325,5 +326,15 @@ main {
 	  
 	  .buttoon:hover::after {
 		width: 0%; /* Shrink the right half of the background color on hover */
+	  }
+	  .buttons .buttoon {
+		background-color: #dddddd;
+		padding: 10px 20px;
+		width: 50%;
+		font-size: 1rem;
+		border-radius: 3px;
+		transition: background-color 0.3s ease, color 0.3s ease; /* Add transition */
+		color: #000000;
+		font-family: Arial, Helvetica, sans-serif;
 	  }
 	  

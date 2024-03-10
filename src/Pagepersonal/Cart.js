@@ -80,10 +80,10 @@ const Cart = () => {
               <div className="overlay"></div>
               <h4 className="product-name">{product.name}</h4>
               <div className="buttons">
-                <Link to={product.type} className="btn">
+                <Link to={product.type} className="buttoon">
                   <p className="forp">Detail</p>
                 </Link>
-                <Link to={product.typee} className="btn">
+                <Link to={product.typee} className="buttoon">
                   <p className="forp">Request A Quote</p>
                 </Link>
               </div>

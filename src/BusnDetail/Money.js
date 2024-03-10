@@ -1,43 +1,21 @@
 import React from 'react';
-import insuranceImage from '../images/money.jpg';
+import insuranceImage from '../images/bm.png';
 import './Bdetail.css';
 
 const Money = () => {
-  const basicCovers = [
-    "Death: Natural, Accidental or due to Sickness"
-  ];
-
-  const optionalCovers = [
-    "Total Permanent Disability due to Sickness",
-    "Total or Partial Permanent Disability due to an Accident ",
-    "Passive War Risk for Death and Disability Covers",
-    "Additional Indemnity in case of Accidental Death",
-    "Terrorism Cover"
-  ];
-
-  const eligibilityCriteria = [
-    "Applicant Entry Age should be between 18 & 70 Years",
-    "Applicant should be a Lebanese Citizen or a Permanent Resident in Lebanon",
-  ];
-
-
-
+  
   return (
-    <div className="container">
-      <div className="contentt">
-        <div className="image-container">
+    <div >
+      <div className="ccoontainer">
+        <div className="imgdescc">
           <img src={insuranceImage} alt="Healthcare Insurance" />
         </div>
-        <div className="descriptionn">
-          <h1 className='blueee'>MONEY INSURANCE</h1>
-          {/* <h2>Enjoy Life Worry Less!</h2> */}
-          <p className='blueee'>Protect your Money against Potential Risks arising from Burglary, Employee Fraudulent Behavior...</p>
-          <p className='blueee'>AROPE Money Insurance Plan is the Solution especially designed to protect your most Valuable Assets being Cash, Cheques, Currency Notes, Securities... whether placed in a Safe or during Transit.</p>
-          <p className='blueee'>Take Action today and preserve your Business from any Accident that might negatively affect its Success and Growth.</p>
-          <p className='namee'>We, at AROPE Insurance, are eager to offer you the Best Solutions that fit your Business Needs.</p>
-          
-          
-          <button className="request-quote-button" onClick={() => window.location.href=`/BQDetail?Type=${encodeURIComponent('Money')}`}>
+        <div className="descdet">
+          <h2>MONEY INSURANCE</h2>
+          <div>
+          Money insurance is crucial for safeguarding your money against potential risks such as burglary and employee fraudulent behavior. With AROPE Money Insurance Plan, you'll have a specialized solution designed to protect your most valuable assets, including cash, cheques, currency notes, and securities, whether they're stored in a safe or during transit. Taking action today to invest in money insurance can help preserve your business from any accidents that may negatively affect its success and growth. At AROPE Insurance, we're committed to offering you the best solutions tailored to meet your business needs.
+          </div>
+          <button className="buttoonbus" onClick={() => window.location.href=`/BQDetail?Type=${encodeURIComponent('Money')}`}>
     <p className="forp">
         Request A Quote
     </p>

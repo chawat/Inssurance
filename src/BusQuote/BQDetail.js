@@ -142,7 +142,7 @@ const BQDetail =() =>{
         />
         <br />
 
-        <button className="request-quote-button">Submit</button>
+        <button className="buttoonbus">Submit</button>
         {/* <button type='submit'>Submit</button> */}
       </form>
     </div>
