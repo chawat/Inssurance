@@ -3,7 +3,7 @@ import handshake from '../images/handshake.jpg';
 import React from 'react';
 import "./about.css";
 import Carteee from './Cartabout';
-
+import Team from './team'
 const Aboutus = () => {
 
 
@@ -36,8 +36,9 @@ const Aboutus = () => {
 
         </div>
   </div> 
-    
-    <Carteee/>
+  <Carteee/>
+    <Team/>
+   
     
     
     
