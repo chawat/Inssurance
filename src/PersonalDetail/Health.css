@@ -51,14 +51,17 @@ main {
     border-radius: 20px;
     z-index: 1;
     position: relative;
-    transition: transform 0.5s ease; /* Define transition property */
+    animation: rotateImage 1s linear 1; /* Define animation */
   }
   
-  .imgdescc:hover img {
-    transform: rotate(360deg); /* Rotate the image when hovered */
+  @keyframes rotateImage {
+    0% {
+      transform: rotate(0deg); /* Start rotation from 0 degrees */
+    }
+    100% {
+      transform: rotate(360deg); /* End rotation at 360 degrees */
+    }
   }
-  
-  
   .descri{
     margin-left:10%;
     flex: 1;
