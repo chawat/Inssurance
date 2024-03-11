@@ -1,10 +1,10 @@
 
 
 import "./about.css";
-import Motor from '../images/vision.svg';
-import House from '../images/growth.svg';
-import Healthh from '../images/mission.svg';
-import Termlife from '../images/Quality.svg';
+import Motor from '../images/vision.jpg';
+import House from '../images/growth.png';
+import Healthh from '../images/mission.png';
+import Termlife from '../images/quality.png';
 const products = [
 	{
 		id: 1,
@@ -83,7 +83,7 @@ const Cartabout = () => {
 							<h4 className="productab-name">
 								{product.name}
 							</h4>
-							<p>
+							<p >
 								{
 									product.description
 								}
