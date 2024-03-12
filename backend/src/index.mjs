@@ -11,6 +11,7 @@ import {BusinessInsurance} from '../src/mongoose/schemas/business.mjs';
 import {ContactUs} from '../src/mongoose/schemas/ContactUs.mjs';
 import {Admin} from '../src/mongoose/schemas/admin.mjs';
 import cors from  "cors";
+import bcrypt from "bcrypt"
 
 
 
@@ -180,18 +181,48 @@ app.post("/contactus",async (request,response)=>{
     }
 })
 
-app.post("/admin",async (request,response)=>{
-    const {body}=request;
-    const  NewAdmin=new Admin(body);
-   try{
-        const savedadmin= await NewAdmin.save();
-        return response.status(201).send(savedadmin);
-   }
-   catch(err){
-     console.log(err);
-     return response.sendStatus(400);
+
+//admin schema
+app.post("/admin", async (request, response) => {
+    const { body } = request;
+    try {
+        // Hash the password
+        const hashedPassword = await bcrypt.hash(body.Password, 10);
+
+        // Create a new admin with the hashed password
+        const newAdmin = new Admin({
+            Username: body.Username,
+            Password: hashedPassword
+        });
+
+        // Save the admin to the database
+        const savedAdmin = await newAdmin.save();
+        return response.status(201).send(savedAdmin);
+    } catch (err) {
+        console.error("Error saving admin:", err);
+        return response.sendStatus(400);
     }
-})
+});
 
 
+//login admin
+app.post('/login', async (req, res) => {
+    const { Username, Password } = req.body;
 
+    try {
+        const admin = await Admin.findOne({ Username });
+        if (!admin) {
+            return res.status(401).json({ success: false, message: 'Invalid username or password.' });
+        }
+
+        const passwordMatch = await bcrypt.compare(Password, admin.Password);
+        if (passwordMatch) {
+            res.json({ success: true, message: 'Login successful.' });
+        } else {
+            res.status(401).json({ success: false, message: 'Invalid email or password.' });
+        }
+    } catch (error) {
+        console.error('Error logging in:', error);
+        res.status(500).json({ success: false, message: 'Error logging in.', error: error.message });
+    }
+});
