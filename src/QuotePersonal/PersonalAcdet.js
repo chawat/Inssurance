@@ -19,6 +19,7 @@ const PersonalAcdet = () => {
     SumInsured: "",
     BasicCover: "Accidental Death)",
     OptionalCover: [],
+    personal:""
   });
   const handleInputChange1 = (e) => {
     const { name, value } = e.target;
@@ -53,18 +54,26 @@ const PersonalAcdet = () => {
       // Check if the 'success' property exists and has a value of true
       if (personalData ) {
         alert('Personal details saved successfully!');
-        
+        const personalId = personalData._id;
+
+  
+        // Update formData1 with the eventsAttended field containing the personal ID
+        const updatedFormData1 = {
+          ...formData1,
+          personal: personalId// Populate eventsAttended with personal ID
+        };
+  
         // Proceed with house insurance details only if personal details are successfully saved
-        const houseResponse = await axios.post('http://localhost:3003/personalinsurance', formData1);
-        const houseData = houseResponse.data;
-        console.log(houseData);
+        const Response = await axios.post('http://localhost:3003/personalinsurance', updatedFormData1);
+        const Data = Response.data;
+        console.log(Data);
         
         // Check if house insurance details were successfully saved
-        if (houseData) {
+        if (Data) {
           alert('House insurance details saved successfully!');
           // window.location.href = '/';
         } else {
-          console.error('Failed to save house insurance details:', houseData.message);
+          console.error('Failed to save house insurance details:', Data.message);
         }
       } else {
         console.error('Failed to save personal details:', personalData.message);

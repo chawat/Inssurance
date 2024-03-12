@@ -2,10 +2,7 @@ import mongoose from "mongoose";
  
 const healthCareSchema=new mongoose.Schema({
   
-    IdPersonal: {
-        type: mongoose.Schema.Types.ObjectId, // Referencing Personal schema
-        ref: "Personal" // Referencing the "Personal" model
-      },
+  personal:mongoose.Schema.Types.ObjectId,
   HospitalNetwork: mongoose.Schema.Types.String,
   HospitalizationClass: mongoose.Schema.Types.String,
   Covertype: mongoose.Schema.Types.String,

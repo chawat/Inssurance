@@ -10,7 +10,7 @@ const Housedet = () => {
     ResidenceStatus: "", 
     BasicCover: ["Material Damage of Property resulting from Fire","Burglary following Forcible Entry","General Third Party Liability covering Bodily Injuries & Material Damages"],
     OptionalCover: [],
-    eventsAttended: ""
+    personal: ""
   });
   const [formData2, setFormData2] = useState({
     FirstName: "",
@@ -56,7 +56,7 @@ const Housedet = () => {
         // Update formData1 with the eventsAttended field containing the personal ID
         const updatedFormData1 = {
           ...formData1,
-          eventsAttended: personalId// Populate eventsAttended with personal ID
+          personal: personalId// Populate eventsAttended with personal ID
         };
   
         // Submit house insurance details

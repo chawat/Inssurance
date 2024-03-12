@@ -2,10 +2,8 @@ import mongoose from "mongoose";
  
 const personalInsuranceSchema=new mongoose.Schema({
   
-    IdPersonal: {
-        type: mongoose.Schema.Types.ObjectId, // Referencing Personal schema
-        ref: "Personal" // Referencing the "Personal" model
-      },
+  personal:mongoose.Schema.Types.ObjectId,
+
   CountryOfResidence: mongoose.Schema.Types.String,
   Currency: mongoose.Schema.Types.String,
   SumInsured: mongoose.Schema.Types.Number,

@@ -10,6 +10,7 @@ import {HealthCareInsurance} from '../src/mongoose/schemas/healthcareInsurance.m
 import {BusinessInsurance} from '../src/mongoose/schemas/business.mjs';
 import {ContactUs} from '../src/mongoose/schemas/ContactUs.mjs';
 import {Admin} from '../src/mongoose/schemas/admin.mjs';
+import {Nbviews} from '../src/mongoose/schemas/views.mjs';
 import cors from  "cors";
 import bcrypt from "bcrypt"
 
@@ -247,45 +248,110 @@ app.get('/api/getHouse', async (req, res) => {
 
 
 
-app.get('/api/getHouseWithPersonalData', async (req, res) => {
+
+//get all personal data
+
+app.get('/api/getAllInsuranceWithPersonalData', async (req, res) => {
     try {
-        const data = await HouseInsurance.aggregate([
+        const houseData = await HouseInsurance.aggregate([
             {
                 $lookup: {
                     from: 'personals',
-                    localField: 'eventsAttended', // Field from the HouseInsurance collection
-                    foreignField: '_id', // Field from the Personal collection
+                    localField: 'personal',
+                    foreignField: '_id',
                     as: 'matchedPersonals'
                 }
             }
         ]);
 
-        res.send(data);
+        const motorData = await MotorInsurance.aggregate([
+            {
+                $lookup: {
+                    from: 'personals',
+                    localField: 'personal',
+                    foreignField: '_id',
+                    as: 'matchedPersonals'
+                }
+            }
+        ]);
+
+        const travelData = await TravelInsurance.aggregate([
+            {
+                $lookup: {
+                    from: 'personals',
+                    localField: 'personal',
+                    foreignField: '_id',
+                    as: 'matchedPersonals'
+                }
+            }
+        ]);
+
+
+
+
+
+        const personalaccData = await PersonalInsurance.aggregate([
+            {
+                $lookup: {
+                    from: 'personals',
+                    localField: 'personal',
+                    foreignField: '_id',
+                    as: 'matchedPersonals'
+                }
+            }
+        ]);
+
+        const healthcareData = await HealthCareInsurance.aggregate([
+            {
+                $lookup: {
+                    from: 'personals',
+                    localField: 'personal',
+                    foreignField: '_id',
+                    as: 'matchedPersonals'
+                }
+            }
+        ]);
+
+        const termlifeData = await TermLifeInsurance.aggregate([
+            {
+                $lookup: {
+                    from: 'personals',
+                    localField: 'personal',
+                    foreignField: '_id',
+                    as: 'matchedPersonals'
+                }
+            }
+        ]);
+
+        res.json({ houseData, motorData, travelData,termlifeData,personalaccData,healthcareData });
     } catch (error) {
         console.error('Error fetching data:', error);
         res.status(500).json({ success: false, message: 'Error fetching data.', error: error.message });
     }
 });
 
-
-
-app.get('/api/getAllData', async (req, res) => {
+//get business data
+app.get('/api/getbusinessdata', async (req, res) => {
     try {
-        const ingredients = await HealthCareInsurance.find();
-        const users = await TermLifeInsurance.find();
-        const recipes = await MotorInsurance.find();
-
-        const allData = {
-            ingredients: ingredients,
-            users: users,
-            recipes: recipes
-            // Add more collections as needed
-        };
-
-        res.send(allData);
+        // Query all documents from the Ingredient collection
+        const business = await BusinessInsurance.find();
+        res.send(business);
     } catch (error) {
-        console.error('Error fetching all data:', error);
-        res.status(500).json({ success: false, message: 'Error fetching all data.', error: error.message });
+        console.error('Error fetching quote:', error);
+        res.status(500).json({ success: false, message: 'Error fetching ingredients.', error: error.message });
     }
 });
+//
+app.post("/views",async (request,response)=>{
+    const {body}=request;
+    const  views =new Nbviews(body);
+   try{
+        const nbviews= await views.save();
+        return response.status(201).send(nbviews);
+   }
 
+   catch(err){
+     console.log(err);
+     return response.sendStatus(400);
+    }
+})
