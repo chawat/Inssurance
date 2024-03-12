@@ -10,6 +10,7 @@ const Housedet = () => {
     ResidenceStatus: "", 
     BasicCover: ["Material Damage of Property resulting from Fire","Burglary following Forcible Entry","General Third Party Liability covering Bodily Injuries & Material Damages"],
     OptionalCover: [],
+    eventsAttended: ""
   });
   const [formData2, setFormData2] = useState({
     FirstName: "",
@@ -40,23 +41,31 @@ const Housedet = () => {
     e.preventDefault();
   
     try {
+      // Save personal details
       const personalResponse = await axios.post('http://localhost:3003/personal', formData2);
       const personalData = personalResponse.data;
       console.log(personalData);
-      
-      // Check if the 'success' property exists and has a value of true
-      if (personalData ) {
+  
+      if (personalData) {
         alert('Personal details saved successfully!');
         
-        // Proceed with house insurance details only if personal details are successfully saved
-        const houseResponse = await axios.post('http://localhost:3003/houseinsurance', formData1);
+        // Extract the ID of the saved personal document
+        const personalId = personalData._id;
+
+  
+        // Update formData1 with the eventsAttended field containing the personal ID
+        const updatedFormData1 = {
+          ...formData1,
+          eventsAttended: personalId// Populate eventsAttended with personal ID
+        };
+  
+        // Submit house insurance details
+        const houseResponse = await axios.post('http://localhost:3003/houseinsurance', updatedFormData1);
         const houseData = houseResponse.data;
         console.log(houseData);
         
-        // Check if house insurance details were successfully saved
         if (houseData) {
           alert('House insurance details saved successfully!');
-          // window.location.href = '/';
         } else {
           console.error('Failed to save house insurance details:', houseData.message);
         }
@@ -67,7 +76,6 @@ const Housedet = () => {
       console.error('Error during form submission:', error);
     }
   };
-  
   
   const [BasicCover, setBasicCover] = useState([
     { id: 1, label: 'Material Damage of Property resulting from Fire', checked: true },

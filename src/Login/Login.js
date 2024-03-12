@@ -1,36 +1,37 @@
 import React, { useState } from "react";
 import "./login.css";
 import backgroundImagee from "../images/baclog.png";
-import Axios from 'axios';
-
+import axios from 'axios';
+import { useNavigate } from "react-router-dom";
 const Login = () => {
   const [loginform,setLoginform]=useState({
     Username:"",
     Password:""
-  })
+  });
 const handleinputchange=(e)=>{
   const {name,value}=e.target;
   setLoginform({
     ...loginform,
     [name]:value
   });
-}
+};
  
     
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await Axios.post('http://localhost:3003/login', { loginform });
-      console.log(response.data);
-     const logindata=response.data;
+      const res = await axios.post('http://localhost:3003/login', loginform );
+      console.log(res.data);
+     const logindata = res.data;
       if (logindata) {
         // Login successful
+
         alert('successfully');
-        console.log("Login successful:", response.data);
-       
+        console.log("Login successful:", res.data);
+        // navigate("/");
       } else {
         // Login failed
-        console.log("Login failed:", response.data);
+        console.log("Login failed:", res.data);
       
     } }catch (error) {
       console.error("Error logging in:", error);
@@ -61,22 +62,24 @@ const handleinputchange=(e)=>{
               placeholder="Username"
               name="Username"
               value={loginform.Username}
-              onChange={handleinputchange}required
+              onChange={handleinputchange}
+              required
             />
           </div>
        
-        <div>
+       
           <label className="usernn">Password</label>
-          <div className="password-container">
+          
             <input
               type="password"
               placeholder="Enter your password"
               name="Password"
               value={loginform.Password}
-              onChange={handleinputchange}required
+              onChange={handleinputchange}
+              required
             />
-          </div>
-        </div>
+        
+        
        <button>Submit</button>
         </form>
       </div>

@@ -114,6 +114,9 @@ app.post("/motorinsurance",async (request,response)=>{
 
 
 //house insurance
+
+
+
 app.post("/houseinsurance",async (request,response)=>{
     const {body}=request;
     const  NewhouseInsurance =new HouseInsurance(body);
@@ -126,6 +129,7 @@ app.post("/houseinsurance",async (request,response)=>{
      return response.sendStatus(400);
     }
 })
+
 
 //travel insurance
 app.post("/travelinsurance",async (request,response)=>{
@@ -215,14 +219,73 @@ app.post('/login', async (req, res) => {
             return res.status(401).json({ success: false, message: 'Invalid username or password.' });
         }
 
-        const passwordMatch = await bcrypt.compare(Password, admin.Password);
+        const passwordMatch = await bcrypt.compare(Password, admin.Password); // Await the result of bcrypt.compare()
         if (passwordMatch) {
-            res.json({ success: true, message: 'Login successful.' });
+            return res.json({ success: true, message: 'Login successful.' });
         } else {
-            res.status(401).json({ success: false, message: 'Invalid email or password.' });
+            return res.status(401).json({ success: false, message: 'Invalid password.' });
         }
     } catch (error) {
         console.error('Error logging in:', error);
-        res.status(500).json({ success: false, message: 'Error logging in.', error: error.message });
+        return res.status(500).json({ success: false, message: 'Error logging in.', error: error.message });
     }
 });
+
+
+//get housequote
+
+app.get('/api/getHouse', async (req, res) => {
+    try {
+        // Query all documents from the Ingredient collection
+        const house = await HouseInsurance.find();
+        res.send(house);
+    } catch (error) {
+        console.error('Error fetching quote:', error);
+        res.status(500).json({ success: false, message: 'Error fetching ingredients.', error: error.message });
+    }
+});
+
+
+
+app.get('/api/getHouseWithPersonalData', async (req, res) => {
+    try {
+        const data = await HouseInsurance.aggregate([
+            {
+                $lookup: {
+                    from: 'personals',
+                    localField: 'eventsAttended', // Field from the HouseInsurance collection
+                    foreignField: '_id', // Field from the Personal collection
+                    as: 'matchedPersonals'
+                }
+            }
+        ]);
+
+        res.send(data);
+    } catch (error) {
+        console.error('Error fetching data:', error);
+        res.status(500).json({ success: false, message: 'Error fetching data.', error: error.message });
+    }
+});
+
+
+
+app.get('/api/getAllData', async (req, res) => {
+    try {
+        const ingredients = await HealthCareInsurance.find();
+        const users = await TermLifeInsurance.find();
+        const recipes = await MotorInsurance.find();
+
+        const allData = {
+            ingredients: ingredients,
+            users: users,
+            recipes: recipes
+            // Add more collections as needed
+        };
+
+        res.send(allData);
+    } catch (error) {
+        console.error('Error fetching all data:', error);
+        res.status(500).json({ success: false, message: 'Error fetching all data.', error: error.message });
+    }
+});
+
