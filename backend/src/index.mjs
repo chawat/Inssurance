@@ -9,6 +9,7 @@ import {TravelInsurance}  from '../src/mongoose/schemas/travelInsurance.mjs';
 import {HealthCareInsurance} from '../src/mongoose/schemas/healthcareInsurance.mjs';
 import {BusinessInsurance} from '../src/mongoose/schemas/business.mjs';
 import {ContactUs} from '../src/mongoose/schemas/ContactUs.mjs';
+import {Admin} from '../src/mongoose/schemas/admin.mjs';
 import cors from  "cors";
 
 
@@ -178,4 +179,19 @@ app.post("/contactus",async (request,response)=>{
      return response.sendStatus(400);
     }
 })
+
+app.post("/admin",async (request,response)=>{
+    const {body}=request;
+    const  NewAdmin=new Admin(body);
+   try{
+        const savedadmin= await NewAdmin.save();
+        return response.status(201).send(savedadmin);
+   }
+   catch(err){
+     console.log(err);
+     return response.sendStatus(400);
+    }
+})
+
+
 
