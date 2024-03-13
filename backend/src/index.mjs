@@ -11,6 +11,7 @@ import {BusinessInsurance} from '../src/mongoose/schemas/business.mjs';
 import {ContactUs} from '../src/mongoose/schemas/ContactUs.mjs';
 import {Admin} from '../src/mongoose/schemas/admin.mjs';
 import {Nbviews} from '../src/mongoose/schemas/views.mjs';
+import { Nbquoteviews } from './mongoose/schemas/quoteview.mjs';
 
 import cors from  "cors";
 import bcrypt from "bcrypt"
@@ -342,19 +343,21 @@ app.get('/api/getbusinessdata', async (req, res) => {
         res.status(500).json({ success: false, message: 'Error fetching data.', error: error.message });
     }
 });
-/*add views/app.post("/views",async (request,response)=>{
+//add views/
+/*app.post("/quoteviews",async (request,response)=>{
     const {body}=request;
-    const  views =new Nbviews(body);
+    const  sviews =new Nbquoteviews(body);
    try{
-        const nbviews= await views.save();
-        return response.status(201).send(nbviews);
+        const nbquotesviews= await sviews.save();
+        return response.status(201).send(nbquotesviews);
    }
 
    catch(err){
      console.log(err);
      return response.sendStatus(400);
     }
-})*/
+}) */
+
 //get messages in contact us
 app.get('/api/messages', async (req, res) => {
     try {
@@ -394,4 +397,32 @@ app.put('/view/:fieldName', async (req, res) => {
       res.status(500).json({ error: 'Internal server error' });
     }
   });
+
+  //personal quote view incrementation
+  app.put('/quoteview/:fieldName', async (req, res) => {
+    const { fieldName } = req.params; // Extract the field name from the request parameters
   
+    try {
+      // Increment the specific field in the views collection by 1
+      const result = await Nbquoteviews.findOneAndUpdate({}, { $inc: { [fieldName]: 1 } }, { new: true });
+  
+      if (result) {
+        res.status(200).json({ success: true, message: `Field ${fieldName} incremented successfully`, newValue: result[fieldName] });
+      } else {
+        res.status(404).json({ success: false, message: `Field ${fieldName} not found` });
+      }
+    } catch (error) {
+      console.error('Error incrementing field:', error);
+      res.status(500).json({ success: false, message: 'Error incrementing field', error: error.message });
+    }
+  });
+  //get quoteviews
+  app.get('/api/getquoteviews', async (req, res) => {
+    try {
+      const statistics = await Nbquoteviews.findOne({}, { _id: 0 }); // Exclude the _id field from the result
+      res.json(statistics);
+    } catch (error) {
+      console.error('Error fetching statistics from MongoDB:', error);
+      res.status(500).json({ error: 'Internal server error' });
+    }
+  });

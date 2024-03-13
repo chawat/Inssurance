@@ -1,6 +1,7 @@
 import './App.css';
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Viewsquote from './Admin/components/quotes';
 import PersonalQuotes from './Admin/components/personalquotes';
 import BusinessQuotes from './Admin/components/businessquotes';
 import Messagesus from './Admin/components/messages';
@@ -121,6 +122,7 @@ function App() {
           <Route path="/dashboard/quotes/business" element={<BusinessQuotes/>} />
           <Route path="/dashboard/messages" element={<Messagesus/>} />
           <Route path="/dashboard/views" element={<Views/>} />
+          <Route path="/dashboard/quoteviews" element={<Viewsquote/>} />
         </Routes>
       </div>
     </Router>

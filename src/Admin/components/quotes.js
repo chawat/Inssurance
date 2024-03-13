@@ -3,7 +3,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Chart } from 'chart.js/auto';
 import axios from 'axios';
 
-function Views() {
+function Viewsquote() {
   const [statistics, setStatistics] = useState(null);
   const canvasRef = useRef(null);
   const chartInstanceRef = useRef(null);
@@ -12,7 +12,7 @@ function Views() {
     // Fetch statistics data from backend API
     const fetchStatistics = async () => {
       try {
-        const response = await axios.get('http://localhost:3003/api/getviews'); // Adjust the endpoint accordingly
+        const response = await axios.get('http://localhost:3003/api/getquoteviews'); // Adjust the endpoint accordingly
         console.log('Statistics data:', response.data); // Log response data for debugging
         setStatistics(response.data); // Set statistics state with the fetched data
       } catch (error) {
@@ -70,10 +70,10 @@ function Views() {
 
   return (
     <div>
-      <h2>Insurance Views Statistics</h2>
+      <h2>Insurance quote Views Statistics</h2>
       <canvas ref={canvasRef} id="myChart" width="400" height="200"></canvas>
     </div>
   );
 }
 
-export default Views;
+export default Viewsquote;

@@ -65,6 +65,16 @@ const Healthdet = () => {
         if (Data) {
           alert('House insurance details saved successfully!');
           // window.location.href = '/';
+          try {
+            // Make a PUT request to the API endpoint to increment the value of the specified field
+            const response = await axios.put(`http://localhost:3003/quoteview/healthcare`);
+            console.log('Field incremented successfully:', response.data);
+            // You can perform additional actions here if needed
+          } catch (error) {
+            console.error('Error incrementing field:', error);
+            // Handle errors here
+          }
+
         } else {
           console.error('Failed to save house insurance details:', Data.message);
         }
@@ -74,6 +84,7 @@ const Healthdet = () => {
     } catch (error) {
       console.error('Error during form submission:', error);
     }
+    
   };
   const [AdditionalCover, setAdditionalCover] = useState([
     { id: 1, label: 'Personal Accidents for the Policyholder/Insured aged less than 65 Years and performing Administrative Profession (Death & Disability due to Accident)', checked: true },
