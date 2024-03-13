@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import axios from "axios";
 import "./Detail.css";
 import Ttravel from './images/de.png';
 import House from './PersonalDetail/House';
@@ -18,13 +19,24 @@ const Detail = () => {
     setDescriptionType(type);
   };
 
-  const handleTypeClick = (type) => {
+  const handleTypeClick = async (type) => {
     if (type === activeType) {
       // If clicking the same type again, keep the active state
       return;
     }
+    
     setActiveType(type);
     toggleDescription(type);
+    
+  try {
+    // Make a PUT request to the API endpoint to increment the value of the specified field
+    const response = await axios.put(`http://localhost:3003/view/${type}`);
+    console.log('Field incremented successfully:', response.data);
+    // You can perform additional actions here if needed
+  } catch (error) {
+    console.error('Error incrementing field:', error);
+    // Handle errors here
+  }
   };
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -87,27 +99,27 @@ const InsuranceType = ({ type, isActive, handleClick }) => {
 };
 
 const insuranceTypes = [
-  { name: "Car Insurance", icon: "➜" },
-  { name: "Life insurance", icon: "➜" },
-  { name: "Home insurance", icon: "➜" },
-  { name: "Health insurance", icon: "➜" },
-  { name: "Personal insurance", icon: "➜" },
-  { name: "Travel insurance", icon: "➜" },
+  { name: "motor", icon: "➜" },
+  { name: "termlife", icon: "➜" },
+  { name: "house", icon: "➜" },
+  { name: "healthcare", icon: "➜" },
+  { name: "personalacc", icon: "➜" },
+  { name: "travel", icon: "➜" },
 ];
 
 const DescriptionComponent = ({ name }) => {
   switch (name) {
-    case "Home insurance":
+    case "house":
       return <House />;
-    case "Travel insurance":
+    case "travel":
       return <Travel />;
-    case "Life insurance":
+    case "termlife":
       return <Term />;
-    case "Car Insurance":
+    case "motor":
       return <Motor />;
-    case "Personal insurance":
+    case "personalacc":
       return <Personal />;
-    case "Health insurance":
+    case " healthcare":
       return <Healt />;
     default:
       return null;

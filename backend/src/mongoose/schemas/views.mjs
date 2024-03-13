@@ -1,7 +1,6 @@
 import mongoose from "mongoose";
  
 const nbviews=new mongoose.Schema({
-  
   personalacc:mongoose.Schema.Types.Number,
   healthcare:mongoose.Schema.Types.Number,
   motor:mongoose.Schema.Types.Number,
@@ -15,7 +14,6 @@ const nbviews=new mongoose.Schema({
   machinerybreakdown:mongoose.Schema.Types.Number,
   motorfleetinsurance:mongoose.Schema.Types.Number,
   
-
 }
 );
 export const Nbviews=mongoose.model("views",nbviews);

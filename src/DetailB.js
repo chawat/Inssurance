@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import axios from "axios";
 import "./DetailB.css";
 import Ttravel from './images/wab.png';
 import Cargo from './BusnDetail/Cargo';
@@ -17,13 +18,22 @@ const Detail = () => {
       setDescriptionType(type);
     };
   
-    const handleTypeClick = (type) => {
+    const handleTypeClick = async (type) => {
       if (type === activeType) {
         // If clicking the same type again, keep the active state
         return;
       }
       setActiveType(type);
       toggleDescription(type);
+      try {
+        // Make a PUT request to the API endpoint to increment the value of the specified field
+        const response = await axios.put(`http://localhost:3003/view/${type}`);
+        console.log('Field incremented successfully:', response.data);
+        // You can perform additional actions here if needed
+      } catch (error) {
+        console.error('Error incrementing field:', error);
+        // Handle errors here
+      }
     };
   
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -86,27 +96,27 @@ const Detail = () => {
   };
   
   const insuranceTypes = [
-    { name: "Cargo insurance", icon: "➜" },
-    { name: "Group Health insurance", icon: "➜" },
-    { name: "Group Personal insurance", icon: "➜" },
-    { name: "Machine insurance", icon: "➜" },
-    { name: "Money insurance", icon: "➜" },
-    { name: "Motor Fleet insurance", icon: "➜" },
+    { name: "cargo", icon: "➜" },
+    { name: "grouphealthcare", icon: "➜" },
+    { name: "grouppersonalacc", icon: "➜" },
+    { name: "machinerybreakdown", icon: "➜" },
+    { name: "moneyinsurance", icon: "➜" },
+    { name: "motorfleetinsurance", icon: "➜" },
   ];
   
   const DescriptionComponent = ({ name }) => {
     switch (name) {
-      case "Cargo insurance":
+      case "cargo":
         return <Cargo />;
-      case "Group Health insurance":
+      case "grouphealthcare":
         return <GroupH />;
-      case "Group Personal insurance":
+      case "grouppersonalacc":
         return <GroupP />;
-      case "Machine insurance":
+      case "machinerybreakdown":
         return <Machine />;
-      case "Money insurance":
+      case "moneyinsurance":
         return <Money />;
-      case "Motor Fleet insurance":
+      case "motorfleetinsurance":
         return <MotorF />;
       default:
         return null;

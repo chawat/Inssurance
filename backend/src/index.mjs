@@ -342,8 +342,7 @@ app.get('/api/getbusinessdata', async (req, res) => {
         res.status(500).json({ success: false, message: 'Error fetching data.', error: error.message });
     }
 });
-//add views
-app.post("/views",async (request,response)=>{
+/*add views/app.post("/views",async (request,response)=>{
     const {body}=request;
     const  views =new Nbviews(body);
    try{
@@ -355,7 +354,7 @@ app.post("/views",async (request,response)=>{
      console.log(err);
      return response.sendStatus(400);
     }
-})
+})*/
 //get messages in contact us
 app.get('/api/messages', async (req, res) => {
     try {
@@ -367,3 +366,33 @@ app.get('/api/messages', async (req, res) => {
         res.status(500).json({ success: false, message: 'Error fetching data.', error: error.message });
     }
 });
+//add view
+app.put('/view/:fieldName', async (req, res) => {
+    const { fieldName } = req.params; // Extract the field name from the request parameters
+  
+    try {
+      // Increment the specific field in the views collection by 1
+      const result = await Nbviews.findOneAndUpdate({}, { $inc: { [fieldName]: 1 } }, { new: true });
+  
+      if (result) {
+        res.status(200).json({ success: true, message: `Field ${fieldName} incremented successfully`, newValue: result[fieldName] });
+      } else {
+        res.status(404).json({ success: false, message: `Field ${fieldName} not found` });
+      }
+    } catch (error) {
+      console.error('Error incrementing field:', error);
+      res.status(500).json({ success: false, message: 'Error incrementing field', error: error.message });
+    }
+  });
+  //get views 
+  app.get('/api/getviews', async (req, res) => {
+    try {
+      const statistics = await Nbviews.findOne();
+      res.json(statistics);
+    } catch (error) {
+      console.error('Error fetching statistics from MongoDB:', error);
+      res.status(500).json({ error: 'Internal server error' });
+    }
+  });
+  
+  
