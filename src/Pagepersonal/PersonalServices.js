@@ -26,7 +26,7 @@ const PersonalServices = () => {
 
   return (
     <div className='body-div'>
-    <div className="img-slider">
+    <div className="image-slider">
       <div className="image-container">
         <img src={images[currentImageIndex]} alt={`Image ${currentImageIndex + 1}`} />
       </div>

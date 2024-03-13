@@ -77,7 +77,7 @@ const Cart = () => {
           {products.map((product) => (
             <div className="product" key={product.id}>
               <img className="product-image" src={product.image} alt={product.image} />
-              <div className="overlay"></div>
+              <div className="ooverlay"></div>
               <h4 className="product-name">{product.name}</h4>
               <div className="buttons">
                 <Link to={product.type} className="buttoon">

@@ -63,16 +63,16 @@ main {
     }
   } */
 
-  @keyframes rotateImageFromTopLeft {
+  /* @keyframes rotateImageFromTopLeft {
     0% {
       transform: translateY(-100%) translateX(-100%) rotate(0deg);
-      opacity: 0; /* Initially invisible */
+      opacity: 0; 
     }
     100% {
       transform: translateY(0) translateX(0) rotate(360deg);
-      opacity: 1; /* Fully visible */
+      opacity: 1; 
     }
-  }
+  } */
   
   .imgdescc img {
     width: 100%;
@@ -80,7 +80,7 @@ main {
     border-radius: 20px;
     z-index: 1;
     position: relative;
-    animation: rotateImageFromTopLeft 1s linear 1; /* Apply rotate and slide-in animation */
+    /* animation: rotateImageFromTopLeft 1s linear 1;  */
   }
   .descri{
     margin-left:10%;
@@ -169,14 +169,14 @@ main {
     margin-right: 100px;
   } */
 
-  @keyframes slideInFromTopRight {
+  /* @keyframes slideInFromTopRight {
     0% {
       transform: translateY(-100%) translateX(100%);
-      opacity: 0; /* Initially invisible */
+      opacity: 0; 
     }
     100% {
       transform: translateY(0) translateX(0);
-      opacity: 1; /* Fully visible */
+      opacity: 1; 
     }
   }
   
@@ -185,8 +185,15 @@ main {
     flex: 1;
     width: 720px;
     margin-right: 100px;
-    animation: slideInFromTopRight 1s ease-in-out forwards; /* Apply slide-in animation */
-  }
+    animation: slideInFromTopRight 1s ease-in-out forwards; 
+  } */
+  .descdet {
+    margin-left: 30px;
+    flex: 1;
+    width: 720px;
+    margin-right: 100px;
+    /* animation: slideInFromTopRight 1s ease-in-out forwards; */ /* Remove animation */
+}
   
   
   .buttoonper {
@@ -200,6 +207,7 @@ main {
     position: relative;
     overflow: hidden;
     font-family: Arial, Helvetica, sans-serif;
+    z-index: 1;
   }
   
   .buttoonper::before,
@@ -210,6 +218,7 @@ main {
     width: 100%;
     font-family: Arial, Helvetica, sans-serif;
     height: 100%;
+    z-index: -1;
     background-color: rgba(39, 220, 233, 0.5); /* Transparent dark color */
     transition: width 0.3s ease; /* Smooth transition animation */
   }
