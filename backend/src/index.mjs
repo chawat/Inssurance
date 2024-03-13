@@ -387,12 +387,11 @@ app.put('/view/:fieldName', async (req, res) => {
   //get views 
   app.get('/api/getviews', async (req, res) => {
     try {
-      const statistics = await Nbviews.findOne();
+      const statistics = await Nbviews.findOne({}, { _id: 0 }); // Exclude the _id field from the result
       res.json(statistics);
     } catch (error) {
       console.error('Error fetching statistics from MongoDB:', error);
       res.status(500).json({ error: 'Internal server error' });
     }
   });
-  
   
