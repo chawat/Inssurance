@@ -1,15 +1,18 @@
 import './App.css';
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-
+import PersonalQuotes from './Admin/components/personalquotes';
+import BusinessQuotes from './Admin/components/businessquotes';
+import Messagesus from './Admin/components/messages';
+import Dashboard from './Admin/Dashboard';
 import Navbar from './Navbar/Navbar';
 import MouseCircle from './MouseCircle';
+import Footer from './Footer/Footer';
 import Home from './Home';
-import Aboutus from'./AboutUs/Aboutus';
-import PersonalServices from'./Pagepersonal/PersonalServices';
-import BusinessServices from'./PageBusn/BusinessServices';
-// import BuQuote from './BusQuote/BuQuote';
-import ContactUs from'./ContactUs/Contactus';
+import Aboutus from './AboutUs/Aboutus';
+import PersonalServices from './Pagepersonal/PersonalServices';
+import BusinessServices from './PageBusn/BusinessServices';
+import ContactUs from './ContactUs/Contactus';
 import HealthcareInsurance from './PersonalDetail/HealthcareInsurance';
 import BQDetail from './BusQuote/BQDetail';
 import PQMDetail from './QuotePersonal/PQMDetail';
@@ -18,7 +21,6 @@ import QuoteTravel from './QuotePersonal/QuoteTravel';
 import QuotePerAc from './QuotePersonal/QuotePerAc';
 import QuoteHouse from './QuotePersonal/QuoteHouse';
 import QuoteHealth from './QuotePersonal/QuoteHealth';
-import Footer from './Footer/Footer';
 import Motor from './PersonalDetail/Motor';
 import House from './PersonalDetail/House';
 import Travel from './PersonalDetail/Travel';
@@ -34,49 +36,93 @@ import MotorFleet from './BusnDetail/MotorFleet';
 import Login from './Login/Login';
 import Detail from './Detail';
 import DetailB from './DetailB';
+
+function withNavbarFooter(Component) {
+  return function WithNavbarFooter(props) {
+    const path = window.location.pathname;
+    const showNavbarAndFooter = path !== '/Login';
+
+    return (
+      <div>
+        {showNavbarAndFooter && <Navbar />}
+        <Component {...props} />
+        {showNavbarAndFooter && <Footer />}
+      </div>
+    );
+  };
+}
+
 function App() {
+  const HomeWithNavbarFooter = withNavbarFooter(Home);
+  const AboutusWithNavbarFooter = withNavbarFooter(Aboutus);
+  const PersonalServicesWithNavbarFooter = withNavbarFooter(PersonalServices);
+  const BusinessServicesWithNavbarFooter = withNavbarFooter(BusinessServices);
+  const ContactUsWithNavbarFooter = withNavbarFooter(ContactUs);
+  const HealthcareInsuranceWithNavbarFooter = withNavbarFooter(HealthcareInsurance);
+  const BQDetailWithNavbarFooter = withNavbarFooter(BQDetail);
+  const PQMDetailWithNavbarFooter = withNavbarFooter(PQMDetail);
+  const QuoteTermLWithNavbarFooter = withNavbarFooter(QuoteTermL);
+  const QuoteTravelWithNavbarFooter = withNavbarFooter(QuoteTravel);
+  const QuotePerAcWithNavbarFooter = withNavbarFooter(QuotePerAc);
+  const QuoteHouseWithNavbarFooter = withNavbarFooter(QuoteHouse);
+  const QuoteHealthWithNavbarFooter = withNavbarFooter(QuoteHealth);
+  const MotorWithNavbarFooter = withNavbarFooter(Motor);
+  const HouseWithNavbarFooter = withNavbarFooter(House);
+  const TravelWithNavbarFooter = withNavbarFooter(Travel);
+  const MotorQuWithNavbarFooter = withNavbarFooter(MotorQu);
+  const PersonalWithNavbarFooter = withNavbarFooter(Personal);
+  const TermWithNavbarFooter = withNavbarFooter(Term);
+  const GroupPersonalWithNavbarFooter = withNavbarFooter(GroupPersonal);
+  const GroupHealthWithNavbarFooter = withNavbarFooter(GroupHealth);
+  const CargoWithNavbarFooter = withNavbarFooter(Cargo);
+  const MoneyWithNavbarFooter = withNavbarFooter(Money);
+  const MachineWithNavbarFooter = withNavbarFooter(Machine);
+  const MotorFleetWithNavbarFooter = withNavbarFooter(MotorFleet);
+  const LoginWithNavbarFooter = withNavbarFooter(Login);
+  const DetailWithNavbarFooter = withNavbarFooter(Detail);
+  const DetailBWithNavbarFooter = withNavbarFooter(DetailB);
+
   return (
     <Router>
-    <div>
-    <MouseCircle />
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/aboutus" element={<Aboutus />} />
-        <Route path="/BQDetail" element={<BQDetail />} />
-        <Route path="/PQMDetail" element={<PQMDetail />} />
-        <Route path="/PersonalServices" element={<PersonalServices />} />
-        <Route path="/BusinessServices" element={<BusinessServices />} />
-        <Route path="/contactus" element={<ContactUs />} />
-        <Route path="/HealthcareInsurance" element={<HealthcareInsurance />} />
-        <Route path="/Motor" element={<Motor />} />
-        <Route path="/House" element={<House />} />
-        <Route path="/Travel" element={<Travel />} />
-        <Route path="/Personal" element={<Personal />} />
-        <Route path="/MotorQu" element={<MotorQu />} />
-        <Route path="/Login" element={<Login />} />
-         <Route path="/Term" element={<Term />} />
-         <Route path="/GroupPersonal" element={<GroupPersonal/>} />
-         <Route path="/GroupHealth" element={<GroupHealth/>} />
-         <Route path="/Cargo" element={<Cargo/>} />
-         <Route path="/Money" element={<Money/>} />
-         <Route path="/Machine" element={<Machine/>} />
-         <Route path="/MotorFleet" element={<MotorFleet/>} />
-         {/* <Route path="/BuQuote" element={<BuQuote/>} /> */}
-         <Route path="/QuoteTermL" element={<QuoteTermL/>} />
-         <Route path="/QuoteTravel" element={<QuoteTravel/>} />
-         <Route path="/QuotePerAc" element={<QuotePerAc/>} />
-         <Route path="/QuoteHouse" element={<QuoteHouse/>} />
-         <Route path="/QuoteHealth" element={<QuoteHealth/>} />
-         <Route path="/Detail" element={<Detail/>} />
-         <Route path="/DetailB" element={<DetailB/>} />
-      </Routes>
-      <Footer />
-    </div>
-    
-  </Router>
+      <div>
+        <MouseCircle />
+        <Routes>
+          <Route path="/" element={<HomeWithNavbarFooter />} />
+          <Route path="/aboutus" element={<AboutusWithNavbarFooter />} />
+          <Route path="/BQDetail" element={<BQDetailWithNavbarFooter />} />
+          <Route path="/PQMDetail" element={<PQMDetailWithNavbarFooter />} />
+          <Route path="/PersonalServices" element={<PersonalServicesWithNavbarFooter />} />
+          <Route path="/BusinessServices" element={<BusinessServicesWithNavbarFooter />} />
+          <Route path="/contactus" element={<ContactUsWithNavbarFooter />} />
+          <Route path="/HealthcareInsurance" element={<HealthcareInsuranceWithNavbarFooter />} />
+          <Route path="/Motor" element={<MotorWithNavbarFooter />} />
+          <Route path="/House" element={<HouseWithNavbarFooter />} />
+          <Route path="/Travel" element={<TravelWithNavbarFooter />} />
+          <Route path="/Personal" element={<PersonalWithNavbarFooter />} />
+          <Route path="/MotorQu" element={<MotorQuWithNavbarFooter />} />
+          <Route path="/Login" element={<LoginWithNavbarFooter />} />
+          <Route path="/Term" element={<TermWithNavbarFooter />} />
+          <Route path="/GroupPersonal" element={<GroupPersonalWithNavbarFooter />} />
+          <Route path="/GroupHealth" element={<GroupHealthWithNavbarFooter />} />
+          <Route path="/Cargo" element={<CargoWithNavbarFooter />} />
+          <Route path="/Money" element={<MoneyWithNavbarFooter />} />
+          <Route path="/Machine" element={<MachineWithNavbarFooter />} />
+          <Route path="/MotorFleet" element={<MotorFleetWithNavbarFooter />} />
+          <Route path="/QuoteTermL" element={<QuoteTermLWithNavbarFooter />} />
+          <Route path="/QuoteTravel" element={<QuoteTravelWithNavbarFooter />} />
+          <Route path="/QuotePerAc" element={<QuotePerAcWithNavbarFooter />} />
+          <Route path="/QuoteHouse" element={<QuoteHouseWithNavbarFooter />} />
+          <Route path="/QuoteHealth" element={<QuoteHealthWithNavbarFooter />} />
+          <Route path="/Detail" element={<DetailWithNavbarFooter />} />
+          <Route path="/DetailB" element={<DetailBWithNavbarFooter />} />
+          <Route path="/admin/dashboard/" element={<Dashboard />} />
+          <Route path="/dashboard/quotes/personal" element={<PersonalQuotes/>} />
+          <Route path="/dashboard/quotes/business" element={<BusinessQuotes/>} />
+          <Route path="/dashboard/messages" element={<Messagesus/>} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
 export default App;
-

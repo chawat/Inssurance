@@ -11,6 +11,7 @@ import {BusinessInsurance} from '../src/mongoose/schemas/business.mjs';
 import {ContactUs} from '../src/mongoose/schemas/ContactUs.mjs';
 import {Admin} from '../src/mongoose/schemas/admin.mjs';
 import {Nbviews} from '../src/mongoose/schemas/views.mjs';
+
 import cors from  "cors";
 import bcrypt from "bcrypt"
 
@@ -333,15 +334,15 @@ app.get('/api/getAllInsuranceWithPersonalData', async (req, res) => {
 //get business data
 app.get('/api/getbusinessdata', async (req, res) => {
     try {
-        // Query all documents from the Ingredient collection
+        // Query all documents from the business collection
         const business = await BusinessInsurance.find();
         res.send(business);
     } catch (error) {
         console.error('Error fetching quote:', error);
-        res.status(500).json({ success: false, message: 'Error fetching ingredients.', error: error.message });
+        res.status(500).json({ success: false, message: 'Error fetching data.', error: error.message });
     }
 });
-//
+//add views
 app.post("/views",async (request,response)=>{
     const {body}=request;
     const  views =new Nbviews(body);
@@ -355,3 +356,14 @@ app.post("/views",async (request,response)=>{
      return response.sendStatus(400);
     }
 })
+//get messages in contact us
+app.get('/api/messages', async (req, res) => {
+    try {
+        // Query all documents from the contact us collection
+        const contact = await ContactUs.find();
+        res.send(contact);
+    } catch (error) {
+        console.error('Error fetching quote:', error);
+        res.status(500).json({ success: false, message: 'Error fetching data.', error: error.message });
+    }
+});

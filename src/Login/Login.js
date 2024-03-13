@@ -1,9 +1,11 @@
 import React, { useState } from "react";
+
 import "./login.css";
 import backgroundImagee from "../images/baclog.png";
 import axios from 'axios';
 
 const Login = () => {
+ 
   const [loginform,setLoginform]=useState({
     Username:"",
     Password:""
@@ -26,7 +28,7 @@ const handleinputchange=(e)=>{
       if (logindata) {
         // Login successful
 
-        alert('successfully');
+    window.location.href="/admin/dashboard/";
         console.log("Login successful:", res.data);
         // navigate("/");
       } else {

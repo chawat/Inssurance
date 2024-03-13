@@ -1,0 +1,41 @@
+.dashboard {
+    display: flex;
+  }
+  
+  .sidebar {
+    width: 200px;
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+  }
+  
+  .sidebar h2 {
+    margin-bottom: 20px;
+  }
+  
+  .sidebar ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .sidebar ul li {
+    margin-bottom: 10px;
+  }
+  
+  .sidebar ul li a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .main-content {
+    flex-grow: 1;
+    padding: 20px;
+  }
+  
+  /* Style for active link in the sidebar */
+  .sidebar ul li a.active {
+    font-weight: bold;
+  }
+  
+  /* Add additional styling as needed */
+  
