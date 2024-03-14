@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from 'axios';
-
+import NavigationMenu from '../NavigationMenu';
+import './personalQuotes.css'; // Import the CSS file
 const PersonalQuotes = () => {
   const [quotes, setQuotes] = useState({
     houseData: [],
@@ -29,8 +30,13 @@ const PersonalQuotes = () => {
   console.log('Quotes state:', quotes); // Log quotes state for debugging
 
   return (
-    <div>
-      <h1>Insurance Quotes</h1>
+    <div className="page-contttainer">
+      <div className="meeenuuu">
+      <NavigationMenu />
+      </div>
+      <div className="contttent">
+        <div className="quote-box">
+     
       
       <h2>House Insurance</h2>
       <ul>
@@ -74,7 +80,8 @@ const PersonalQuotes = () => {
           </li>
         ))}
       </ul>
-      
+     </div>
+     <div className="quote-box">
       <h2>Motor Insurance</h2>
       <ul>
         {quotes.motorData.map((quote, index) => (
@@ -98,7 +105,8 @@ const PersonalQuotes = () => {
         ))}
         <button>done!</button>
       </ul>
-      
+      </div>
+      <div className="quote-box">
       <h2>Travel Insurance</h2>
 <ul>
   {quotes.travelData.map((quote, index) => (
@@ -151,7 +159,8 @@ const PersonalQuotes = () => {
     </li>
   ))}
 </ul>
-
+</div>
+<div className="quote-box">
 
 <h2>Term Life Insurance</h2>
 <ul>
@@ -193,7 +202,9 @@ const PersonalQuotes = () => {
   ))}
 </ul>
 
+</div>
 
+<div className="quote-box">
 <h2>Personal Accident Insurance</h2>
 <ul>
   {quotes.personalaccData.map((quote, index) => (
@@ -232,7 +243,8 @@ const PersonalQuotes = () => {
     </li>
   ))}
 </ul>
-
+</div>
+<div className="quote-box">
 
 <h2>Healthcare Insurance</h2>
 <ul>
@@ -281,8 +293,8 @@ const PersonalQuotes = () => {
     </li>
   ))}
 </ul>
-
-      
+</div>
+</div> 
     </div>
   );
 }

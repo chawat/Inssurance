@@ -1,7 +1,8 @@
-
 import React, { useState, useEffect, useRef } from 'react';
 import { Chart } from 'chart.js/auto';
 import axios from 'axios';
+import NavigationMenu from '../NavigationMenu';
+import './ViewsquoteStyles.css'; // Import the CSS file
 
 function Viewsquote() {
   const [statistics, setStatistics] = useState(null);
@@ -69,9 +70,14 @@ function Viewsquote() {
   };
 
   return (
-    <div>
-      <h2>Insurance quote Views Statistics</h2>
-      <canvas ref={canvasRef} id="myChart" width="400" height="200"></canvas>
+    <div className="page-containerquo">
+      <div className="menuquo">
+        <NavigationMenu />
+      </div>
+      <div className="contentquo">
+        <h2>Insurance quote Views Statistics</h2>
+        <canvas ref={canvasRef} id="myChart" width="400" height="200"></canvas>
+      </div>
     </div>
   );
 }

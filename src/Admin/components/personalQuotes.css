@@ -1,0 +1,48 @@
+/* personalQuotes.css */
+
+.page-contttainer {
+    display: flex;
+    height: 100%;
+  }
+  
+  .meeenuuu {
+    width: 250px;
+    background-color: #333;
+    color: #fff;
+  }
+  
+  .contttent {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start; /* Align items to the start of the cross axis (top of the container) */
+  }
+  
+  .quote-box {
+    width: 300px;
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+  }
+  
+  .quote-box h1 {
+    margin-top: 0;
+  }
+  
+  .quote-box h2 {
+    margin-top: 20px;
+  }
+  
+  .quote-box ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .quote-box ul li {
+    margin-bottom: 10px;
+  }
+  

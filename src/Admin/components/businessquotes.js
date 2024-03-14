@@ -1,6 +1,9 @@
+// BusinessQuotes.jsx
+
 import React, { useState, useEffect } from "react";
 import axios from 'axios';
-import Dashboard from '../Dashboard'; 
+import NavigationMenu from '../NavigationMenu';
+import './businessQuotes.css'; // Import the CSS file
 
 const BusinessQuotes = () => {
     const [quotes, setQuotes] = useState([]);
@@ -34,9 +37,15 @@ const BusinessQuotes = () => {
     };
 
     return (
-        <div>
-          {/* <Dashboard /> */}
-            <h1>Insurance Quotes</h1>
+        <div className="page-container">
+          <div className="menuuu">
+            <NavigationMenu />
+          </div>
+          {/* <h1>Insurance Quotes</h1> */}
+          <div className="content">
+         
+          <div className="quote-box">
+            
 
             <ul>
                 {quotes.map((quote, index) => (
@@ -53,7 +62,8 @@ const BusinessQuotes = () => {
                     </li>
                 ))}
             </ul>
-
+          </div>
+          </div>
         </div>
     );
 }

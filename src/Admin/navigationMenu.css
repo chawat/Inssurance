@@ -1,0 +1,32 @@
+/* navigationMenu.css */
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Align items to the center of the flex container */
+  }
+  
+  .menu-item {
+    position: relative; /* Position each menu item relative to its parent */
+    margin-bottom: 10px; /* Add some space between menu items */
+  }
+  
+  .menu-link {
+    display: block; /* Change links to block elements */
+    text-align: center; /* Center the text horizontally */
+  }
+  
+  /* Positioning the submenu */
+ .submenu {
+  position: absolute;
+  top: 20px; /* Adjust the positioning as needed */
+  left: 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 10px;
+  z-index: 20;
+}
+  .menu-item:hover .submenu {
+    display: block; /* Display submenu on hover */
+  }
+  

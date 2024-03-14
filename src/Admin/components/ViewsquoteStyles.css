@@ -1,0 +1,28 @@
+.page-containerquo {
+    display: flex;
+    height: 100vh; /* Set height to 100% of viewport height */
+  }
+  
+  .menuquo {
+    width: 250px;
+    background-color: #333;
+    color: #fff;
+  }
+  
+  .contentquo {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Align content to the top */
+    align-items: center; /* Center content horizontally */
+  }
+  
+  .content h2 {
+    margin-top: 0; /* Remove default margin for h2 */
+  }
+  
+  canvas {
+    margin-top: 20px; /* Add margin to canvas */
+  }
+  

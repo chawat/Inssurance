@@ -1,0 +1,38 @@
+.page-containerme {
+    display: flex;
+    height: 100%;
+}
+  
+.menume {
+    width: 250px;
+    background-color: #333;
+    color: #fff;
+    height: 100vh; /* Set height to 100% of viewport height */
+}
+  
+.contentme {
+    flex: 1; /* Fill remaining space */
+    padding: 20px;
+    display: flex;
+    flex-direction: column; /* Column layout for content */
+    justify-content: flex-start; /* Align content to the top */
+    align-items: center; /* Center content horizontally */
+}
+  
+.message-box {
+    width: 300px;
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+  
+.message-box ul {
+    list-style-type: none;
+    padding: 0;
+}
+  
+.message-box ul li {
+    margin-bottom: 10px;
+}

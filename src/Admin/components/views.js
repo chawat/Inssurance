@@ -1,7 +1,8 @@
-
 import React, { useState, useEffect, useRef } from 'react';
 import { Chart } from 'chart.js/auto';
 import axios from 'axios';
+import NavigationMenu from '../NavigationMenu';
+import './ViewsStyles.css'; // Import the CSS file
 
 function Views() {
   const [statistics, setStatistics] = useState(null);
@@ -69,9 +70,14 @@ function Views() {
   };
 
   return (
-    <div>
-      <h2>Insurance Views Statistics</h2>
-      <canvas ref={canvasRef} id="myChart" width="400" height="200"></canvas>
+    <div className="page-containervie">
+      <div className="menuvie">
+        <NavigationMenu />
+      </div>
+      <div className="contentvie">
+        <h2>Insurance Views Statistics</h2>
+        <canvas ref={canvasRef} id="myChart" width="400" height="200"></canvas>
+      </div>
     </div>
   );
 }
