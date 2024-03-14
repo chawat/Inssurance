@@ -69,6 +69,7 @@ const PersonalQuotes = () => {
                   <li key={coverIndex}>{cover}</li>
                 ))}
               </ul>
+              <button>done!</button>
             </div>
           </li>
         ))}
@@ -95,6 +96,7 @@ const PersonalQuotes = () => {
             <div>Plan Detail: {quote.PlanDetail}</div>
           </li>
         ))}
+        <button>done!</button>
       </ul>
       
       <h2>Travel Insurance</h2>
@@ -142,6 +144,7 @@ const PersonalQuotes = () => {
               </li>
             ))}
           </ul>
+          <button>done!</button>
         </div>
       )}
       
@@ -180,7 +183,9 @@ const PersonalQuotes = () => {
               <li key={coverIndex}>{cover}</li>
             ))}
           </ul>
+          <button>done!</button>
         </div>
+       
       )}
      
      
@@ -219,6 +224,7 @@ const PersonalQuotes = () => {
               <li key={coverIndex}>{cover}</li>
             ))}
           </ul>
+          <button>done!</button>
         </div>
       )}
       
@@ -267,6 +273,7 @@ const PersonalQuotes = () => {
               <li key={coverIndex}>{cover}</li>
             ))}
           </ul>
+          <button>done!</button>
         </div>
       )}
       

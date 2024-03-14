@@ -6,6 +6,7 @@ const businessSchema=new mongoose.Schema({
     //     type: mongoose.Schema.Types.ObjectId, // Referencing business servive collection 
     //     ref: "BusinessService" // Referencing the "Businessservice" model
     //   },
+  Status:mongoose.Schema.Types.String,
   Type:mongoose.Schema.Types.String,
   CompanyName:mongoose.Schema.Types.String,
   BusinessType:mongoose.Schema.Types.String,

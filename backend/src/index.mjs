@@ -426,3 +426,42 @@ app.put('/view/:fieldName', async (req, res) => {
       res.status(500).json({ error: 'Internal server error' });
     }
   });
+
+  //change the status of bus
+  app.put('/api/businessinsurance/updatestatus/:id', async (req, res) => {
+    const { id } = req.params;
+  
+    try {
+      // Find the business insurance record by its ID
+      const insuranceRecord = await BusinessInsurance.findById(id);
+  
+      if (!insuranceRecord) {
+        return res.status(404).json({ message: 'Insurance record not found' });
+      }
+  
+      // Update the status from 'pending' to 'done'
+      insuranceRecord.Status = 'done';
+  
+      // Save the updated record
+      await insuranceRecord.save();
+  
+      return res.json({ message: 'Status updated successfully', insuranceRecord });
+    } catch (error) {
+      console.error('Error updating status:', error);
+      return res.status(500).json({ message: 'Internal server error' });
+    }
+  });
+
+  //data of bus when the status is Pending
+  app.get('/api/getbusinessdatapending', async (req, res) => {
+    const status = 'Pending'; // Set the status to 'pending'
+
+    try {
+        // Query documents from the business collection with the status 'pending'
+        const business = await BusinessInsurance.find({ Status: status });
+        res.send(business);
+    } catch (error) {
+        console.error('Error fetching quote:', error);
+        res.status(500).json({ success: false, message: 'Error fetching data.', error: error.message });
+    }
+});

@@ -119,7 +119,7 @@ const DescriptionComponent = ({ name }) => {
       return <Motor />;
     case "personalacc":
       return <Personal />;
-    case " healthcare":
+    case "healthcare":
       return <Healt />;
     default:
       return null;

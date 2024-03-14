@@ -28,6 +28,7 @@ const BQDetail =() =>{
     Email: "",
     Mobile: "",
     Landline:"",
+    Status:"Pending",
     Type:Typee,
   });
   
