@@ -3,6 +3,8 @@ import handshake from '../images/handshake.jpg';
 import React from 'react';
 import "./about.css";
 import Carteee from './Cartabout';
+import data from "./data.json";
+import Testimonial from './testimonial.js';
 import Team from './team'
 const Aboutus = () => {
 
@@ -38,7 +40,10 @@ const Aboutus = () => {
   </div> 
   <Carteee/>
     <Team/>
-   
+    <div>
+      <h2>TESTIMONIAL</h2>
+    <Testimonial testimonialData={data} />
+   </div>
     
     
     

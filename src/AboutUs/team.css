@@ -34,11 +34,13 @@
     transition: 0.3s;
     background-color: #ffffff;
     margin-right: 20px;
+    height:320px;
+   
    
   }
   .card .img-container {
     width: 200px;
-    height: 400px;
+    height: 150px;
     background-color: white; 
   
     margin: 0 1em 2em 1em;
@@ -57,6 +59,7 @@
     margin: 0.5em 0 2em 0;
     letter-spacing: 2px;
     text-align: center;
+    color:black;
   }
   .icons{
     display: none;
@@ -68,7 +71,7 @@
     font-size: 1.4em;
   }
   .card:hover {
-    background: linear-gradient(#a8a8a8, #c4c4c5);
+  
     color: #ffffff;
   }
   .card:hover .img-container {
@@ -84,7 +87,7 @@
   }
   .card:hover .icons2:hover{
   
-    color: white;
+    color: grey;
   }
   @media screen and (min-width: 768px) {
     section {

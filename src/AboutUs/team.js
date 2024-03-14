@@ -51,7 +51,7 @@ const Team = () => {
                                 </div>
                                 
                                     <h3 >{item.name}</h3>
-                                    <p className='description'>{item.position}</p>
+                                    <p >{item.position}</p>
 
                                     <div className="icons">
                                       <FaLinkedin className="icons2" />
