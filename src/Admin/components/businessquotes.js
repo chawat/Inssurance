@@ -41,11 +41,11 @@ const BusinessQuotes = () => {
           <div className="menuuu">
             <NavigationMenu />
           </div>
-          {/* <h1>Insurance Quotes</h1> */}
+          
           <div className="content">
          
           <div className="quote-box">
-            
+          <h1>Insurance Quotes</h1>
 
             <ul>
                 {quotes.map((quote, index) => (
