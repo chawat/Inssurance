@@ -13,6 +13,7 @@ const [formData2, setFormData2] = useState({
     Email: "", 
     Mobile: "",
     Message:"",
+    Status:"Pending",
   });
   const handleInputChange2 = (e) => {
     const { name, value } = e.target;
