@@ -31,8 +31,8 @@ main {
 
   }
   .imgdescc{
-    width: 400px;
-	height:400px;
+    width: 60%;
+	height:600px;
 	/* margin-left: 40px; */
 	margin-top: 10px;
 	margin-bottom: 10px;
@@ -190,11 +190,17 @@ main {
   .descdet {
     margin-left: 30px;
     flex: 1;
-    width: 720px;
+    width: 40%;
     margin-right: 100px;
+    padding-top: auto;
+    padding-bottom: auto;
     /* animation: slideInFromTopRight 1s ease-in-out forwards; */ /* Remove animation */
 }
-  
+.descdet h2 {
+  text-align: center;
+  font-size: 24px; /* Increase font size */
+  margin-bottom: 20px; /* Add distance between h2 and description */
+}
   
   .buttoonper {
     display: inline-block;
@@ -208,6 +214,10 @@ main {
     overflow: hidden;
     font-family: Arial, Helvetica, sans-serif;
     z-index: 1;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block
   }
   
   .buttoonper::before,

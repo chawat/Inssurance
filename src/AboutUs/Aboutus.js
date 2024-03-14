@@ -9,7 +9,7 @@ const Aboutus = () => {
 
   return ( 
   <div className='body-div'>
-    <div className="image-slider">
+    <div className="image-sliderabout">
       <div className="image-container">
         <img src={image1} alt="Thank you for your trust" />
         <div className='text'>

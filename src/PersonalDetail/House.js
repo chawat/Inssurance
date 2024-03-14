@@ -54,8 +54,7 @@ For you, the Security and Safety Measures installed are enough but you still nee
            */}
             <div className='descdet'>
            <h2>HOUSEHOLD MULTI-RISKS INSURANCE</h2>
-            <div>Explore the benefits of our Household Multi-Risks Insurance, designed to safeguard your property comprehensively. With our coverage, you can rest assured that your residence and its contents are protected against a wide range of potential hazards. While your existing security measures offer some level of protection, it's essential to mitigate risks such as fire, burglary, and general third-party liability. Our insurance offers both basic and optional covers to meet your specific needs. The basic covers include protection against material damage resulting from fire, burglary of contents following forcible entry, and general third-party liability covering bodily injuries and material damages occurring on the insured property. Additionally, our optional covers provide added security, including provisions for neighbors' and tenants' recourse, loss of rent, debris removal, architects' and surveyors' fees, as well as coverage for natural disasters like earthquakes, storms, tempests, floods, water damage, and plate glass protection.
-
+<div>Our Household Multi-Risks Insurance offers comprehensive protection for your property. It safeguards your residence and belongings against various risks, including fire, burglary, and third-party liability. With basic covers such as protection against material damage and optional covers for added security, you can tailor the insurance to meet your specific needs. From neighbors' and tenants' recourse to coverage for natural disasters, our insurance provides peace of mind and financial security for your home.
             </div>
           <button className="buttoonper" onClick={() => window.location.href="/QuoteHouse"}>
     <p className="forp">

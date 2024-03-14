@@ -10,6 +10,7 @@ import Money from './BusnDetail/Money';
 import MotorF from './BusnDetail/MotorFleet';
 import image1 from './images/per1.png';
 import './Home.css'; 
+
 const Detail = () => {
     const [descriptionType, setDescriptionType] = useState(null);
     const [activeType, setActiveType] = useState(null);
@@ -19,15 +20,15 @@ const Detail = () => {
     };
   
     const handleTypeClick = async (type) => {
-      if (type === activeType) {
+      if (type.name === activeType) {
         // If clicking the same type again, keep the active state
         return;
       }
-      setActiveType(type);
-      toggleDescription(type);
+      setActiveType(type.name);
+      toggleDescription(type.name);
       try {
         // Make a PUT request to the API endpoint to increment the value of the specified field
-        const response = await axios.put(`http://localhost:3003/view/${type}`);
+        const response = await axios.put(`http://localhost:3003/view/${type.name}`);
         console.log('Field incremented successfully:', response.data);
         // You can perform additional actions here if needed
       } catch (error) {
@@ -53,7 +54,7 @@ const Detail = () => {
   
     return (
       <div>
-        <div className="img-slider">
+        <div className="image-slider">
           <div className="image-container">
             <img src={images[currentImageIndex]} alt={`Image ${currentImageIndex + 1}`} />
           </div>
@@ -65,7 +66,7 @@ const Detail = () => {
                 key={index}
                 type={type}
                 isActive={type.name === activeType}
-                handleClick={() => handleTypeClick(type.name)}
+                handleClick={() => handleTypeClick(type)}
               />
             ))}
           </div>
@@ -83,12 +84,12 @@ const Detail = () => {
   };
   
   const InsuranceType = ({ type, isActive, handleClick }) => {
-    const { name, icon } = type;
+    const { displayName, icon } = type;
   
     return (
-      <div className={`insurance-type ${isActive ? 'active' : ''}`} onClick={handleClick}>
+      <div className={`insurance-type ${isActive ? 'active' : ''}`} onClick={() => handleClick(type)}>
         <div className="ttype-container">
-          <div className="nname-ccontainer">{name}</div>
+          <div className="nname-ccontainer">{displayName}</div>
           <div className="iicon-container">{icon}</div>
         </div>
       </div>
@@ -96,12 +97,12 @@ const Detail = () => {
   };
   
   const insuranceTypes = [
-    { name: "cargo", icon: "➜" },
-    { name: "grouphealthcare", icon: "➜" },
-    { name: "grouppersonalacc", icon: "➜" },
-    { name: "machinerybreakdown", icon: "➜" },
-    { name: "moneyinsurance", icon: "➜" },
-    { name: "motorfleetinsurance", icon: "➜" },
+    { name: "cargo", displayName: "Cargo Insurance", icon: "➜" },
+    { name: "grouphealthcare", displayName: "Group Health Care Insurance", icon: "➜" },
+    { name: "grouppersonalacc", displayName: "Group Personal Insurance", icon: "➜" },
+    { name: "machinerybreakdown", displayName: "Machinery Breakdown Insurance", icon: "➜" },
+    { name: "moneyinsurance", displayName: "Money Insurance", icon: "➜" },
+    { name: "motorfleetinsurance", displayName: "Motorfleet Insurance", icon: "➜" },
   ];
   
   const DescriptionComponent = ({ name }) => {
@@ -124,4 +125,3 @@ const Detail = () => {
   };
   
   export default Detail;
-  

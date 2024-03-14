@@ -7,7 +7,7 @@ const MotorFleet = () => {
   return (
     <div>
       <div className="ccoontainer">
-      <div className="imgdescc">
+      <div className="imgdesccbu">
 
           <img src={insuranceImage} alt="Healthcare Insurance" />
         </div>

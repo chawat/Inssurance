@@ -81,10 +81,8 @@ This Insurance Plan covers Third Party Liability | Material Damages and/or Bodil
 
 <div className='descdet'>
            <h2>MOTOR INSURANCE</h2>
-            <div>Ensure a safe drive on the roads with NEXTGUARD's Motor Insurance Plans, tailored to meet your needs and provide peace of mind. The Motor All Risks plan offers comprehensive coverage including own damage, fire, theft, third party liability for material damage and bodily injuries, replacement car, road assistance service, and more. AROPE also offers Motor Third Party Liability Insurance, covering material damages and bodily injuries caused to third parties by your vehicle. The basic covers include compulsory insurance for bodily injuries and material damages, coverage for driver and family passengers, and road assistance services. Optional covers such as excess bodily injury are available. Additionally, NEXTGUARD offers the Motor Orange Card, which extends coverage for third party liability arising from vehicle accidents outside Lebanon, covering countries such as Syria, Jordan, and Egypt. The Orange Card is available for private and commercial vehicles and can be purchased for various durations.
-            </div>
-          
-          <button className="buttoonper" onClick={() => window.location.href="/PQMDetail"}>
+<div>Drive confidently with NEXTGUARD's tailored Motor Insurance Plans, offering comprehensive coverage for your peace of mind. Our Motor All Risks plan covers own damage, fire, theft, and third-party liability, including material damage and bodily injuries. With essential features like compulsory insurance for bodily injuries and material damages, along with optional extras such as excess bodily injury coverage, we've got you covered. Extend your protection globally with the Motor Orange Card, providing liability coverage in countries like Syria, Jordan, and Egypt. Whether it's for private or commercial vehicles, NEXTGUARD offers flexible options to suit your needs. Drive with assurance and face the road ahead confidently with NEXTGUARD. </div>        
+    <button className="buttoonper" onClick={() => window.location.href="/PQMDetail"}>
     <p className="forp">
         Request A Quote
     </p>

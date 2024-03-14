@@ -20,23 +20,23 @@ const Detail = () => {
   };
 
   const handleTypeClick = async (type) => {
-    if (type === activeType) {
+    if (type.name === activeType) {
       // If clicking the same type again, keep the active state
       return;
     }
     
-    setActiveType(type);
-    toggleDescription(type);
+    setActiveType(type.name);
+    toggleDescription(type.name);
     
-  try {
-    // Make a PUT request to the API endpoint to increment the value of the specified field
-    const response = await axios.put(`http://localhost:3003/view/${type}`);
-    console.log('Field incremented successfully:', response.data);
-    // You can perform additional actions here if needed
-  } catch (error) {
-    console.error('Error incrementing field:', error);
-    // Handle errors here
-  }
+    try {
+      // Make a PUT request to the API endpoint to increment the value of the specified field
+      const response = await axios.put(`http://localhost:3003/view/${type.name}`);
+      console.log('Field incremented successfully:', response.data);
+      // You can perform additional actions here if needed
+    } catch (error) {
+      console.error('Error incrementing field:', error);
+      // Handle errors here
+    }
   };
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -68,7 +68,7 @@ const Detail = () => {
               key={index}
               type={type}
               isActive={type.name === activeType}
-              handleClick={() => handleTypeClick(type.name)}
+              handleClick={handleTypeClick}
             />
           ))}
         </div>
@@ -86,12 +86,12 @@ const Detail = () => {
 };
 
 const InsuranceType = ({ type, isActive, handleClick }) => {
-  const { name, icon } = type;
+  const { displayName, icon } = type;
 
   return (
-    <div className={`insurance-type ${isActive ? 'active' : ''}`} onClick={handleClick}>
+    <div className={`insurance-type ${isActive ? 'active' : ''}`} onClick={() => handleClick(type)}>
       <div className="type-container">
-        <div className="nname-container">{name}</div>
+        <div className="nname-container">{displayName}</div>
         <div className="icon-container">{icon}</div>
       </div>
     </div>
@@ -99,12 +99,12 @@ const InsuranceType = ({ type, isActive, handleClick }) => {
 };
 
 const insuranceTypes = [
-  { name: "motor", icon: "➜" },
-  { name: "termlife", icon: "➜" },
-  { name: "house", icon: "➜" },
-  { name: "healthcare", icon: "➜" },
-  { name: "personalacc", icon: "➜" },
-  { name: "travel", icon: "➜" },
+  { name: "motor", displayName: "Motor Insurance", icon: "➜" },
+  { name: "termlife", displayName: "Termlife Insurance", icon: "➜" },
+  { name: "house", displayName: "House Insurance", icon: "➜" },
+  { name: "healthcare", displayName: "Healthcare Insurance", icon: "➜" },
+  { name: "personalacc", displayName: "Personalacc Insurance", icon: "➜" },
+  { name: "travel", displayName: "Travel Insurance", icon: "➜" },
 ];
 
 const DescriptionComponent = ({ name }) => {
