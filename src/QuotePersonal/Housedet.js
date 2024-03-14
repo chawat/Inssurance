@@ -5,6 +5,7 @@ import './MotorQ.css';
 const Housedet = () => {
   const [formData1, setFormData1] = useState({
     ConstructionValue: "",
+    Status:"Pending",
     ContentValue: "",
     ApplicationStatus: "",
     ResidenceStatus: "", 

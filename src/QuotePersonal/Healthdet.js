@@ -15,6 +15,7 @@ const Healthdet = () => {
   });
   const [formData1, setFormData1] = useState({
     HospitalNetwork:"",
+    Status:"Pending",
     HospitalizationClass: "",
     Covertype: "",
     AdditionalCover: ["Personal Accidents for the Policyholder/Insured aged less than 65 Years and performing Administrative Profession (Death & Disability due to Accident)"],

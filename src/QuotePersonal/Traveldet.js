@@ -15,6 +15,7 @@ const Traveldet = () => {
   });
   const [formData1, setFormData1] = useState({
     Destination:"",
+    Status:"Pending",
     CountryOfDeparture: "",
     ContactOfPersonEmergency: "",
     ContactOfPerson: "",

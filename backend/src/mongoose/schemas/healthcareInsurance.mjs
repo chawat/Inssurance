@@ -3,6 +3,7 @@ import mongoose from "mongoose";
 const healthCareSchema=new mongoose.Schema({
   
   personal:mongoose.Schema.Types.ObjectId,
+  Status:mongoose.Schema.Types.String,
   HospitalNetwork: mongoose.Schema.Types.String,
   HospitalizationClass: mongoose.Schema.Types.String,
   Covertype: mongoose.Schema.Types.String,

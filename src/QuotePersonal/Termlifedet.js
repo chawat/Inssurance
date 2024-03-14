@@ -16,6 +16,7 @@ const Termlifedet = () => {
   const [formData1, setFormData1] = useState({
     Currency: "",
     SumInsured: "",
+    Status:"Pending",
     PolicyDuration: "",
     BasicCover: "Death all causes (Natural, Accidental or due to Sickness)",
     OptionalCover: [],

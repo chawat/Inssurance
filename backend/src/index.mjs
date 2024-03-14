@@ -465,3 +465,153 @@ app.put('/view/:fieldName', async (req, res) => {
         res.status(500).json({ success: false, message: 'Error fetching data.', error: error.message });
     }
 });
+
+//change the status of personal 
+app.put('/api/insurance/:schema/updatestatus/:id', async (req, res) => {
+    const { schema, id } = req.params;
+  
+    try {
+        let insuranceRecord;
+        switch(schema) {
+            case 'personalacc':
+                insuranceRecord = await PersonalInsurance.findById(id);
+                break;
+            case 'termlife':
+                insuranceRecord = await TermLifeInsurance.findById(id);
+                break;
+            case 'motor':
+                insuranceRecord = await MotorInsurance.findById(id);
+                break;
+            case 'house':
+                insuranceRecord = await HouseInsurance.findById(id);
+                break;
+            case 'travel':
+                insuranceRecord = await TravelInsurance.findById(id);
+                break;
+            case 'healthcare':
+                insuranceRecord = await HealthCareInsurance.findById(id);
+                break;
+            default:
+                return res.status(404).json({ message: 'Schema not found' });
+        }
+  
+        if (!insuranceRecord) {
+            return res.status(404).json({ message: 'Insurance record not found' });
+        }
+  
+        insuranceRecord.Status = 'done';
+        await insuranceRecord.save();
+  
+        return res.json({ message: 'Status updated successfully', insuranceRecord });
+    } catch (error) {
+        console.error('Error updating status:', error);
+        return res.status(500).json({ message: 'Internal server error' });
+    }
+});
+
+
+//get all the insurance quote with status Pending
+app.get('/api/getAllPendingInsuranceWithPersonalData', async (req, res) => {
+    try {
+        const houseData = await HouseInsurance.aggregate([
+            {
+                $lookup: {
+                    from: 'personals',
+                    localField: 'personal',
+                    foreignField: '_id',
+                    as: 'matchedPersonals'
+                }
+            },
+            {
+                $match: {
+                    Status: 'Pending'
+                }
+            }
+        ]);
+
+        const motorData = await MotorInsurance.aggregate([
+            {
+                $lookup: {
+                    from: 'personals',
+                    localField: 'personal',
+                    foreignField: '_id',
+                    as: 'matchedPersonals'
+                }
+            },
+            {
+                $match: {
+                    Status: 'Pending'
+                }
+            }
+        ]);
+
+        const travelData = await TravelInsurance.aggregate([
+            {
+                $lookup: {
+                    from: 'personals',
+                    localField: 'personal',
+                    foreignField: '_id',
+                    as: 'matchedPersonals'
+                }
+            },
+            {
+                $match: {
+                    Status: 'Pending'
+                }
+            }
+        ]);
+
+        const personalaccData = await PersonalInsurance.aggregate([
+            {
+                $lookup: {
+                    from: 'personals',
+                    localField: 'personal',
+                    foreignField: '_id',
+                    as: 'matchedPersonals'
+                }
+            },
+            {
+                $match: {
+                    Status: 'Pending'
+                }
+            }
+        ]);
+
+        const healthcareData = await HealthCareInsurance.aggregate([
+            {
+                $lookup: {
+                    from: 'personals',
+                    localField: 'personal',
+                    foreignField: '_id',
+                    as: 'matchedPersonals'
+                }
+            },
+            {
+                $match: {
+                    Status: 'Pending'
+                }
+            }
+        ]);
+
+        const termlifeData = await TermLifeInsurance.aggregate([
+            {
+                $lookup: {
+                    from: 'personals',
+                    localField: 'personal',
+                    foreignField: '_id',
+                    as: 'matchedPersonals'
+                }
+            },
+            {
+                $match: {
+                    Status: 'Pending'
+                }
+            }
+        ]);
+
+        res.json({ houseData, motorData, travelData, termlifeData, personalaccData, healthcareData });
+    } catch (error) {
+        console.error('Error fetching data:', error);
+        res.status(500).json({ success: false, message: 'Error fetching data.', error: error.message });
+    }
+});

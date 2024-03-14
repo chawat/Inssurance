@@ -12,22 +12,32 @@ const PersonalQuotes = () => {
     healthcareData: []
   });
 
-  useEffect(() => {
-    // Fetch quotes data from your backend API
-    const fetchQuotes = async () => {
-      try {
-        const response = await axios.get('http://localhost:3003/api/getAllInsuranceWithPersonalData'); // Replace with your API endpoint
-        console.log('Response data:', response.data); // Log response data for debugging
-        setQuotes(response.data); // Set quotes state with the fetched data
-      } catch (error) {
-        console.error('Error fetching quotes:', error);
-      }
-    };
+  const fetchQuotes = async () => {
+    try {
+      const response = await axios.get('http://localhost:3003/api/getAllPendingInsuranceWithPersonalData');
+      console.log('Response data:', response.data);
+      setQuotes(response.data);
+    } catch (error) {
+      console.error('Error fetching quotes:', error);
+    }
+  };
 
+  useEffect(() => {
     fetchQuotes();
   }, []);
 
-  console.log('Quotes state:', quotes); // Log quotes state for debugging
+  const updateStatus = async (schema, id) => {
+    try {
+      const response = await axios.put(`http://localhost:3003/api/insurance/${schema}/updatestatus/${id}`);
+      window.alert('Status updated successfully');
+      console.log(response.data);
+      // After updating status, fetch the updated data
+      fetchQuotes();
+    } catch (error) {
+      console.error('Error updating status:', error);
+    }
+  };
+
 
   return (
     <div className="page-contttainer">
@@ -75,7 +85,7 @@ const PersonalQuotes = () => {
                   <li key={coverIndex}>{cover}</li>
                 ))}
               </ul>
-              <button>done!</button>
+              <button onClick={() => updateStatus('house', quote._id)}>done!</button>
             </div>
           </li>
         ))}
@@ -101,9 +111,11 @@ const PersonalQuotes = () => {
               ))}
             </ul>
             <div>Plan Detail: {quote.PlanDetail}</div>
+            <button onClick={() => updateStatus('motor', quote._id)}>done!</button>
           </li>
+          
         ))}
-        <button>done!</button>
+       
       </ul>
       </div>
       <div className="quote-box">
@@ -152,7 +164,8 @@ const PersonalQuotes = () => {
               </li>
             ))}
           </ul>
-          <button>done!</button>
+          <button onClick={() => updateStatus('travel', quote._id)}>done!</button>
+            
         </div>
       )}
       
@@ -192,8 +205,8 @@ const PersonalQuotes = () => {
               <li key={coverIndex}>{cover}</li>
             ))}
           </ul>
-          <button>done!</button>
-        </div>
+          <button onClick={() => updateStatus('termlife', quote._id)}>done!</button>
+                </div>
        
       )}
      
@@ -235,8 +248,8 @@ const PersonalQuotes = () => {
               <li key={coverIndex}>{cover}</li>
             ))}
           </ul>
-          <button>done!</button>
-        </div>
+          <button onClick={() => updateStatus('personalacc', quote._id)}>done!</button>
+             </div>
       )}
       
       
@@ -285,8 +298,8 @@ const PersonalQuotes = () => {
               <li key={coverIndex}>{cover}</li>
             ))}
           </ul>
-          <button>done!</button>
-        </div>
+          <button onClick={() => updateStatus('healthcare', quote._id)}>done!</button>
+               </div>
       )}
       
      

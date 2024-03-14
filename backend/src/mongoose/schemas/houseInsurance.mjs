@@ -4,6 +4,7 @@ const houseInsuranceSchema=new mongoose.Schema({
   
 
     personal:mongoose.Schema.Types.ObjectId,
+    Status:mongoose.Schema.Types.String,
     ConstructionValue:mongoose.Schema.Types.Number,
     ContentValue:mongoose.Schema.Types.Number,
     ApplicationStatus:mongoose.Schema.Types.String,

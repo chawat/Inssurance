@@ -15,6 +15,7 @@ const PQMDetail = () => {
   });
   const [formData1, setFormData1] = useState({
     PlanDetail:"",
+    Status:"Pending",
     personal:""
   });
 

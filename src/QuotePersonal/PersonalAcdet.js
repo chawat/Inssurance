@@ -17,6 +17,7 @@ const PersonalAcdet = () => {
     CountryOfResidence:"",
     Currency: "",
     SumInsured: "",
+    Status:"Pending",
     BasicCover: "Accidental Death)",
     OptionalCover: [],
     personal:""
