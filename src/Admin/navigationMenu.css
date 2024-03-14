@@ -3,8 +3,10 @@
 .menu {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Align items to the center of the flex container */
-  }
+    align-items: flex-start;
+    padding-left:40px ;
+   
+}
   
   .menu-item {
     position: relative; /* Position each menu item relative to its parent */
