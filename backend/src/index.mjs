@@ -343,6 +343,102 @@ app.get('/api/getbusinessdata', async (req, res) => {
         res.status(500).json({ success: false, message: 'Error fetching data.', error: error.message });
     }
 });
+
+//
+app.get('/api/getAllInsuranceCount', async (req, res) => {
+    try {
+        const houseData = await HouseInsurance.aggregate([
+            {
+                $lookup: {
+                    from: 'personals',
+                    localField: 'personal',
+                    foreignField: '_id',
+                    as: 'matchedPersonals'
+                }
+            }
+        ]);
+
+        const motorData = await MotorInsurance.aggregate([
+            {
+                $lookup: {
+                    from: 'personals',
+                    localField: 'personal',
+                    foreignField: '_id',
+                    as: 'matchedPersonals'
+                }
+            }
+        ]);
+
+        const travelData = await TravelInsurance.aggregate([
+            {
+                $lookup: {
+                    from: 'personals',
+                    localField: 'personal',
+                    foreignField: '_id',
+                    as: 'matchedPersonals'
+                }
+            }
+        ]);
+
+        const personalaccData = await PersonalInsurance.aggregate([
+            {
+                $lookup: {
+                    from: 'personals',
+                    localField: 'personal',
+                    foreignField: '_id',
+                    as: 'matchedPersonals'
+                }
+            }
+        ]);
+
+        const healthcareData = await HealthCareInsurance.aggregate([
+            {
+                $lookup: {
+                    from: 'personals',
+                    localField: 'personal',
+                    foreignField: '_id',
+                    as: 'matchedPersonals'
+                }
+            }
+        ]);
+
+        const termlifeData = await TermLifeInsurance.aggregate([
+            {
+                $lookup: {
+                    from: 'personals',
+                    localField: 'personal',
+                    foreignField: '_id',
+                    as: 'matchedPersonals'
+                }
+            }
+        ]);
+
+        // Calculate the total count of all insurance data
+        const totalCount = houseData.length + motorData.length + travelData.length + personalaccData.length + healthcareData.length + termlifeData.length;
+
+        // Send the response with the total count
+        res.json({ totalCount });
+    } catch (error) {
+        console.error('Error fetching data:', error);
+        res.status(500).json({ success: false, message: 'Error fetching data.', error: error.message });
+    }
+});
+
+
+//sumofbusquot
+app.get('/api/getsumbusinessquote', async (req, res) => {
+    try {
+        // Count all documents in the BusinessInsurance collection
+        const totalCount = await BusinessInsurance.countDocuments();
+
+        // Send the total count in the response
+        res.json({ success: true, totalCount: totalCount });
+    } catch (error) {
+        console.error('Error fetching quote:', error);
+        res.status(500).json({ success: false, message: 'Error fetching data.', error: error.message });
+    }
+});
+
 //add views/
 /*app.post("/quoteviews",async (request,response)=>{
     const {body}=request;
@@ -369,6 +465,20 @@ app.get('/api/messages', async (req, res) => {
         res.status(500).json({ success: false, message: 'Error fetching data.', error: error.message });
     }
 });
+
+//
+app.get('/api/engthmessages', async (req, res) => {
+    try {
+        // Query all documents from the contact us collection
+        const contact = await ContactUs.find();
+        const messageLength = contact.length;
+        res.json({ success: true, messageLength: messageLength });
+    } catch (error) {
+        console.error('Error fetching messages:', error);
+        res.status(500).json({ success: false, message: 'Error fetching data.', error: error.message });
+    }
+});
+
 //add view
 app.put('/view/:fieldName', async (req, res) => {
     const { fieldName } = req.params; // Extract the field name from the request parameters
@@ -387,6 +497,30 @@ app.put('/view/:fieldName', async (req, res) => {
       res.status(500).json({ success: false, message: 'Error incrementing field', error: error.message });
     }
   });
+
+  //
+  app.get('/api/getViewsLength', async (req, res) => {
+    try {
+        // Query the views collection to get the document
+        const viewsDoc = await Nbviews.findOne();
+
+        if (!viewsDoc) {
+            return res.status(404).json({ success: false, message: 'Views document not found' });
+        }
+
+        // Sum the values of all fields in the views document
+        const totalViewsLength = Object.values(viewsDoc.toObject()).reduce((total, value) => {
+            return typeof value === 'number' ? total + value : total;
+        }, 0);
+
+        // Send the total length of views in the response
+        res.json({ success: true, totalViewsLength });
+    } catch (error) {
+        console.error('Error fetching views:', error);
+        res.status(500).json({ success: false, message: 'Error fetching views', error: error.message });
+    }
+});
+
   //get views 
   app.get('/api/getviews', async (req, res) => {
     try {

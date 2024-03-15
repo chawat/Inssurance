@@ -53,9 +53,9 @@ const NavigationMenu= ({openSidebarToggle, OpenSidebar}) => {
 
         <ul className='sidebar-list'>
             <li className='sidebar-list-item'>
-                <a href="">
+            <Link to="/HomeA">
                     <BsGrid1X2Fill className='icon'/> Dashboard
-                </a>         
+                </Link>         
             </li>
             <li className='sidebar-list-item'>
             <Link to="/dashboard/quotes/personal">

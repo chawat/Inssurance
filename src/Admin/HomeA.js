@@ -1,4 +1,5 @@
-import React from 'react'
+
+import React, { useState, useEffect } from 'react';
 import 
 { BsFillArchiveFill, BsFillGrid3X3GapFill, BsPeopleFill, BsFillBellFill}
  from 'react-icons/bs'
@@ -6,44 +7,97 @@ import
  { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, LineChart, Line } 
  from 'recharts';
  import './HomeA.css';
+ import NavigationMenu from './NavigationMenu';
+ import axios from 'axios';
  const HomeA = () => {
+    const [viewsCount, setViewsCount] = useState(null);
 
-   
+    useEffect(() => {
+        axios.get('http://localhost:3003/api/getViewsLength')
+            .then(response => {
+                setViewsCount(response.data.totalViewsLength);
+            })
+            .catch(error => {
+                console.error('Error fetching views count:', error);
+            });
+    }, []);
+
+    const [personalQuotesCount, setPersonalQuotesCount] = useState(null);
+
+    useEffect(() => {
+        // Axios request to fetch the personal quotes count
+        axios.get('http://localhost:3003/api/getAllInsuranceCount')
+            .then(response => {
+                setPersonalQuotesCount(response.data.totalCount);
+            })
+            .catch(error => {
+                console.error('Error fetching personal quotes count:', error);
+                // Handle error
+            });
+    }, []);
+    const [sumOfQuotes, setSumOfQuotes] = useState(null);
+
+useEffect(() => {
+    // Axios request to fetch the sum
+    axios.get('http://localhost:3003/api/getsumbusinessquote')
+        .then(response => {
+            setSumOfQuotes(response.data.totalCount);
+        })
+        .catch(error => {
+            console.error('Error fetching sum:', error);
+            // Handle error
+        });
+}, []);
+const [messageCount, setMessageCount] = useState(null);
+
+useEffect(() => {
+    // Axios request to fetch the message count
+    axios.get('http://localhost:3003/api/engthmessages')
+        .then(response => {
+            setMessageCount(response.data.messageLength);
+        })
+        .catch(error => {
+            console.error('Error fetching message count:', error);
+            // Handle error
+        });
+}, []);
 
   return (
     <main className='main-container'>
+       
         <div className='main-title'>
             <h3>DASHBOARD</h3>
+            
         </div>
-
+      
         <div className='main-cards'>
             <div className='card'>
                 <div className='card-inner'>
                     <h3>Personal Quotes</h3>
                     <BsFillArchiveFill className='card_icon'/>
                 </div>
-                <h1>300</h1>
+                <h1>{personalQuotesCount !== null ? personalQuotesCount : 'Loading...'}</h1>
             </div>
             <div className='card'>
                 <div className='card-inner'>
                     <h3>Business Quotes</h3>
                     <BsFillGrid3X3GapFill className='card_icon'/>
                 </div>
-                <h1>12</h1>
+                <h1>{sumOfQuotes !== null ? sumOfQuotes : 'Loading...'}</h1>
             </div>
             <div className='card'>
                 <div className='card-inner'>
                     <h3>Views</h3>
                     <BsPeopleFill className='card_icon'/>
                 </div>
-                <h1>33</h1>
+                <h1>{viewsCount !== null ? viewsCount : 'Loading...'}</h1>
             </div>
             <div className='card'>
                 <div className='card-inner'>
                     <h3>Messages</h3>
                     <BsFillBellFill className='card_icon'/>
                 </div>
-                <h1>42</h1>
+                <h1>{messageCount !== null ? messageCount : 'Loading...'}</h1>
             </div>
         </div>
 

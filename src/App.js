@@ -6,6 +6,7 @@ import PersonalQuotes from './Admin/components/personalquotes';
 import BusinessQuotes from './Admin/components/businessquotes';
 import Messagesus from './Admin/components/messages';
 import Views from './Admin/components/views';
+import HomeA from './Admin/HomeA';
 import Dashboard from './Admin/Dashboard';
 import Navbar from './Navbar/Navbar';
 import MouseCircle from './MouseCircle';
@@ -123,6 +124,7 @@ function App() {
           <Route path="/dashboard/messages" element={<Messagesus/>} />
           <Route path="/dashboard/views" element={<Views/>} />
           <Route path="/dashboard/quoteviews" element={<Viewsquote/>} />
+          <Route path="/HomeA" element={<HomeA/>} />
         </Routes>
       </div>
     </Router>
