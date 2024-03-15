@@ -1,45 +1,10 @@
+// NavigationMenu.js
 
-
-// import React, { useState } from 'react';
-// import { Link } from 'react-router-dom';
-// import './navigationMenu.css'; // Import CSS file
-
-// const NavigationMenu = () => {
-//   const [showSubmenu, setShowSubmenu] = useState(false);
-
-//   const toggleSubmenu = () => {
-//     setShowSubmenu(!showSubmenu);
-//   };
-
-//   return (
-//     <ul className="menu">
-//       <li className="menu-item">
-//         <div className="menu-link" onMouseEnter={toggleSubmenu} onMouseLeave={toggleSubmenu}>
-//           Quote
-//           {showSubmenu && (
-//             <ul className="submenu">
-//               <li className="submenu-item"><Link to="/dashboard/quotes/personal" className="submenu-link">Personal Quotes</Link></li>
-//               <li className="submenu-item"><Link to="/dashboard/quotes/business" className="submenu-link">Business Quotes</Link></li>
-//             </ul>
-//           )}
-//         </div>
-//       </li>
-//       <li className="menu-item"><Link to="/dashboard/views" className="menu-link">Views</Link></li>
-//       <li className="menu-item"><Link to="/dashboard/quoteviews" className="menu-link">Quotes Views</Link></li>
-//       <li className="menu-item"><Link to="/dashboard/messages" className="menu-link">Messages</Link></li>
-//     </ul>
-//   );
-// };
-
-// export default NavigationMenu;
-
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import './navigationMenu.css'; 
-import 
-{BsCart3, BsGrid1X2Fill, BsFillArchiveFill, BsFillGrid3X3GapFill, BsPeopleFill, 
-  BsListCheck, BsMenuButtonWideFill, BsFillGearFill}
- from 'react-icons/bs'
+import {BsCart3, BsGrid1X2Fill, BsFillArchiveFill, BsFillGrid3X3GapFill, BsPeopleFill, 
+  BsListCheck, BsMenuButtonWideFill, BsFillGearFill} from 'react-icons/bs';
 
 const NavigationMenu= ({openSidebarToggle, OpenSidebar}) => {
   return (
@@ -53,7 +18,7 @@ const NavigationMenu= ({openSidebarToggle, OpenSidebar}) => {
 
         <ul className='sidebar-list'>
             <li className='sidebar-list-item'>
-            <Link to="/admin/dashboard/">
+            <Link to="/HomeA">
                     <BsGrid1X2Fill className='icon'/> Dashboard
                 </Link>         
             </li>
@@ -89,4 +54,4 @@ const NavigationMenu= ({openSidebarToggle, OpenSidebar}) => {
   )
 }
 
-export default NavigationMenu
+export default NavigationMenu;

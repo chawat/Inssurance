@@ -7,9 +7,15 @@ import
  { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, LineChart, Line } 
  from 'recharts';
  import './HomeA.css';
+ import Header from './Header';
  import NavigationMenu from './NavigationMenu';
  import axios from 'axios';
  const HomeA = () => {
+    const [openSidebarToggle, setOpenSidebarToggle] = useState(false)
+
+  const OpenSidebar = () => {
+    setOpenSidebarToggle(!openSidebarToggle)
+  }
     const [viewsCount, setViewsCount] = useState(null);
 
     useEffect(() => {
@@ -63,6 +69,9 @@ useEffect(() => {
 }, []);
 
   return (
+    <div className='grid-container'>
+<Header OpenSidebar={OpenSidebar}/>
+      <NavigationMenu openSidebarToggle={openSidebarToggle} OpenSidebar={OpenSidebar}/>
     <main className='main-container'>
        
         <div className='main-title'>
@@ -148,6 +157,7 @@ useEffect(() => {
 
         </div>
     </main>
+    </div>
   )
 }
 

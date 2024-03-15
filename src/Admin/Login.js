@@ -1,11 +1,16 @@
 import React, { useState } from "react";
-
+import Header from './Header';
+import NavigationMenu from './NavigationMenu';
 import "./login.css";
 import backgroundImagee from "../images/baclog.png";
 import axios from 'axios';
 
 const Login = () => {
- 
+  const [openSidebarToggle, setOpenSidebarToggle] = useState(false)
+
+  const OpenSidebar = () => {
+    setOpenSidebarToggle(!openSidebarToggle)
+  }
   const [loginform,setLoginform]=useState({
     Username:"",
     Password:""
@@ -28,7 +33,7 @@ const handleinputchange=(e)=>{
       if (logindata) {
         // Login successful
 
-    window.location.href="/admin/dashboard/";
+    window.location.href="HomeA/";
         console.log("Login successful:", res.data);
         // navigate("/");
       } else {
@@ -52,7 +57,10 @@ const handleinputchange=(e)=>{
   };
 
   return (
-    <div style={containerStylelogin} className="mainlogin">
+    <div className='grid-container'>
+    <Header OpenSidebar={OpenSidebar}/>
+          <NavigationMenu openSidebarToggle={openSidebarToggle} OpenSidebar={OpenSidebar}/>
+        <main className='main-container'>
       <div className="form">
         <h1>LOGIN HERE</h1>
         <div>
@@ -86,6 +94,7 @@ const handleinputchange=(e)=>{
         </form>
       </div>
       </div>
+      </main>
     </div>
   );
 }

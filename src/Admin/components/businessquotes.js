@@ -4,68 +4,70 @@ import React, { useState, useEffect } from "react";
 import axios from 'axios';
 import NavigationMenu from '../NavigationMenu';
 import './businessQuotes.css'; // Import the CSS file
+import Header from '../Header';
 
 const BusinessQuotes = () => {
-    const [quotes, setQuotes] = useState([]);
+  const [openSidebarToggle, setOpenSidebarToggle] = useState(false);
+  const [quotes, setQuotes] = useState([]);
 
-    useEffect(() => {
-        // Fetch quotes data from your backend API
-        const fetchQuotes = async () => {
-            try {
-                const response = await axios.get('http://localhost:3003/api/getbusinessdatapending');
-                console.log('Response data:', response.data); // Log response data for debugging
-                setQuotes(response.data); // Set quotes state with the fetched data
-            } catch (error) {
-                console.error('Error fetching quotes:', error);
-            }
-        };
-
-        fetchQuotes();
-    }, []);
-
-    console.log('Quotes state:', quotes); // Log quotes state for debugging
-
-    const handleDoneClick = async (id) => {
-        try {
-            await axios.put(`http://localhost:3003/api/businessinsurance/updatestatus/${id}`);
-            // After updating, remove the quote from the displayed list
-            setQuotes(quotes.filter(quote => quote._id !== id));
-            window.alert('Status updated successfully'); // Show alert
-        } catch (error) {
-            console.error('Error updating status:', error);
-        }
+  useEffect(() => {
+    const fetchQuotes = async () => {
+      try {
+        const response = await axios.get('http://localhost:3003/api/getbusinessdatapending');
+        setQuotes(response.data);
+      } catch (error) {
+        console.error('Error fetching quotes:', error);
+      }
     };
 
-    return (
-        <div className="page-container">
-          <div className="menuuu">
-            <NavigationMenu />
-          </div>
-          
-          <div className="content">
-         
-          <div className="quote-box">
-          <h1>Insurance Quotes</h1>
+    fetchQuotes();
+  }, []);
 
-            <ul>
-                {quotes.map((quote, index) => (
-                    <li key={index}>
-                        <div><h2>Type: {quote.Type}</h2></div>
-                        <div> Company Name: {quote.CompanyName}</div>
-                        <div> Business Type: {quote.BusinessType}</div>
-                        <div> Number of Employees: {quote.NumberOfEmployees}</div>
-                        <div> Contact Of Person: {quote.ContactOfPerson}</div>
-                        <div> Email: {quote.Email}</div>
-                        <div> Mobile: {quote.Mobile}</div>
-                        <div> LandLine: {quote.Landline}</div>
-                        <button onClick={() => handleDoneClick(quote._id)}>Done</button> {/* Pass quote ID to the handleDoneClick function */}
-                    </li>
-                ))}
+  const handleDoneClick = async (id) => {
+    try {
+      await axios.put(`http://localhost:3003/api/businessinsurance/updatestatus/${id}`);
+      setQuotes(quotes.filter(quote => quote._id !== id));
+      window.alert('Status updated successfully');
+    } catch (error) {
+      console.error('Error updating status:', error);
+    }
+  };
+
+  const OpenSidebar = () => {
+    setOpenSidebarToggle(!openSidebarToggle);
+  };
+
+  return (
+    <div className='grid-containerbus'>
+      <Header OpenSidebar={OpenSidebar}/>
+      <NavigationMenu openSidebarToggle={openSidebarToggle} OpenSidebar={OpenSidebar}/>
+      <main className='main-containerbus'>
+        <div className="contentbus">
+          {quotes.length ? (
+            <ul className="quote-list">
+              {quotes.map((quote, index) => (
+                <li key={index}>
+                  <div className="quote-boxbus">
+                    <h1>{quote.Type}</h1>
+                    <div>Company Name: {quote.CompanyName}</div>
+                    <div>Business Type: {quote.BusinessType}</div>
+                    <div>Number of Employees: {quote.NumberOfEmployees}</div>
+                    <div>Contact Of Person: {quote.ContactOfPerson}</div>
+                    <div>Email: {quote.Email}</div>
+                    <div>Mobile: {quote.Mobile}</div>
+                    <div>LandLine: {quote.Landline}</div>
+                    <button onClick={() => handleDoneClick(quote._id)}>Done</button>
+                  </div>
+                </li>
+              ))}
             </ul>
-          </div>
-          </div>
+          ) : (
+            <p className="empty-quote">No quotes available.</p>
+          )}
         </div>
-    );
+      </main>
+    </div>
+  );
 }
 
 export default BusinessQuotes;

@@ -1,127 +1,79 @@
-/* navigationMenu.css */
 
-/* .menu {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding-left:40px ;
-    background-color: #333;
-    width: 250px;
-    height: 100vh; 
-   
+/* Header.css */
+/* NavigationMenu.css */
+
+.icon {
+  vertical-align: middle;
+  line-height: 1px;
+  font-size: 20px;
 }
-  
-  .menu-item {
-    position: relative; 
-    margin-bottom: 10px;
-  }
-  
-  .menu-link {
-    display: block; 
-    text-align: center;
-  }
-  
 
- .submenu {
+.icon_header {
+  vertical-align: middle;
+  line-height: 1px;
+  font-size: 26px;
+}
+
+.icon,
+.icon_header {
+  margin-right: 10px;
+}
+
+.close_icon {
+  color: red;
+  margin-left: 30px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+#sidebar {
+  grid-area: sidebar;
+  height: 100vh; /* Set height to 100% of viewport height */
+  background-color: #263043;
+  overflow-y: auto;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  position: fixed; /* Fix the position of the sidebar */
+  top: 0; /* Position it at the top of the viewport */
+  left: 0; /* Position it at the left of the viewport */
+  z-index: 11; /* Ensure the sidebar appears above the header */
+}
+
+.sidebar-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px 0px 30px;
+  margin-bottom: 30px;
+}
+
+.sidebar-brand {
+  margin-top: 15px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.sidebar-list {
+  padding: 0;
+  list-style-type: none;
+}
+
+.sidebar-list-item {
+  padding: 20px 20px 20px 20px;
+  font-size: 18px;
+}
+
+.sidebar-list-item:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+}
+
+.sidebar-list-item > a {
+  text-decoration: none;
+  color: #9e9ea4;
+}
+
+.sidebar-responsive {
+  display: inline !important;
   position: absolute;
-  top: 20px; 
-  left: 0;
-  background-color: #fff;
-  border: 1px solid #ccc;
-  padding: 10px;
-  z-index: 20;
+  z-index: 12 !important;
 }
-  .menu-item:hover .submenu {
-    display: block; 
-  }
-   */
-
-
-   .icon {
-    vertical-align: middle;
-    line-height: 1px;
-    font-size: 20px;
-  }
-  .icon_header {
-    vertical-align: middle;
-    line-height: 1px;
-    font-size: 26px;
-  }
-  .icon, .icon_header {
-    margin-right: 5px;
-  }
-  
-  .close_icon {
-    color: red;
-    margin-left: 30px;
-    margin-top: 10px;
-    cursor: pointer;
-  }
-  
-  .grid-container {
-    display: grid;
-    grid-template-columns: 260px 1fr 1fr 1fr;
-    grid-template-rows: 0.2fr 3fr;
-    grid-template-areas:
-      'sidebar header header header'
-      'sidebar main main main';
-    height: 100vh;
-  }
-  #sidebar {
-    grid-area: sidebar;
-    height: 100%;
-    background-color: #263043;
-    overflow-y: auto;
-    transition: all 0.5s;
-    -webkit-transition: all 0.5s;
-  }
-  
-  .sidebar-title {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 30px 0px 30px;
-    margin-bottom: 30px;
-  }
-  
-  .sidebar-title > span {
-    display: none;
-  }
-  
-  .sidebar-brand {
-    margin-top: 15px;
-    font-size: 20px;
-    font-weight: 700;
-  }
-  
-  .sidebar-list {
-    padding: 0;
-    list-style-type: none;
-  }
-  
-  .sidebar-list-item {
-    padding: 20px 20px 20px 20px;
-    font-size: 18px;
-  }
-  
-  .sidebar-list-item:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-    cursor: pointer;
-  }
-  
-  .sidebar-list-item > a {
-    text-decoration: none;
-    color: #9e9ea4;
-  }
-  
-  .sidebar-responsive {
-    display: inline !important;
-    position: absolute;
-    /*
-      we want the z-index of the sidebar higher so that
-      the charts are not showing over the sidebar 
-      on small screens
-    */
-    z-index: 12 !important;
-  }
-    

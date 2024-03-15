@@ -3,7 +3,7 @@ import { Chart } from 'chart.js/auto';
 import axios from 'axios';
 import NavigationMenu from '../NavigationMenu';
 import './ViewsStyles.css'; // Import the CSS file
-
+import Header from '../Header';
 function Views() {
   const [statistics, setStatistics] = useState(null);
   const canvasRef = useRef(null);
@@ -68,16 +68,21 @@ function Views() {
       console.error('Canvas element not found');
     }
   };
+  const [openSidebarToggle, setOpenSidebarToggle] = useState(false)
 
+  const OpenSidebar = () => {
+    setOpenSidebarToggle(!openSidebarToggle)
+  }
   return (
-    <div className="page-containervie">
-      <div className="menuvie">
-        <NavigationMenu />
-      </div>
+    <div className='grid-container'>
+   <Header OpenSidebar={OpenSidebar}/>
+      <NavigationMenu openSidebarToggle={openSidebarToggle} OpenSidebar={OpenSidebar}/>
+      <main className='main-container'>
       <div className="contentvie">
         <h2>Insurance Views Statistics</h2>
         <canvas ref={canvasRef} id="myChart" width="400" height="200"></canvas>
       </div>
+    </main>
     </div>
   );
 }
