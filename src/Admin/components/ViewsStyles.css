@@ -1,28 +1,37 @@
-.page-containervie {
-    display: flex;
-    height: 100vh; /* Set height to 100% of viewport height */
-  }
-  
-  .menuvie {
-    width: 250px;
-    background-color: #333;
-    color: #fff;
-  }
-  
-  .contentvie {
-    flex: 1;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start; /* Align content to the top */
-    align-items: center; /* Center content horizontally */
-  }
-  
-  .content h2 {
-    margin-top: 0; /* Remove default margin for h2 */
-  }
-  
-  canvas {
-    margin-top: 20px; /* Add margin to canvas */
-  }
-  
+.contentvi {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20px; /* Add padding to the top */
+}
+
+.contentvi h2 {
+  margin-bottom: 20px; /* Add margin to the bottom of the h2 element */
+  font-size: 24px; /* Adjust the font size */
+}
+
+.contentvi canvas {
+  max-width: 100%; /* Adjust the width of the canvas as needed */
+  height: auto;
+}
+
+.grid-containervi {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  grid-template-rows: auto 1fr;
+  grid-template-areas:
+    'sidebar header'
+    'sidebar main';
+  height: 100vh;
+}
+
+.main-containervi {
+  grid-area: main;
+  overflow-y: auto;
+  padding-left: 20px;
+  color: rgba(5, 5, 5, 0.95);
+  position: relative;
+}

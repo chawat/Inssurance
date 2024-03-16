@@ -10,12 +10,13 @@ import
  import Header from './Header';
  import NavigationMenu from './NavigationMenu';
  import axios from 'axios';
- const HomeA = () => {
-    const [openSidebarToggle, setOpenSidebarToggle] = useState(false)
 
-  const OpenSidebar = () => {
-    setOpenSidebarToggle(!openSidebarToggle)
-  }
+ const HomeA = () => {
+    const [openSidebarToggle, setOpenSidebarToggle] = useState(false);
+
+  const toggleSidebar = () => {
+    setOpenSidebarToggle(!openSidebarToggle);
+  };
     const [viewsCount, setViewsCount] = useState(null);
 
     useEffect(() => {
@@ -69,16 +70,12 @@ useEffect(() => {
 }, []);
 
   return (
-    <div className='grid-container'>
-<Header OpenSidebar={OpenSidebar}/>
-      <NavigationMenu openSidebarToggle={openSidebarToggle} OpenSidebar={OpenSidebar}/>
-    <main className='main-container'>
+    <div className='grid-containerhom'>
+  <Header toggleSidebar={toggleSidebar} /> {/* Pass toggleSidebar function */}
+      <NavigationMenu openSidebarToggle={openSidebarToggle} toggleSidebar={toggleSidebar} />
+    <main className='main-containerhom'>
        
-        <div className='main-title'>
-            <h3>DASHBOARD</h3>
-            
-        </div>
-      
+
         <div className='main-cards'>
             <div className='card'>
                 <div className='card-inner'>
@@ -111,6 +108,7 @@ useEffect(() => {
         </div>
 
         <div className='charts'>
+
             {/* <ResponsiveContainer width="100%" height="100%">
             <BarChart
             width={500}

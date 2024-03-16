@@ -68,17 +68,17 @@ function Views() {
       console.error('Canvas element not found');
     }
   };
-  const [openSidebarToggle, setOpenSidebarToggle] = useState(false)
+  const [openSidebarToggle, setOpenSidebarToggle] = useState(false);
 
-  const OpenSidebar = () => {
-    setOpenSidebarToggle(!openSidebarToggle)
-  }
+  const toggleSidebar = () => {
+    setOpenSidebarToggle(!openSidebarToggle);
+  };
   return (
-    <div className='grid-container'>
-   <Header OpenSidebar={OpenSidebar}/>
-      <NavigationMenu openSidebarToggle={openSidebarToggle} OpenSidebar={OpenSidebar}/>
-      <main className='main-container'>
-      <div className="contentvie">
+    <div className='grid-containervi'>
+    <Header toggleSidebar={toggleSidebar} /> {/* Pass toggleSidebar function */}
+      <NavigationMenu openSidebarToggle={openSidebarToggle} toggleSidebar={toggleSidebar} />
+      <main className='main-containervi'>
+      <div className="contentvi">
         <h2>Insurance Views Statistics</h2>
         <canvas ref={canvasRef} id="myChart" width="400" height="200"></canvas>
       </div>

@@ -34,14 +34,14 @@ const Messagesus = () => {
 
   const [openSidebarToggle, setOpenSidebarToggle] = useState(false);
 
-  const OpenSidebar = () => {
+  const toggleSidebar = () => {
     setOpenSidebarToggle(!openSidebarToggle);
   };
 
   return (
     <div className='grid-containerme'>
-      <Header OpenSidebar={OpenSidebar} />
-      <NavigationMenu openSidebarToggle={openSidebarToggle} OpenSidebar={OpenSidebar} />
+      <Header toggleSidebar={toggleSidebar} /> {/* Pass toggleSidebar function */}
+      <NavigationMenu openSidebarToggle={openSidebarToggle} toggleSidebar={toggleSidebar} />
       <main className='main-containerme'>
         <div className="contentme">
           {messages.length ? (

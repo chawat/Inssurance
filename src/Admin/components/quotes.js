@@ -2,8 +2,9 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Chart } from 'chart.js/auto';
 import axios from 'axios';
 import NavigationMenu from '../NavigationMenu';
-import './ViewsquoteStyles.css'; // Import the CSS file
+import './ViewsquoteStyles.css'; // Correctly import the CSS file
 import Header from '../Header';
+
 function Viewsquote() {
   const [statistics, setStatistics] = useState(null);
   const canvasRef = useRef(null);
@@ -30,7 +31,6 @@ function Viewsquote() {
         // If a Chart instance exists, destroy it before rendering the new chart
         chartInstanceRef.current.destroy();
       }
-      console.log("1");
       renderChart();
     }
   }, [statistics]); // Re-render the chart when statistics change
@@ -68,20 +68,22 @@ function Viewsquote() {
       console.error('Canvas element not found');
     }
   };
-  const [openSidebarToggle, setOpenSidebarToggle] = useState(false)
 
-  const OpenSidebar = () => {
-    setOpenSidebarToggle(!openSidebarToggle)
-  }
+  const [openSidebarToggle, setOpenSidebarToggle] = useState(false);
+
+  const toggleSidebar = () => {
+    setOpenSidebarToggle(!openSidebarToggle);
+  };
+
   return (
-    <div className='grid-container'>
-   <Header OpenSidebar={OpenSidebar}/>
-      <NavigationMenu openSidebarToggle={openSidebarToggle} OpenSidebar={OpenSidebar}/>
-      <main className='main-container'>
-      <div className="contentquo">
-        <h2>Insurance quote Views Statistics</h2>
-        <canvas ref={canvasRef} id="myChart" width="400" height="200"></canvas>
-      </div>
+    <div className='grid-containerqu'>
+       <Header toggleSidebar={toggleSidebar} /> {/* Pass toggleSidebar function */}
+      <NavigationMenu openSidebarToggle={openSidebarToggle} toggleSidebar={toggleSidebar} />
+      <main className='main-containerqu'>
+        <div className="contentquo">
+          <h2 style={{ marginBottom: '20px', fontSize: '24px' }}>Insurance quote Views Statistics</h2>
+          <canvas ref={canvasRef} id="myChart" width="400" height="200"></canvas>
+        </div>
       </main>
     </div>
   );

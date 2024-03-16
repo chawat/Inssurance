@@ -59,12 +59,12 @@ a{
 }
 
 .sb__footer-links_div h4{
-    font-size: 14px;
+    font-size: 18px;
     line-height: 17px;
     margin-bottom: 0.9rem;
 }
 .sb__footer-links_div p{
-    font-size: 12px;
+    font-size: 15px;
     line-height: 15px;
     margin: 0.5rem 0;
     cursor: pointer;
@@ -83,7 +83,7 @@ a{
 }
 
 .sb__footer-below-links p{
-    font-size: 13px;
+    font-size: 15px;
     line-height: 15px;
     margin-left: 2rem;
     color: blue;
@@ -96,7 +96,7 @@ hr{
 }
 
 .sb__footer-copyright p{
-    font-size: 13px;
+    font-size: 15px;
     line-height: 15px;
     color: blue;
     font-weight: 600;
@@ -121,7 +121,7 @@ hr{
     }
 
     .sb__footer-btn p{
-        font-size: 14px;
+        font-size: 15px;
         line-height: 20px;
     }
 
