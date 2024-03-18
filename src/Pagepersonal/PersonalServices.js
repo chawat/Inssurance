@@ -6,7 +6,7 @@ import Cart from './Cart'; // Import the Cart component
 // import image2 from './images/travel.jpg';
 // import image3 from './images/termlife.jpeg';
 import '../Home.css'; // Import CSS file
-import image1 from '../images/per1.png';
+import image1 from '../images/personalfamimg.png';
 
 const PersonalServices = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -26,8 +26,8 @@ const PersonalServices = () => {
 
   return (
     <div className='body-div'>
-    <div className="image-slider">
-      <div className="image-container">
+    <div className="image-sliderabout">
+      <div className="image-containeer">
         <img src={images[currentImageIndex]} alt={`Image ${currentImageIndex + 1}`} />
       </div>
       </div>

@@ -21,7 +21,7 @@ const BusinessServices = () => {
 
   return (
     <div>
-      <div className="image-slider">
+      <div className="image-sliderabout">
         <img src={images[currentImageIndex]} alt={`Image ${currentImageIndex + 1}`} />
       </div>
       <div >

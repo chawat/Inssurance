@@ -12,8 +12,8 @@ const Aboutus = () => {
   return ( 
   <div className='body-div'>
     <div className="image-sliderabout">
-      <div className="image-container">
-        <img src={image1} alt="Thank you for your trust" />
+      <div className="image-containeer">
+        <img src={image1} alt="Thank you for your trust"/>
         <div className='text'>
         <h1> Protecting Your Peace of Mind </h1>
         <h2> At any cost</h2>
@@ -30,11 +30,12 @@ const Aboutus = () => {
         </div>     
        
         
-       <div className='desc'>
-            <h2>PERFECT INSURANCE SERVICES</h2>
-            <div>At NextGuard,we understand that life is full of uncertainties.That's why we're dedicated to providing reliable insurance solutions tailored to meet you unique needs.From protecting your home and belongings to safeguarding your family's future,we are here to offer peace of mind every step of the way.
+       <div className='desceab'>
+       <span>Creating a better future </span><br/>
+            <span>with perfect insurance services </span>
+      <div className='texteab'>At NextGuard,we understand that life is full of uncertainties.That's why we're dedicated to providing reliable insurance solutions tailored to meet you unique needs.From protecting your home and belongings to safeguarding your family's future,we are here to offer peace of mind every step of the way.
               With a commitment to exceptional service and comprehensive coverage,we strive to be your trusted partner in safeguarding what matters most to you.Discover the confidence that comes with knowing you are protected with NextGuard
-            </div>
+       </div>
 
         </div>
   </div> 

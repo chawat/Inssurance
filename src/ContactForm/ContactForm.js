@@ -78,7 +78,7 @@ const [formData2, setFormData2] = useState({
           </div>
           <div className={styles.form_control}>
             <label htmlFor="text">Message</label>
-            <textarea type="text" name="Message" rows="8"  value={formData2.Message} onChange={handleInputChange2}/>
+            <textarea type="text" name="Message" rows="5"  value={formData2.Message} onChange={handleInputChange2}/>
           </div>
           <div
             style={{

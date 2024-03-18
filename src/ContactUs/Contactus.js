@@ -24,8 +24,8 @@ const Contactus = () =>  {
   }, [images.length]);
   return (
     <div>
-       <div className="img-slider">
-      <div className="image-container">
+       <div className="image-sliderabout">
+      <div className="image-containeer">
         <img src={images[currentImageIndex]} alt={`Image ${currentImageIndex + 1}`} />
       </div>
       </div>
