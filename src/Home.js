@@ -9,7 +9,7 @@ import './Home.css'; // Import CSS file
 import Travel from './images/Traveleee.jpg';
 import ParallaxImage from './ParallaxImage'; 
 import forrig from './images/forright.png';
-import handshake from './images/handshake.jpg';
+import handshake from './images/ima1.png';
 
 const Home = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -58,9 +58,11 @@ const Home = () => {
         
        <div className='desc'>
             <h2>PERFECT INSURANCE SERVICES</h2>
-            <div>At NextGuard,we understand that life is full of uncertainties.That's why we're dedicated to providing reliable insurance solutions tailored to meet you unique needs.From protecting your home and belongings to safeguarding your family's future,we are here to offer peace of mind every step of the way.
-              With a commitment to exceptional service and comprehensive coverage,we strive to be your trusted partner in safeguarding what matters most to you.Discover the confidence that comes with knowing you are protected with NextGuard
-            </div>
+            <div>Welcome to NextGuard, where safeguarding your peace of mind is our priority.
+               Explore our diverse range of insurance options tailored to fit your needs, including auto, home, life, health,
+                and more. With our expertise and personalized service, rest assured knowing you're protected every step of the way.
+                 Join thousands of satisfied customers who trust us to navigate life's uncertainties.
+               Get started today and secure a brighter tomorrow with NextGuard.</div>
 
         </div>
   </div> 

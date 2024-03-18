@@ -221,7 +221,7 @@ main {
 
   
   .product:hover .product-name {
-	color: rgb(0, 132, 255); /* Change the color of the text when hovering over the product */
+	color: rgb(95, 209, 230); /* Change the color of the text when hovering over the product */
   }
 .rating {
 	display: flex;

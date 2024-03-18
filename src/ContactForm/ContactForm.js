@@ -4,7 +4,7 @@ import { MdMessage } from "react-icons/md";
 import { FaPhoneAlt } from "react-icons/fa";
 import { HiMail } from "react-icons/hi";
 import React, { useState } from "react";
-import Cont from '../images/contact.svg';
+import Cont from '../images/contactus12.png';
 import axios from 'axios';
 const ContactForm = () => {
 
@@ -74,7 +74,7 @@ const [formData2, setFormData2] = useState({
           </div>
           <div className={styles.form_control}>
             <label htmlFor="name">Mobile</label>
-            <input type="number" name="Mobile" value={formData2.Mobile} onChange={handleInputChange2} required/>
+            <input type="tel" name="Mobile" value={formData2.Mobile} onChange={handleInputChange2} required/>
           </div>
           <div className={styles.form_control}>
             <label htmlFor="text">Message</label>
@@ -86,7 +86,7 @@ const [formData2, setFormData2] = useState({
               justifyContent: "end",
             }}
           >
-            <Button text="SUBMIT" />
+            <Button className="buttoon" text="SUBMIT" />
           </div>
 
    

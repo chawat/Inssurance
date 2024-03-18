@@ -44,7 +44,7 @@
   color: #0e0d0d;
 }
 
-input[type="text"],
+.form-group input[type="text"],
 input[type="password"] {
   width: calc(100% - 20px);
   height: 40px;
