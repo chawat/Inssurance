@@ -29,27 +29,29 @@
     padding-top: 40px;
   }
   
-  .card {
+  .cardee {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     padding: 8px 15px;
     border-radius: 5px;
+    height: 300px;
+    flex-basis: 25%;
   }
   
-  .card:first-child {
+  .cardee:first-child {
     background-color: #2962ff;
   }
   
-  .card:nth-child(2) {
+  .cardee:nth-child(2) {
     background-color: #ff6d00;
   }
   
-  .card:nth-child(3) {
+  .cardee:nth-child(3) {
     background-color: #2e7d32;
   }
   
-  .card:nth-child(4) {
+  .cardee:nth-child(4) {
     background-color: #d50000;
   }
   

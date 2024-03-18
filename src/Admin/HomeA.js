@@ -3,9 +3,7 @@ import React, { useState, useEffect } from 'react';
 import 
 { BsFillArchiveFill, BsFillGrid3X3GapFill, BsPeopleFill, BsFillBellFill}
  from 'react-icons/bs'
- import 
- { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, LineChart, Line } 
- from 'recharts';
+
  import './HomeA.css';
  import Header from './Header';
  import NavigationMenu from './NavigationMenu';
@@ -77,28 +75,28 @@ useEffect(() => {
        
 
         <div className='main-cards'>
-            <div className='card'>
+            <div className='cardee'>
                 <div className='card-inner'>
                     <h3>Personal Quotes</h3>
                     <BsFillArchiveFill className='card_icon'/>
                 </div>
                 <h1>{personalQuotesCount !== null ? personalQuotesCount : 'Loading...'}</h1>
             </div>
-            <div className='card'>
+            <div className='cardee'>
                 <div className='card-inner'>
                     <h3>Business Quotes</h3>
                     <BsFillGrid3X3GapFill className='card_icon'/>
                 </div>
                 <h1>{sumOfQuotes !== null ? sumOfQuotes : 'Loading...'}</h1>
             </div>
-            <div className='card'>
+            <div className='cardee'>
                 <div className='card-inner'>
                     <h3>Views</h3>
                     <BsPeopleFill className='card_icon'/>
                 </div>
                 <h1>{viewsCount !== null ? viewsCount : 'Loading...'}</h1>
             </div>
-            <div className='card'>
+            <div className='cardee'>
                 <div className='card-inner'>
                     <h3>Messages</h3>
                     <BsFillBellFill className='card_icon'/>
