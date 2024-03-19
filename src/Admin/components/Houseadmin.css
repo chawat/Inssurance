@@ -1,0 +1,58 @@
+/* Your existing CSS... */
+
+.house-table {
+    width: 100%;
+   
+    border-collapse:collapse; /* Separate borders between cells */
+    /* Add space between rows */
+  }
+  .house-table tr:nth-child(even) {
+    background-color: grey; /* White background for even rows */
+}
+
+.house-table tr:nth-child(odd) {
+    background-color:white; /* Grey background for odd rows */
+}
+
+  .house-table th {
+   
+    padding: 5px;
+    color:white;
+    width:auto;
+    background-color: #084477;
+    font-weight: bold;
+
+  }
+  .house-table td {
+   
+    padding: 5px;
+  text-align: center;
+
+  }
+ 
+  
+  .house-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  .house-table tr:hover {
+    background-color: #ddd;
+  }
+  
+  .house-table td button {
+    padding: 5px 10px;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+  }
+  
+.house-table td ul {
+  padding: 0; /* Remove default padding of the ul element */
+}
+
+.house-table td ul li {
+
+  margin-left: 20px; /* Add left padding to align bullet points */
+}

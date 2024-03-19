@@ -39,7 +39,7 @@ import MotorFleet from './BusnDetail/MotorFleet';
 import Login from './Admin/Login';
 import Detail from './Detail';
 import DetailB from './DetailB';
-
+import Houseadmin from './Admin/components/houseadmin';
 function withNavbarFooter(Component) {
   return function WithNavbarFooter(props) {
     const path = window.location.pathname;
@@ -125,6 +125,7 @@ function App() {
           <Route path="/dashboard/views" element={<Views/>} />
           <Route path="/dashboard/quoteviews" element={<Viewsquote/>} />
           <Route path="/HomeA" element={<HomeA/>} />
+          <Route path="/dashboard/quotes/house" element={<Houseadmin/>} />
         </Routes>
       </div>
     </Router>

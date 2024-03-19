@@ -239,17 +239,127 @@ app.post('/login', async (req, res) => {
 
 app.get('/api/getHouse', async (req, res) => {
     try {
-        // Query all documents from the Ingredient collection
-        const house = await HouseInsurance.find();
-        res.send(house);
+        const houseData = await HouseInsurance.aggregate([
+            {
+                $lookup: {
+                    from: 'personals',
+                    localField: 'personal',
+                    foreignField: '_id',
+                    as: 'matchedPersonals'
+                }
+            }
+        ]);
+
+        res.json(houseData); // Sending only the houseData array
     } catch (error) {
-        console.error('Error fetching quote:', error);
-        res.status(500).json({ success: false, message: 'Error fetching ingredients.', error: error.message });
+        console.error('Error fetching house data:', error);
+        res.status(500).json({ success: false, message: 'Error fetching house data.', error: error.message });
     }
 });
 
+//get personal accidentquote
 
+app.get('/api/getPersonal', async (req, res) => {
+    try {
+        const Data = await PersonalInsurance.aggregate([
+            {
+                $lookup: {
+                    from: 'personals',
+                    localField: 'personal',
+                    foreignField: '_id',
+                    as: 'matchedPersonals'
+                }
+            }
+        ]);
 
+        res.json(Data); //
+    } catch (error) {
+        console.error('Error fetching  data:', error);
+        res.status(500).json({ success: false, message: 'Error fetching data.', error: error.message });
+    }
+});
+//get termlife quotes
+app.get('/api/getHealthCare', async (req, res) => {
+    try {
+        const Data = await HealthCareInsurance.aggregate([
+            {
+                $lookup: {
+                    from: 'personals',
+                    localField: 'personal',
+                    foreignField: '_id',
+                    as: 'matchedPersonals'
+                }
+            }
+        ]);
+
+        res.json(Data); //
+    } catch (error) {
+        console.error('Error fetching  data:', error);
+        res.status(500).json({ success: false, message: 'Error fetching data.', error: error.message });
+    }
+});
+
+//get travel quotes
+app.get('/api/getTravel', async (req, res) => {
+    try {
+        const Data = await TravelInsurance.aggregate([
+            {
+                $lookup: {
+                    from: 'personals',
+                    localField: 'personal',
+                    foreignField: '_id',
+                    as: 'matchedPersonals'
+                }
+            }
+        ]);
+
+        res.json(Data); //
+    } catch (error) {
+        console.error('Error fetching  data:', error);
+        res.status(500).json({ success: false, message: 'Error fetching data.', error: error.message });
+    }
+});
+
+//get healthcare quotes
+app.get('/api/getTermLife', async (req, res) => {
+    try {
+        const Data = await TermLifeInsurance.aggregate([
+            {
+                $lookup: {
+                    from: 'personals',
+                    localField: 'personal',
+                    foreignField: '_id',
+                    as: 'matchedPersonals'
+                }
+            }
+        ]);
+
+        res.json(Data); //
+    } catch (error) {
+        console.error('Error fetching  data:', error);
+        res.status(500).json({ success: false, message: 'Error fetching data.', error: error.message });
+    }
+});
+//get motor quotes 
+app.get('/api/getMotor', async (req, res) => {
+    try {
+        const Data = await MotorInsurance.aggregate([
+            {
+                $lookup: {
+                    from: 'personals',
+                    localField: 'personal',
+                    foreignField: '_id',
+                    as: 'matchedPersonals'
+                }
+            }
+        ]);
+
+        res.json(Data); //
+    } catch (error) {
+        console.error('Error fetching  data:', error);
+        res.status(500).json({ success: false, message: 'Error fetching data.', error: error.message });
+    }
+});
 
 //get all personal data
 
