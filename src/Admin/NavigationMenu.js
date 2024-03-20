@@ -49,11 +49,11 @@ const NavigationMenu = ({ openSidebarToggle, toggleSidebar }) => {
             <BsFillGrid3X3GapFill className='icon'/> Business Quotes
           </Link>
         </li>
-        <li className='sidebar-list-item'>
+        {/* <li className='sidebar-list-item'>
           <Link to="/dashboard/quotes/house">
             <BsFillGrid3X3GapFill className='icon'/> House quotes
           </Link>
-        </li>
+        </li> */}
         <li className='sidebar-list-item'>
           <Link to="/dashboard/views">
             <BsPeopleFill className='icon'/> Views

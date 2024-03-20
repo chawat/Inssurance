@@ -4,16 +4,16 @@ import Header from '../Header';
 import NavigationMenu from '../NavigationMenu';
 import './Houseadmin.css'; // Import the CSS file
 
-const Houseadmin = () => {
+const Traveladmin = () => {
   const [quotes, setQuotes] = useState({
-    houseData: []
+    travelData: []
   });
 
   const fetchQuotes = async () => {
     try {
-      const response = await axios.get('http://localhost:3003/api/getHouse');
+      const response = await axios.get('http://localhost:3003/api/getTravel');
       console.log('Response data:', response.data);
-      setQuotes({ houseData: response.data }); // Update the state directly with response data
+      setQuotes({ travelData: response.data }); // Update the state directly with response data
     } catch (error) {
       console.error('Error fetching quotes:', error);
     }
@@ -28,7 +28,7 @@ const Houseadmin = () => {
       const response = await axios.put(`http://localhost:3003/api/insurance/${schema}/updatestatus/${id}`);
       // Remove the quote with the given id from the state
       setQuotes(prevState => ({
-        houseData: prevState.houseData.filter(quote => quote._id !== id)
+        travelData: prevState.travelData.filter(quote => quote._id !== id)
       }));
       window.alert('Status updated successfully');
       console.log(response.data);
@@ -49,7 +49,7 @@ const Houseadmin = () => {
       <NavigationMenu openSidebarToggle={openSidebarToggle} toggleSidebar={toggleSidebar} />
       <main className='main-containerhouse'>
         <div className="contenthouse">
-          {quotes.houseData.length > 0 && (
+          {quotes.travelData.length > 0 && (
             <div className="quote-boxhouse">
               <h2>House Insurance</h2>
               <table className="house-table">
@@ -63,17 +63,19 @@ const Houseadmin = () => {
                     <th>Mobile</th>
                     <th>Date of Birth</th>
                     <th>Occupation</th>
-                    <th>Construction Value</th>
-                    <th>Content Value</th>
-                    <th>Application Status</th>
-                    <th>Residence Status</th>
-                    <th>Basic Cover</th>
+                    <th>Destination</th>
+                    <th>Country of Departure</th>
+                    <th>Contact of Person Emergency</th>
+                    <th>Contact of Person</th>
                     <th>Optional Cover</th>
+                    <th>Plan Type</th>
+                    <th>Geographical Zone</th>
+                    <th>Trip Duration</th>
                     <th>Action</th>
                   </tr>
                 </thead>
                 <tbody>
-                  {quotes.houseData.map((quote, index) => (
+                  {quotes.travelData.map((quote, index) => (
                     <tr key={index}>
                       <td>{quote.matchedPersonals && quote.matchedPersonals[0].FirstName}</td>
                       <td>{quote.matchedPersonals && quote.matchedPersonals[0].LastName}</td>
@@ -83,26 +85,14 @@ const Houseadmin = () => {
                       <td>{quote.matchedPersonals && quote.matchedPersonals[0].Mobile}</td>
                       <td>{quote.matchedPersonals && quote.matchedPersonals[0].DateOfBirth}</td>
                       <td>{quote.matchedPersonals && quote.matchedPersonals[0].Occupation}</td>
-                      <td>{quote.ConstructionValue}</td>
-                      <td>{quote.ContentValue}</td>
-                      <td>{quote.ApplicationStatus}</td>
-                      <td>{quote.ResidenceStatus}</td>
-                      <td>
-                        <ul>
-                          {quote.BasicCover && quote.BasicCover.map((cover, coverIndex) => (
-                            <li key={coverIndex}>{cover}</li>
-                          ))}
-                        </ul>
-                      </td>
-                      <td>
-                        {quote.OptionalCover && quote.OptionalCover.length > 0 && (
-                          <ul>
-                            {quote.OptionalCover.map((cover, coverIndex) => (
-                              <li key={coverIndex}>{cover}</li>
-                            ))}
-                          </ul>
-                        )}
-                      </td>
+                      <td>{quote.Destination}</td>
+                      <td>{quote.CountryOfDeparture}</td>
+                      <td>{quote.ContactOfPersonEmergency}</td>
+                      <td>{quote.ContactOfPerson}</td>
+                      <td>{quote.OptionalCover}</td>
+                      <td>{quote.PlanType}</td>
+                      <td>{quote.GeographicalZone}</td>
+                      <td>{quote.TripDuration}</td>
                       <td>
                        
                         <button onClick={() => updateStatus('house', quote._id)}>Done</button>
@@ -120,4 +110,4 @@ const Houseadmin = () => {
   );
 }
 
-export default Houseadmin;
+export default Traveladmin;

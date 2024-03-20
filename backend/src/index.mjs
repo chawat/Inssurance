@@ -247,6 +247,11 @@ app.get('/api/getHouse', async (req, res) => {
                     foreignField: '_id',
                     as: 'matchedPersonals'
                 }
+            },
+            {
+                $match: {
+                    Status: 'Pending'
+                }
             }
         ]);
 
@@ -256,7 +261,6 @@ app.get('/api/getHouse', async (req, res) => {
         res.status(500).json({ success: false, message: 'Error fetching house data.', error: error.message });
     }
 });
-
 //get personal accidentquote
 
 app.get('/api/getPersonal', async (req, res) => {
@@ -310,6 +314,11 @@ app.get('/api/getTravel', async (req, res) => {
                     foreignField: '_id',
                     as: 'matchedPersonals'
                 }
+            },
+            {
+                $match: {
+                    Status: 'Pending'
+                }
             }
         ]);
 
@@ -351,6 +360,11 @@ app.get('/api/getMotor', async (req, res) => {
                     foreignField: '_id',
                     as: 'matchedPersonals'
                 }
+            },
+            {
+                $match: {
+                    Status: 'Pending'
+                }
             }
         ]);
 
@@ -360,7 +374,29 @@ app.get('/api/getMotor', async (req, res) => {
         res.status(500).json({ success: false, message: 'Error fetching data.', error: error.message });
     }
 });
+//number of motor quote
+app.get('/api/getMotorLength', async (req, res) => {
+    try {
+        const motorL = await MotorInsurance.find();
+        const motorLength = motorL.length;
+        res.json({ success: true, motorlength: motorLength });
+    } catch (error) {
+        console.error('Error fetching house length:', error);
+        res.status(500).json({ success: false, message: 'Error fetching house length.', error: error.message });
+    }
+});
 
+//number of travel quote
+app.get('/api/getTravelLength', async (req, res) => {
+    try {
+        const travelL = await TravelInsurance.find();
+        const travelLength = travelL.length;
+        res.json({ success: true, travellength: travelLength });
+    } catch (error) {
+        console.error('Error fetching house length:', error);
+        res.status(500).json({ success: false, message: 'Error fetching house length.', error: error.message });
+    }
+});
 //get all personal data
 
 app.get('/api/getAllInsuranceWithPersonalData', async (req, res) => {
@@ -577,17 +613,7 @@ app.get('/api/messages', async (req, res) => {
 });
 
 //
-app.get('/api/engthmessages', async (req, res) => {
-    try {
-        // Query all documents from the contact us collection
-        const contact = await ContactUs.find();
-        const messageLength = contact.length;
-        res.json({ success: true, messageLength: messageLength });
-    } catch (error) {
-        console.error('Error fetching messages:', error);
-        res.status(500).json({ success: false, message: 'Error fetching data.', error: error.message });
-    }
-});
+
 
 //add view
 app.put('/view/:fieldName', async (req, res) => {
@@ -630,7 +656,29 @@ app.put('/view/:fieldName', async (req, res) => {
         res.status(500).json({ success: false, message: 'Error fetching views', error: error.message });
     }
 });
-
+//get message length
+app.get('/api/engthmessages', async (req, res) => {
+    try {
+        // Query all documents from the contact us collection
+        const contact = await ContactUs.find();
+        const messageLength = contact.length;
+        res.json({ success: true, messageLength: messageLength });
+    } catch (error) {
+        console.error('Error fetching messages:', error);
+        res.status(500).json({ success: false, message: 'Error fetching data.', error: error.message });
+    }
+});
+//get length of house
+app.get('/api/getHouseLength', async (req, res) => {
+    try {
+        const houseL = await HouseInsurance.find();
+        const houseLength = houseL.length;
+        res.json({ success: true, houselength: houseLength });
+    } catch (error) {
+        console.error('Error fetching house length:', error);
+        res.status(500).json({ success: false, message: 'Error fetching house length.', error: error.message });
+    }
+});
   //get views 
   app.get('/api/getviews', async (req, res) => {
     try {

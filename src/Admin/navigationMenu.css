@@ -35,9 +35,8 @@
   position: fixed; /* Fix the position of the sidebar */
   top: 0; /* Position it at the top of the viewport */
   left: 0; /* Position it at the left of the viewport */
-  z-index: 11; /* Ensure the sidebar appears above the header */
+  z-index: 14; /* Higher z-index to appear above the header */
 }
-
 .sidebar-title {
   display: flex;
   justify-content: space-between;

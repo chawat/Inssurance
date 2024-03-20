@@ -4,7 +4,7 @@
   padding: 20px;
   color: rgba(5, 5, 5, 0.95);
   position: relative; /* Ensure the main container has a stacking context */
-  z-index: 100; 
+ 
   }
   .grid-containerhom {
     display: grid;
@@ -40,19 +40,19 @@
   }
   
   .cardee:first-child {
-    background-color: #2962ff;
+    background-color: rgb(255, 255, 255);
   }
   
   .cardee:nth-child(2) {
-    background-color: #ff6d00;
+    background-color: rgb(255, 255, 255);
   }
   
   .cardee:nth-child(3) {
-    background-color: #2e7d32;
+    background-color: rgb(255, 255, 255);
   }
   
   .cardee:nth-child(4) {
-    background-color: #d50000;
+    background-color: rgb(255, 255, 255);
   }
   
   .card-inner {

@@ -1,58 +1,85 @@
-/* Your existing CSS... */
+body {
+  margin: 0; /* Reset default margin */
+  overflow-y: auto; /* Allow vertical scrolling for the entire page */
+}
+
+.grid-containerhouse {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto 1fr;
+  grid-template-areas: "header header" "sidebar content";
+  min-height: 100vh; /* Set minimum height to fill the viewport */
+}
+
+.header {
+  grid-area: header;
+  position: fixed; /* Fix the header at the top */
+  width: 100%; /* Occupy full width */
+  z-index: 100; /* Ensure header is above other content */
+}
+
+.sidebar {
+  grid-area: sidebar;
+}
+
+.contenthouse {
+  grid-area: content;
+  padding-top: 20px; /* Adjust padding to accommodate fixed header */
+  overflow-y: auto; /* Allow content to scroll if it overflows */
+}
 
 .house-table {
-    width: 100%;
-   
-    border-collapse:collapse; /* Separate borders between cells */
-    /* Add space between rows */
-  }
-  .house-table tr:nth-child(even) {
-    background-color: grey; /* White background for even rows */
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.house-table tr:nth-child(even) {
+  background-color: grey;
 }
 
 .house-table tr:nth-child(odd) {
-    background-color:white; /* Grey background for odd rows */
+  background-color: white;
 }
 
-  .house-table th {
-   
-    padding: 5px;
-    color:white;
-    width:auto;
-    background-color: #084477;
-    font-weight: bold;
+.house-table th {
+  padding: 5px;
+  color: white;
+  width: auto;
+  background-color: #084477;
+  font-weight: bold;
+}
 
-  }
-  .house-table td {
-   
-    padding: 5px;
+.house-table td {
+  padding: 5px;
   text-align: center;
+}
 
-  }
- 
-  
-  .house-table tr:nth-child(even) {
-    background-color: #f2f2f2;
-  }
-  
-  .house-table tr:hover {
-    background-color: #ddd;
-  }
-  
-  .house-table td button {
-    padding: 5px 10px;
-    cursor: pointer;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 4px;
-  }
-  
+.house-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.house-table tr:hover {
+  background-color: #ddd;
+}
+
+.house-table td button {
+  padding: 5px 10px;
+  cursor: pointer;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+}
+
 .house-table td ul {
-  padding: 0; /* Remove default padding of the ul element */
+  padding: 0;
 }
 
 .house-table td ul li {
+  margin-left: 20px;
+}
 
-  margin-left: 20px; /* Add left padding to align bullet points */
+/* Adjust width of content area to accommodate sidebar */
+.main-containerhouse {
+  margin-left: 205px;
 }

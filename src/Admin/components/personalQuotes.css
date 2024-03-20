@@ -1,4 +1,4 @@
-.grid-containerper {
+/* .grid-containerper {
   display: grid;
   grid-template-columns: 260px 1fr;
   grid-template-rows: auto 1fr;
@@ -12,10 +12,9 @@
   grid-area: main;
   overflow-y: auto;
   padding: 20px;
-  padding-top: 80px; /* Add padding from the top to avoid overlap with the header */
+  padding-top: 80px; 
   color: rgba(5, 5, 5, 0.95);
-  position: relative; /* Ensure the main container has a stacking context */
-  z-index: 100; /* Set a higher z-index than the sidebar */
+  position: relative; 
 }
 
 .page-container {
@@ -27,10 +26,10 @@
   width: 250px;
   background-color: #333;
   color: #fff;
-  position: fixed; /* Fix the position of the sidebar */
-  top: 0; /* Position it at the top of the viewport */
-  left: 0; /* Position it at the left of the viewport */
-  bottom: 0; /* Expand it to the bottom of the viewport */
+  position: fixed; 
+  top: 0; 
+  left: 0; 
+  bottom: 0;
 }
 
 .contentper {
@@ -38,19 +37,19 @@
   overflow-y: auto;
   padding: 20px;
   color: rgba(5, 5, 5, 0.95);
-  position: relative; /* Ensure the main container has a stacking context */
-  z-index: 100; /* Set a higher z-index than the sidebar */
+  position: relative; 
+  z-index: 100; 
 }
 
 .quote-box {
-  width: auto; /* Set width to 100% to occupy the available space */
+  width: auto;
   max-width: fit-content;
-  margin: 10px 0; /* Add margin for spacing between message boxes */
+  margin: 10px 0;
   border: 1px solid #ccc;
   border-radius: 5px;
   background-color: #f9f9f9;
-  padding: 20px; /* Add padding for better readability */
-  box-sizing: border-box; /* Ensure padding is included in the width */
+  padding: 20px;
+  box-sizing: border-box;
 
 }
 
@@ -65,4 +64,104 @@
 
 .quote-box ul li {
   margin-bottom: 10px;
+} */
+/* Main Container */
+.main-containerper {
+  grid-area: main;
+  overflow-y: auto;
+  padding: 20px;
+  color: rgba(5, 5, 5, 0.95);
+  position: relative; /* Ensure the main container has a stacking context */
+}
+
+/* Grid Container */
+.grid-containerper {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  grid-template-rows: auto 1fr;
+  grid-template-areas: 'sidebar header' 'sidebar main';
+  height: 100vh;
+}
+
+/* Cards Container */
+.main-cardsper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Adjust the number of columns as needed */
+  gap: 20px;
+  margin: 15px 0;
+  padding-top: 40px;
+}
+
+/* Card Styling */
+.cardeeper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 8px 15px;
+  border-radius: 5px;
+  height: 300px;
+  flex-basis: 25%; /* Adjust the width of each card */
+  background-color: rgb(255, 255, 255);
+}
+
+.card-innerper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card-innerper > .card_iconper {
+  font-size: 25px;
+}
+
+/* Charts Container */
+.chartsper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-top: 60px;
+  height: 300px;
+}
+
+/* Media Queries */
+/* Medium <= 992px */
+@media screen and (max-width: 992px) {
+  .grid-containerper {
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.2fr 3fr;
+    grid-template-areas: 'header' 'main';
+  }
+
+  #sidebar {
+    display: none;
+  }
+
+  .menu-iconper {
+    display: inline;
+  }
+
+  .sidebar-titleper > span {
+    display: inline;
+  }
+}
+
+/* Small <= 768px */
+@media screen and (max-width: 768px) {
+  .main-cardsper {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin-bottom: 0;
+  }
+
+  .chartsper {
+    grid-template-columns: 1fr;
+    margin-top: 30px;
+  }
+}
+
+/* Extra Small <= 576px */
+@media screen and (max-width: 576px) {
+  .hedaer-leftper {
+    display: none;
+  }
 }
