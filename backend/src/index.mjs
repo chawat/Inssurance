@@ -273,6 +273,11 @@ app.get('/api/getPersonal', async (req, res) => {
                     foreignField: '_id',
                     as: 'matchedPersonals'
                 }
+            },
+            {
+                $match: {
+                    Status: 'Pending'
+                }
             }
         ]);
 
@@ -282,7 +287,7 @@ app.get('/api/getPersonal', async (req, res) => {
         res.status(500).json({ success: false, message: 'Error fetching data.', error: error.message });
     }
 });
-//get termlife quotes
+//get healthcare quotes
 app.get('/api/getHealthCare', async (req, res) => {
     try {
         const Data = await HealthCareInsurance.aggregate([
@@ -292,6 +297,11 @@ app.get('/api/getHealthCare', async (req, res) => {
                     localField: 'personal',
                     foreignField: '_id',
                     as: 'matchedPersonals'
+                }
+            },
+            {
+                $match: {
+                    Status: 'Pending'
                 }
             }
         ]);
@@ -329,7 +339,7 @@ app.get('/api/getTravel', async (req, res) => {
     }
 });
 
-//get healthcare quotes
+//get termlife quotes
 app.get('/api/getTermLife', async (req, res) => {
     try {
         const Data = await TermLifeInsurance.aggregate([
@@ -339,6 +349,11 @@ app.get('/api/getTermLife', async (req, res) => {
                     localField: 'personal',
                     foreignField: '_id',
                     as: 'matchedPersonals'
+                }
+            },
+            {
+                $match: {
+                    Status: 'Pending'
                 }
             }
         ]);

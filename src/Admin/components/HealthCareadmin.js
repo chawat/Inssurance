@@ -4,14 +4,14 @@ import Header from '../Header';
 import NavigationMenu from '../NavigationMenu';
 import './Houseadmin.css'; // Import the CSS file
 
-const Traveladmin = () => {
+const Healthcareadmin = () => {
   const [quotes, setQuotes] = useState({
     Data: []
   });
 
   const fetchQuotes = async () => {
     try {
-      const response = await axios.get('http://localhost:3003/api/getTravel');
+      const response = await axios.get('http://localhost:3003/api/getHealthCare');
       console.log('Response data:', response.data);
       setQuotes({ Data: response.data }); // Update the state directly with response data
     } catch (error) {
@@ -51,7 +51,7 @@ const Traveladmin = () => {
         <div className="contenthouse">
           {quotes.Data.length > 0 && (
             <div className="quote-boxhouse">
-              <h2>Travel Insurance</h2>
+              <h2>Healthcare Insurance</h2>
               <table className="house-table">
                 <thead>
                   <tr>
@@ -63,14 +63,7 @@ const Traveladmin = () => {
                     <th>Mobile</th>
                     <th>Date of Birth</th>
                     <th>Occupation</th>
-                    <th>Destination</th>
-                    <th>Country of Departure</th>
-                    <th>Contact of Person Emergency</th>
-                    <th>Contact of Person</th>
                     <th>Optional Cover</th>
-                    <th>Plan Type</th>
-                    <th>Geographical Zone</th>
-                    <th>Trip Duration</th>
                     <th>Action</th>
                   </tr>
                 </thead>
@@ -85,18 +78,17 @@ const Traveladmin = () => {
                       <td>{quote.matchedPersonals && quote.matchedPersonals[0].Mobile}</td>
                       <td>{quote.matchedPersonals && quote.matchedPersonals[0].DateOfBirth}</td>
                       <td>{quote.matchedPersonals && quote.matchedPersonals[0].Occupation}</td>
-                      <td>{quote.Destination}</td>
-                      <td>{quote.CountryOfDeparture}</td>
-                      <td>{quote.ContactOfPersonEmergency}</td>
-                      <td>{quote.ContactOfPerson}</td>
-                      <td>{quote.OptionalCover}</td>
-                      <td>{quote.PlanType}</td>
-                      <td>{quote.GeographicalZone}</td>
-                      <td>{quote.TripDuration}</td>
                       <td>
-                       
-                        <button onClick={() => updateStatus('travel', quote._id)}>Done</button>
-                        
+                        {quote.OptionalCover && (
+                          <ul>
+                            {quote.OptionalCover.map((cover, coverIndex) => (
+                              <li key={coverIndex}>{cover}</li>
+                            ))}
+                          </ul>
+                        )}
+                      </td>
+                      <td>
+                        <button onClick={() => updateStatus('healthcare', quote._id)}>Done</button>
                       </td>
                     </tr>
                   ))}
@@ -110,4 +102,4 @@ const Traveladmin = () => {
   );
 }
 
-export default Traveladmin;
+export default Healthcareadmin;

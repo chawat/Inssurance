@@ -439,6 +439,33 @@ useEffect(() => {
             </Link>
           </div>
           <div className='cardeeper'>
+          <Link to="/dashboard/quotes/healthcare" className='cardeeper'>
+            <div className='card-innerper'>
+              <h3>Healthcare Quotes</h3>
+              <BsPeopleFill className='card_iconper'/>
+            </div>
+            <h1>{viewsCount !== null ? viewsCount : 'Loading...'}</h1>
+            </Link>
+          </div>
+          <div className='cardeeper'>
+          <Link to="/dashboard/quotes/personalacc" className='cardeeper'>
+            <div className='card-innerper'>
+              <h3>Personal accident Quotes</h3>
+              <BsPeopleFill className='card_iconper'/>
+            </div>
+            <h1>{viewsCount !== null ? viewsCount : 'Loading...'}</h1>
+            </Link>
+          </div>
+          <div className='cardeeper'>
+          <Link to="/dashboard/quotes/termlife" className='cardeeper'>
+            <div className='card-innerper'>
+              <h3>Termlife Quotes</h3>
+              <BsPeopleFill className='card_iconper'/>
+            </div>
+            <h1>{viewsCount !== null ? viewsCount : 'Loading...'}</h1>
+            </Link>
+          </div>
+          <div className='cardeeper'>
             <div className='card-innerper'>
               <h3>Messages</h3>
               <BsFillBellFill className='card_iconper'/>

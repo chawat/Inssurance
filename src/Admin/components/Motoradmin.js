@@ -6,14 +6,14 @@ import './Houseadmin.css'; // Import the CSS file
 
 const Motoradmin = () => {
   const [quotes, setQuotes] = useState({
-    houseData: [] // Corrected to houseData
+    Data: [] // Corrected to houseData
   });
 
   const fetchQuotes = async () => {
     try {
       const response = await axios.get('http://localhost:3003/api/getMotor');
       console.log('Response data:', response.data);
-      setQuotes({ houseData: response.data }); // Updated to houseData
+      setQuotes({ Data: response.data }); // Updated to houseData
     } catch (error) {
       console.error('Error fetching quotes:', error);
     }
@@ -28,7 +28,7 @@ const Motoradmin = () => {
       const response = await axios.put(`http://localhost:3003/api/insurance/${schema}/updatestatus/${id}`);
       // Remove the quote with the given id from the state
       setQuotes(prevState => ({
-        houseData: prevState.houseData.filter(quote => quote._id !== id) // Updated to houseData
+        Data: prevState.Data.filter(quote => quote._id !== id) // Updated to houseData
       }));
       window.alert('Status updated successfully');
       console.log(response.data);
@@ -49,9 +49,9 @@ const Motoradmin = () => {
       <NavigationMenu openSidebarToggle={openSidebarToggle} toggleSidebar={toggleSidebar} />
       <main className='main-containerhouse'>
         <div className="contenthouse">
-          {quotes.houseData.length > 0 && (
+          {quotes.Data.length > 0 && (
             <div className="quote-boxhouse">
-              <h2>House Insurance</h2>
+              <h2>Motor Insurance</h2>
               <table className="house-table">
                 <thead>
                   <tr>
@@ -68,7 +68,7 @@ const Motoradmin = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  {quotes.houseData.map((quote, index) => (
+                  {quotes.Data.map((quote, index) => (
                     <tr key={index}>
                       <td>{quote.matchedPersonals && quote.matchedPersonals[0].FirstName}</td>
                       <td>{quote.matchedPersonals && quote.matchedPersonals[0].LastName}</td>
@@ -81,7 +81,7 @@ const Motoradmin = () => {
                       <td>{quote.PlanDetail}</td>
                       
                       <td>
-                        <button onClick={() => updateStatus('house', quote._id)}>Done</button>
+                        <button onClick={() => updateStatus('motor', quote._id)}>Done</button>
                       </td>
                     </tr>
                   ))}

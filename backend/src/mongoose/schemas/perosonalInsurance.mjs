@@ -7,8 +7,8 @@ const personalInsuranceSchema=new mongoose.Schema({
   CountryOfResidence: mongoose.Schema.Types.String,
   Currency: mongoose.Schema.Types.String,
   SumInsured: mongoose.Schema.Types.Number,
-  BasicCover: mongoose.Schema.Types.String,
-  OptionalCover: [mongoose.Schema.Types.String],
+  BasicCover:[ mongoose.Schema.Types.String],
+ 
 
 }
 );
