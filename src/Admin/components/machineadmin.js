@@ -4,14 +4,14 @@ import Header from '../Header';
 import NavigationMenu from '../NavigationMenu';
 import './Houseadmin.css'; // Import the CSS file
 
-const Moneyadmin = () => {
+const Machineadmin = () => {
   const [quotes, setQuotes] = useState([]);
 
   const fetchQuotes = async () => {
     try {
-      const response = await axios.get('http://localhost:3003/api/getPendingMoneyData');
+      const response = await axios.get('http://localhost:3003/api/getMachineData');
       console.log('Response data:', response.data);
-      setQuotes(response.data.moneyData); // Update the state directly with response data
+      setQuotes(response.data.machineData); // Update the state directly with response data
     } catch (error) {
       console.error('Error fetching quotes:', error);
     }
@@ -45,7 +45,7 @@ const Moneyadmin = () => {
         <div className="contenthouse">
           {quotes.length > 0 && (
             <div className="quote-boxhouse">
-              <h2>Money Insurance</h2>
+              <h2>Machine Insurance</h2>
               <table className="house-table">
                 <thead>
                   <tr>
@@ -84,4 +84,4 @@ const Moneyadmin = () => {
   );
 }
 
-export default Moneyadmin;
+export default Machineadmin;

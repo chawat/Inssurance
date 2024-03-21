@@ -555,19 +555,74 @@ app.get('/api/getMotorfleetLength', async (req, res) => {
         res.status(500).json({ success: false, message: 'Error fetching motor length.', error: error.message });
     }
 });
-
-//get data Money
-app.get('/api/getMoneyData', async (req, res) => {
+// Get data for Motor type with status Pending
+app.get('/api/getPendingMotorData', async (req, res) => {
     try {
-        const moneyData = await BusinessInsurance.find({ Type: 'Money' }); // Find documents where Type is 'Money'
-        res.json({ success: true, moneyData: moneyData });
+        // Find documents where Type is 'Motor' and Status is 'Pending'
+        const motorData = await BusinessInsurance.find({ Type: 'Motor', Status: 'Pending' });
+        res.json({ success: true, motorData: motorData });
     } catch (error) {
-        console.error('Error fetching money data:', error);
-        res.status(500).json({ success: false, message: 'Error fetching money data.', error: error.message });
+        console.error('Error fetching pending motor data:', error);
+        res.status(500).json({ success: false, message: 'Error fetching pending motor data.', error: error.message });
     }
 });
 
+// Get data for Machine type
+app.get('/api/getMachineData', async (req, res) => {
+    try {
+        // Find documents where Type is 'Machine'
+        const machineData = await BusinessInsurance.find({ Type: 'Machine', Status: 'Pending' });
+        res.json({ success: true, machineData: machineData });
+    } catch (error) {
+        console.error('Error fetching machine data:', error);
+        res.status(500).json({ success: false, message: 'Error fetching machine data.', error: error.message });
+    }
+});
 
+// Get data for Money type with status Pending
+app.get('/api/getPendingMoneyData', async (req, res) => {
+    try {
+        // Find documents where Type is 'Money' and Status is 'Pending'
+        const moneyData = await BusinessInsurance.find({ Type: 'Money', Status: 'Pending' });
+        res.json({ success: true, moneyData: moneyData });
+    } catch (error) {
+        console.error('Error fetching pending money data:', error);
+        res.status(500).json({ success: false, message: 'Error fetching pending money data.', error: error.message });
+    }
+});
+// Get data for Cargo type with status Pending
+app.get('/api/getPendingCargoData', async (req, res) => {
+    try {
+        // Find documents where Type is 'Cargo' and Status is 'Pending'
+        const cargoData = await BusinessInsurance.find({ Type: 'Cargo', Status: 'Pending' });
+        res.json({ success: true, cargoData: cargoData });
+    } catch (error) {
+        console.error('Error fetching pending cargo data:', error);
+        res.status(500).json({ success: false, message: 'Error fetching pending cargo data.', error: error.message });
+    }
+});
+// Get data for Group Health type with status Pending
+app.get('/api/getPendingGroupHealthData', async (req, res) => {
+    try {
+        // Find documents where Type is 'Group Health' and Status is 'Pending'
+        const groupHealthData = await BusinessInsurance.find({ Type: 'Group Health', Status: 'Pending' });
+        res.json({ success: true, groupHealthData: groupHealthData });
+    } catch (error) {
+        console.error('Error fetching pending group health data:', error);
+        res.status(500).json({ success: false, message: 'Error fetching pending group health data.', error: error.message });
+    }
+});
+// Get data for Group Personal type with status Pending
+app.get('/api/getPendingGroupPersonalData', async (req, res) => {
+    try {
+        // Find documents where Type is 'Group Personal' and Status is 'Pending'
+        const groupPersonalData = await BusinessInsurance.find({ Type: 'Group Personal', Status: 'Pending' });
+        res.json({ success: true, groupPersonalData: groupPersonalData });
+    } catch (error) {
+        console.error('Error fetching pending group personal data:', error);
+        res.status(500).json({ success: false, message: 'Error fetching pending group personal data.', error: error.message });
+    }
+});
 //get all personal data
 
 app.get('/api/getAllInsuranceWithPersonalData', async (req, res) => {

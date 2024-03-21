@@ -46,6 +46,13 @@ import Healthcareadmin from './Admin/components/HealthCareadmin';
 import Termlifeadmin from './Admin/components/TermLifeadmin';
 import Personalaccadmin from './Admin/components/PersonalAccadmin';
 import Moneyadmin from './Admin/components/moneyadmin';
+import Cargoadmin from './Admin/components/cargoadmin';
+import Grouphealthadmin from './Admin/components/grouphealthadmin';
+import Grouppersonaladmin from './Admin/components/grouppersonaladmin';
+import Machineadmin from './Admin/components/machineadmin';
+import Motorfadmin from './Admin/components/motorfadmin';
+
+
 
 function withNavbarFooter(Component) {
   return function WithNavbarFooter(props) {
@@ -140,6 +147,11 @@ function App() {
           <Route path="/dashboard/quotes/personalacc" element={<Personalaccadmin/>} />
 
           <Route path="/dashboard/quotes/money" element={<Moneyadmin/>} />
+          <Route path="/dashboard/quotes/cargo" element={<Cargoadmin/>} />
+          <Route path="/dashboard/quotes/grouphealth" element={<Grouphealthadmin/>} />
+          <Route path="/dashboard/quotes/grouppersonal" element={<Grouppersonaladmin/>} />
+          <Route path="/dashboard/quotes/machine" element={<Machineadmin/>} />
+          <Route path="/dashboard/quotes/motorf" element={<Motorfadmin/>} />
 
         </Routes>
       </div>

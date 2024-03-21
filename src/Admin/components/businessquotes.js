@@ -179,7 +179,7 @@ useEffect(() => {
       <main className='main-containerper'>
         <div className='main-cardsper'>
           <div className='cardeeper'>
-          <Link to="/dashboard/quotes/house">
+          <Link to="/dashboard/quotes/cargo">
             <div className='card-innerper'>
               <h3>Cargo Quotes</h3>
               <BsFillArchiveFill className='card_iconper'/>
@@ -188,7 +188,7 @@ useEffect(() => {
                </Link>
           </div>
           <div className='cardeeper'>
-          <Link to="/dashboard/quotes/Motor" className='cardeeper'>
+          <Link to="/dashboard/quotes/grouphealth" className='cardeeper'>
             <div className='card-innerper'>
               <h3>Group Healthcare Quotes</h3>
               <BsFillGrid3X3GapFill className='card_iconper'/>
@@ -197,7 +197,7 @@ useEffect(() => {
             </Link>
           </div>
           <div className='cardeeper'>
-          <Link to="/dashboard/quotes/travel" className='cardeeper'>
+          <Link to="/dashboard/quotes/grouppersonal" className='cardeeper'>
             <div className='card-innerper'>
               <h3>Group Personal Quotes</h3>
               <BsPeopleFill className='card_iconper'/>
@@ -206,7 +206,7 @@ useEffect(() => {
                </Link>
           </div>
           <div className='cardeeper'>
-          <Link to="/dashboard/quotes/healthcare" className='cardeeper'>
+          <Link to="/dashboard/quotes/machine" className='cardeeper'>
             <div className='card-innerper'>
               <h3>Machinery Breakdown Quotes</h3>
               <BsPeopleFill className='card_iconper'/>
@@ -224,7 +224,7 @@ useEffect(() => {
                         </Link>
           </div>
           <div className='cardeeper'>
-          <Link to="/dashboard/quotes/termlife" className='cardeeper'>
+          <Link to="/dashboard/quotes/motorf" className='cardeeper'>
             <div className='card-innerper'>
               <h3>Motor Quotes</h3>
               <BsPeopleFill className='card_iconper'/>
