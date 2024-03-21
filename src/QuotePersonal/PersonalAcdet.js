@@ -18,7 +18,7 @@ const PersonalAcdet = () => {
     Currency: "",
     SumInsured: "",
     Status:"Pending",
-    BasicCover: "Accidental Death)",
+    BasicCover: "Accidental Death",
     OptionalCover: [],
     personal:""
   });
@@ -227,15 +227,15 @@ const PersonalAcdet = () => {
     <label htmlFor={`basic-cover-checkbox-${checkbox.id}`}>{checkbox.label}</label>
   </div>
 ))}
-
-<h2 className='blackk'>Optional Covers</h2>
+<h2 className='blackk'>Optional Cover</h2>
 {OptionalCover.map(checkbox => (
   <div key={checkbox.id}>
     <input
       type="checkbox"
-      name={checkbox.label} // Use the label as the name
+      id={`optional-cover-checkbox-${checkbox.id}`}
+      name={checkbox.label}
       checked={checkbox.checked}
-      onChange={() => handleOptionalCoverChange(checkbox.id, 'OptionalCover')} // Pass the type 'OptionalCover'
+      onChange={() => handleOptionalCoverChange(checkbox.id, 'OptionalCover')}
     />
     <label htmlFor={`optional-cover-checkbox-${checkbox.id}`}>{checkbox.label}</label>
   </div>

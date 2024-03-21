@@ -8,6 +8,7 @@ const personalInsuranceSchema=new mongoose.Schema({
   Currency: mongoose.Schema.Types.String,
   SumInsured: mongoose.Schema.Types.Number,
   BasicCover:[ mongoose.Schema.Types.String],
+  OptionalCover:[ mongoose.Schema.Types.String],
  
 
 }

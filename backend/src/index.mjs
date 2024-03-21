@@ -412,6 +412,18 @@ app.get('/api/getTravelLength', async (req, res) => {
         res.status(500).json({ success: false, message: 'Error fetching house length.', error: error.message });
     }
 });
+
+//number of health quote
+app.get('/api/getHealthLength', async (req, res) => {
+    try {
+        const healthL = await HealthCareInsurance.find();
+        const healthLength = healthL.length;
+        res.json({ success: true, healthlength: healthLength });
+    } catch (error) {
+        console.error('Error fetching house length:', error);
+        res.status(500).json({ success: false, message: 'Error fetching house length.', error: error.message });
+    }
+});
 //get all personal data
 
 app.get('/api/getAllInsuranceWithPersonalData', async (req, res) => {

@@ -393,18 +393,28 @@ useEffect(() => {
     });
 }, []);
 
-  const [messageCount, setMessageCount] = useState(null);
+  // const [messageCount, setMessageCount] = useState(null);
+
+  // useEffect(() => {
+  //   axios.get('http://localhost:3003/api/getHealthLength')
+  //     .then(response => {
+  //       setMessageCount(response.data.messageLength);
+  //     })
+  //     .catch(error => {
+  //       console.error('Error fetching message count:', error);
+  //     });
+  // }, []);
+  const [healthCount, setHealthCount] = useState(null);
 
   useEffect(() => {
-    axios.get('http://localhost:3003/api/engthmessages')
+    axios.get('http://localhost:3003/api/getHealthLength')
       .then(response => {
-        setMessageCount(response.data.messageLength);
+        setHealthCount(response.data.healthlength);
       })
       .catch(error => {
-        console.error('Error fetching message count:', error);
+        console.error('Error fetching health count:', error);
       });
   }, []);
-
   return (
     <div className='grid-containerper'>
       <Header toggleSidebar={toggleSidebar} /> {/* Pass toggleSidebar function */}
@@ -444,7 +454,7 @@ useEffect(() => {
               <h3>Healthcare Quotes</h3>
               <BsPeopleFill className='card_iconper'/>
             </div>
-            <h1>{viewsCount !== null ? viewsCount : 'Loading...'}</h1>
+            <h1>{healthCount !== null ? healthCount : 'Loading...'}</h1>
             </Link>
           </div>
           <div className='cardeeper'>
@@ -464,13 +474,6 @@ useEffect(() => {
             </div>
             <h1>{viewsCount !== null ? viewsCount : 'Loading...'}</h1>
             </Link>
-          </div>
-          <div className='cardeeper'>
-            <div className='card-innerper'>
-              <h3>Messages</h3>
-              <BsFillBellFill className='card_iconper'/>
-            </div>
-            <h1>{messageCount !== null ? messageCount : 'Loading...'}</h1>
           </div>
         </div>
         <div className='chartsper'></div>
