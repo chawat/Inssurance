@@ -45,6 +45,8 @@ import Motoradmin from './Admin/components/Motoradmin';
 import Healthcareadmin from './Admin/components/HealthCareadmin';
 import Termlifeadmin from './Admin/components/TermLifeadmin';
 import Personalaccadmin from './Admin/components/PersonalAccadmin';
+import Moneyadmin from './Admin/components/moneyadmin';
+
 function withNavbarFooter(Component) {
   return function WithNavbarFooter(props) {
     const path = window.location.pathname;
@@ -136,6 +138,8 @@ function App() {
           <Route path="/dashboard/quotes/healthcare" element={<Healthcareadmin/>} />
           <Route path="/dashboard/quotes/termlife" element={<Termlifeadmin/>} />
           <Route path="/dashboard/quotes/personalacc" element={<Personalaccadmin/>} />
+
+          <Route path="/dashboard/quotes/money" element={<Moneyadmin/>} />
 
         </Routes>
       </div>

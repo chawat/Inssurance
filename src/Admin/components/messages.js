@@ -1,10 +1,9 @@
-// Messagesus.js
-
 import React, { useState, useEffect } from "react";
 import axios from 'axios';
 import NavigationMenu from '../NavigationMenu';
-import './MessagesusStyles.css'; // Import the CSS file
 import Header from '../Header';
+import './MessagesusStyles.css'; // Import the CSS file
+import './Houseadmin.css';
 
 const Messagesus = () => {
   const [messages, setMessages] = useState([]);
@@ -39,25 +38,36 @@ const Messagesus = () => {
   };
 
   return (
-    <div className='grid-containerme'>
-      <Header toggleSidebar={toggleSidebar} /> {/* Pass toggleSidebar function */}
+    <div className='grid-containerhouse'>
+      <Header toggleSidebar={toggleSidebar} />
       <NavigationMenu openSidebarToggle={openSidebarToggle} toggleSidebar={toggleSidebar} />
-      <main className='main-containerme'>
-        <div className="contentme">
+      <main className='main-containerhouse'>
+        <div className="contenthouse">
           {messages.length ? (
-            <ul className="message-list">
-              {messages.map((message, index) => (
-                <li key={index}>
-                  <div className="message-box">
-                    <div>FullName: {message.FullName}</div>
-                    <div>Email: {message.Email}</div>
-                    <div>Mobile: {message.Mobile}</div>
-                    <div>Message: {message.Message}</div>
-                    <button onClick={() => handleDoneClick(message._id)}>Done</button>
-                  </div>
-                </li>
-              ))}
-            </ul>
+            <table className="house-table">
+              <thead>
+                <tr>
+                  <th>FullName</th>
+                  <th>Email</th>
+                  <th>Mobile</th>
+                  <th>Message</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                {messages.map((message, index) => (
+                  <tr key={index}>
+                    <td>{message.FullName}</td>
+                    <td>{message.Email}</td>
+                    <td>{message.Mobile}</td>
+                    <td>{message.Message}</td>
+                    <td>
+                      <button onClick={() => handleDoneClick(message._id)}>Done</button>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           ) : (
             <p className="empty-message">No messages available.</p>
           )}

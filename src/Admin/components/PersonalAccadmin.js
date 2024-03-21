@@ -67,6 +67,7 @@ const Personalaccadmin = () => {
                     <th>Currency</th>
                     <th>Sum Insured</th>
                     <th>Basic Cover</th>
+                    <th>Optional Cover</th>
                     <th>Action</th>
                   </tr>
                 </thead>
@@ -87,6 +88,13 @@ const Personalaccadmin = () => {
                       <td>
                         <ul>
                           {quote.BasicCover && quote.BasicCover.map((cover, coverIndex) => (
+                            <li key={coverIndex}>{cover}</li>
+                          ))}
+                        </ul>
+                      </td>
+                      <td>
+                        <ul>
+                          {quote.OptionalCover && quote.OptionalCover.map((cover, coverIndex) => (
                             <li key={coverIndex}>{cover}</li>
                           ))}
                         </ul>

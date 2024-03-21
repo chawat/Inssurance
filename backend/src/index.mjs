@@ -424,6 +424,150 @@ app.get('/api/getHealthLength', async (req, res) => {
         res.status(500).json({ success: false, message: 'Error fetching house length.', error: error.message });
     }
 });
+
+//number of health quote
+app.get('/api/getPersonalLength', async (req, res) => {
+    try {
+        const personalL = await PersonalInsurance.find();
+        const personalLength = personalL.length;
+        res.json({ success: true, personallength: personalLength });
+    } catch (error) {
+        console.error('Error fetching house length:', error);
+        res.status(500).json({ success: false, message: 'Error fetching house length.', error: error.message });
+    }
+});
+
+//number of termlife quote
+app.get('/api/getTermLength', async (req, res) => {
+    try {
+        const termL = await TermLifeInsurance.find();
+        const termLength = termL.length;
+        res.json({ success: true, termlength: termLength });
+    } catch (error) {
+        console.error('Error fetching house length:', error);
+        res.status(500).json({ success: false, message: 'Error fetching house length.', error: error.message });
+    }
+});
+
+//number of cargo quote
+app.get('/api/getCargoLength', async (req, res) => {
+    try {
+        const cargoCount = await BusinessInsurance.aggregate([
+            { $match: { Type: 'Cargo' } }, // Match documents where Type is 'Cargo'
+            { $count: 'cargolength' } // Count the matched documents
+        ]);
+
+        // If cargoCount is empty, return 0 as the count
+        const cargoLength = cargoCount.length > 0 ? cargoCount[0].cargolength : 0;
+
+        res.json({ success: true, cargolength: cargoLength });
+    } catch (error) {
+        console.error('Error fetching cargo length:', error);
+        res.status(500).json({ success: false, message: 'Error fetching cargo length.', error: error.message });
+    }
+});
+
+// API endpoint for getting the count of documents with Type "Group Health"
+app.get('/api/getGroupHealthLength', async (req, res) => {
+    try {
+        const groupHealthCount = await BusinessInsurance.aggregate([
+            { $match: { Type: 'Group Health' } }, // Match documents where Type is 'Group Health'
+            { $count: 'groupHealthLength' } // Count the matched documents
+        ]);
+
+        // If groupHealthCount is empty, return 0 as the count
+        const groupHealthLength = groupHealthCount.length > 0 ? groupHealthCount[0].groupHealthLength : 0;
+
+        res.json({ success: true, groupHealthLength: groupHealthLength });
+    } catch (error) {
+        console.error('Error fetching group health length:', error);
+        res.status(500).json({ success: false, message: 'Error fetching group health length.', error: error.message });
+    }
+});
+//number of Group Personal quote
+app.get('/api/getGroupPersonalLength', async (req, res) => {
+    try {
+        const groupPersonalCount = await BusinessInsurance.aggregate([
+            { $match: { Type: 'Group Personal' } }, // Match documents where Type is 'Group Personal'
+            { $count: 'groupPersonalLength' } // Count the matched documents
+        ]);
+
+        // If groupPersonalCount is empty, return 0 as the count
+        const groupPersonalLength = groupPersonalCount.length > 0 ? groupPersonalCount[0].groupPersonalLength : 0;
+
+        res.json({ success: true, groupPersonalLength: groupPersonalLength });
+    } catch (error) {
+        console.error('Error fetching group personal length:', error);
+        res.status(500).json({ success: false, message: 'Error fetching group personal length.', error: error.message });
+    }
+});
+
+//number of Machine quote
+app.get('/api/getMachineLength', async (req, res) => {
+    try {
+        const machineCount = await BusinessInsurance.aggregate([
+            { $match: { Type: 'Machine' } }, // Match documents where Type is 'Machine'
+            { $count: 'machineLength' } // Count the matched documents
+        ]);
+
+        // If machineCount is empty, return 0 as the count
+        const machineLength = machineCount.length > 0 ? machineCount[0].machineLength : 0;
+
+        res.json({ success: true, machineLength: machineLength });
+    } catch (error) {
+        console.error('Error fetching machine length:', error);
+        res.status(500).json({ success: false, message: 'Error fetching machine length.', error: error.message });
+    }
+});
+//number of Money quote
+app.get('/api/getMoneyLength', async (req, res) => {
+    try {
+        const moneyCount = await BusinessInsurance.aggregate([
+            { $match: { Type: 'Money' } }, // Match documents where Type is 'Money'
+            { $count: 'moneyLength' } // Count the matched documents
+        ]);
+
+        // If moneyCount is empty, return 0 as the count
+        const moneyLength = moneyCount.length > 0 ? moneyCount[0].moneyLength : 0;
+
+        res.json({ success: true, moneyLength: moneyLength });
+    } catch (error) {
+        console.error('Error fetching money length:', error);
+        res.status(500).json({ success: false, message: 'Error fetching money length.', error: error.message });
+    }
+});
+
+
+//number of Motor quote
+app.get('/api/getMotorfleetLength', async (req, res) => {
+    try {
+        const motorCount = await BusinessInsurance.aggregate([
+            { $match: { Type: 'Motor' } }, // Match documents where Type is 'Motor'
+            { $count: 'motorLength' } // Count the matched documents
+        ]);
+
+        // If motorCount is empty, return 0 as the count
+        const motorLength = motorCount.length > 0 ? motorCount[0].motorLength : 0;
+
+        res.json({ success: true, motorLength: motorLength });
+    } catch (error) {
+        console.error('Error fetching motor length:', error);
+        res.status(500).json({ success: false, message: 'Error fetching motor length.', error: error.message });
+    }
+});
+
+//get data Money
+app.get('/api/getMoneyData', async (req, res) => {
+    try {
+        const moneyData = await BusinessInsurance.find({ Type: 'Money' }); // Find documents where Type is 'Money'
+        res.json({ success: true, moneyData: moneyData });
+    } catch (error) {
+        console.error('Error fetching money data:', error);
+        res.status(500).json({ success: false, message: 'Error fetching money data.', error: error.message });
+    }
+});
+
+
 //get all personal data
 
 app.get('/api/getAllInsuranceWithPersonalData', async (req, res) => {

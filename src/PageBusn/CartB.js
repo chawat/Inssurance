@@ -22,7 +22,7 @@ const products = [
 		image: GroupP,
     type:"/DetailB",
     typee:"/BQDetail",
-	nameee:"Group Personal Insurance",
+	nameee:"Group Personal",
 	},
 	{
 		id: 2,
@@ -34,7 +34,7 @@ const products = [
 		image: GroupP,
     type:"/DetailB",
     typee:"/BQDetail",
-	nameee:"Group Healthcare Insurance",
+	nameee:"Group Health",
 	},
 	{
 		id: 3,
@@ -58,7 +58,7 @@ const products = [
 		image: Money,
     type:"/DetailB",
     typee:"/BQDetail",
-	nameee:"Money Inssurance"
+	nameee:"Money"
 	},
 	{
 		id: 5,
@@ -70,7 +70,7 @@ const products = [
 		image: Machinery,
     type:"/DetailB",
     typee:"/BQDetail",
-	nameee:"Machinery Breakdown Insurance"
+	nameee:"Machine"
 	},
 	{
 		id: 6,

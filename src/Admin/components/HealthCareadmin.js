@@ -63,6 +63,10 @@ const Healthcareadmin = () => {
                     <th>Mobile</th>
                     <th>Date of Birth</th>
                     <th>Occupation</th>
+                    <th>Hospital Network</th>
+                    <th>Hospitalization Class</th>
+                    <th>Cover type</th>
+                    <th>Additional Cover</th>
                     <th>Optional Cover</th>
                     <th>Action</th>
                   </tr>
@@ -78,6 +82,18 @@ const Healthcareadmin = () => {
                       <td>{quote.matchedPersonals && quote.matchedPersonals[0].Mobile}</td>
                       <td>{quote.matchedPersonals && quote.matchedPersonals[0].DateOfBirth}</td>
                       <td>{quote.matchedPersonals && quote.matchedPersonals[0].Occupation}</td>
+                      <td>{quote.HospitalNetwork}</td>
+                      <td>{quote.HospitalizationClass}</td>
+                      <td>{quote.Covertype}</td>
+                      <td>
+                        {quote.AdditionalCover && (
+                          <ul>
+                            {quote.AdditionalCover.map((cover, coverIndex) => (
+                              <li key={coverIndex}>{cover}</li>
+                            ))}
+                          </ul>
+                        )}
+                      </td>
                       <td>
                         {quote.OptionalCover && (
                           <ul>

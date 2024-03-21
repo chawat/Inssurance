@@ -393,19 +393,34 @@ useEffect(() => {
     });
 }, []);
 
-  // const [messageCount, setMessageCount] = useState(null);
+const [termCount, setTermCount] = useState(null);
 
-  // useEffect(() => {
-  //   axios.get('http://localhost:3003/api/getHealthLength')
-  //     .then(response => {
-  //       setMessageCount(response.data.messageLength);
-  //     })
-  //     .catch(error => {
-  //       console.error('Error fetching message count:', error);
-  //     });
-  // }, []);
-  const [healthCount, setHealthCount] = useState(null);
+useEffect(() => {
+  axios.get('http://localhost:3003/api/getTermLength')
+    .then(response => {
+      setTermCount(response.data.termlength);
+    })
+    .catch(error => {
+      console.error('Error fetching term count:', error);
+    });
+}, []);
 
+  
+
+  const [personalCount, setPersonalCount] = useState(null);
+
+useEffect(() => {
+  axios.get('http://localhost:3003/api/getPersonalLength')
+    .then(response => {
+      setPersonalCount(response.data.personallength);
+    })
+    .catch(error => {
+      console.error('Error fetching personal count:', error);
+    });
+}, []);
+
+
+const [healthCount, setHealthCount] = useState(null);
   useEffect(() => {
     axios.get('http://localhost:3003/api/getHealthLength')
       .then(response => {
@@ -463,7 +478,7 @@ useEffect(() => {
               <h3>Personal accident Quotes</h3>
               <BsPeopleFill className='card_iconper'/>
             </div>
-            <h1>{viewsCount !== null ? viewsCount : 'Loading...'}</h1>
+            <h1>{personalCount !== null ? personalCount : 'Loading...'}</h1>
             </Link>
           </div>
           <div className='cardeeper'>
@@ -472,8 +487,8 @@ useEffect(() => {
               <h3>Termlife Quotes</h3>
               <BsPeopleFill className='card_iconper'/>
             </div>
-            <h1>{viewsCount !== null ? viewsCount : 'Loading...'}</h1>
-            </Link>
+            <h1>{termCount !== null ? termCount : 'Loading...'}</h1>        
+                </Link>
           </div>
         </div>
         <div className='chartsper'></div>
