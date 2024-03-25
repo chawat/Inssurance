@@ -56,9 +56,9 @@ const Home = () => {
         </div>     
        
         
-       <div className='desc'>
-            <h2>PERFECT INSURANCE SERVICES</h2>
-            <div>Welcome to NextGuard, where safeguarding your peace of mind is our priority.
+       <div className='desceab'>
+            <span>PERFECT INSURANCE SERVICES</span>
+            <div className='texteab'>Welcome to NextGuard, where safeguarding your peace of mind is our priority.
                Explore our diverse range of insurance options tailored to fit your needs, including auto, home, life, health,
                 and more. With our expertise and personalized service, rest assured knowing you're protected every step of the way.
                  Join thousands of satisfied customers who trust us to navigate life's uncertainties.

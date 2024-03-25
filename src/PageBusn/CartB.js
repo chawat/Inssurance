@@ -167,7 +167,7 @@ const Cart = () => {
 									product.image
 								}
 							/>
-							<div className="overlay"></div>
+							<div className="ooverlaybus"></div>
 							<h4 className="product-name">
 								{product.name}
 							</h4>

@@ -173,15 +173,24 @@ main {
   }
 
 
- .ooverlay {
+  .ooverlay {
 	position: absolute;
 	top: 0;
 	left: 0;
 	height:300px;
 	flex-basis: 25%;
-	background-color: rgba(0, 0, 0, 0.9);
+	background-color: rgba(0, 0, 0, 0.5);
+	/* z-index: 1000; */
   }
-
+  .ooverlaybus {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top: 10px; /* Adjust margin to create space between image and overlay */
+    height: calc(100% - 10px); /* Ensure the overlay covers the entire product */
+    width: calc(100% - 10px); /* Ensure the overlay covers the entire product */
+    background-color: rgba(0, 0, 0, 0.3);
+}
   .product::before {
 	content: "";
 	position: absolute;
@@ -218,6 +227,7 @@ main {
   margin-left: 10px;
 	/* padding: 5px 10px;  */
   }
+
 
   
   .product:hover .product-name {
