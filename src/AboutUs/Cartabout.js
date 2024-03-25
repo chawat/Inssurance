@@ -11,47 +11,46 @@ const products = [
 		name: "Mission",
 		rating: 4.3,
 		description:
-			"Our Mission is to help people manage the risks of everyday life, recover from the unexpected and preserve their lifetime financial Security.",
-		price: 199,
+		"Our Mission is to help people manage the risks of everyday life, recover from the unexpected and preserve their lifetime financial Security.",		price: 199,
 		image: Healthh,
-    type:"/HealthcareInsurance",
-	typee:"/MotorQu",
+		type: "/HealthcareInsurance",
+		typee: "/MotorQu",
 	},
 	{
 		id: 2,
 		name: "Vision",
 		rating: 4.2,
 		description:
-			"Our Vision is to be a Regional Insurance Financial Services Leader, offering Innovative and Effective opportunities for Protection, Savings and Investment, consequently providing Security for all of our Stakeholders.",
-		price: 229,
+			"Our Vision is to become a regional leader in insurance and financial services, providing innovative opportunities ensuring security for all stakeholders.",
+	
 		image: Motor,
-    type:"/Motor",
-	typee:"/MotorQu",
+		type: "/Motor",
+		typee: "/MotorQu",
 	},
 	{
 		id: 3,
 		name: "Growth & Profitability",
 		rating: 3.2,
 		description:
-			"Achieve a steady Growth and increase Profitability to maintain Financial Strength and Sustainable Development.",
-		price: 99,
+		"Driven by a commitment to excellence, we strive to achieve steady growth and increased profitability fostering sustainable development for the benefit of all.",		
 		image: House,
-    type:"/House",
-	typee:"/MotorQu",
+		type: "/House",
+		typee: "/MotorQu",
 	},
 	{
 		id: 4,
 		name: "Quality",
 		rating: 4.8,
 		description:
-			"Provide the Finest Services to our Business Partners and Customers coupled with Professionalism and Excellence",
-		price: 119,
+		"At the core of our operations lies an unwavering dedication to quality. We continuously innovate and refine our processes to deliver the finest services  focusing on excellence.",
 		image: Termlife,
-    type:"/Personal",
-	typee:"/MotorQu",
+		type: "/Personal",
+		typee: "/MotorQu",
 	},
-	
 ];
+
+
+
 const Cartabout = () => {
 
 	
