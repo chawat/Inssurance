@@ -21,17 +21,18 @@
 .grid-containervi {
   display: grid;
   grid-template-columns: 260px 1fr;
-  grid-template-rows: auto 1fr;
+  grid-template-rows: auto auto; /* Adjust the grid template rows */
   grid-template-areas:
     'sidebar header'
     'sidebar main';
   height: 100vh;
+  overflow: hidden; /* Remove the scrollbars */
 }
 
 .main-containervi {
   grid-area: main;
-  overflow-y: auto;
-  padding-left: 20px;
+  overflow: hidden; /* Remove the scrollbars */
+  padding: 20px;
   color: rgba(5, 5, 5, 0.95);
-  position: relative;
+  position: relative; /* Ensure the main container has a stacking context */
 }

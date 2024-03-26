@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import './navigationMenu.css'; 
 import { BsCart3, BsGrid1X2Fill, BsFillArchiveFill, BsFillGrid3X3GapFill, BsPeopleFill, 
   BsListCheck, BsMenuButtonWideFill, BsFillGearFill, BsX } from 'react-icons/bs';
+  import { IoMdLogOut } from "react-icons/io";
 
 const NavigationMenu = ({ openSidebarToggle, toggleSidebar }) => {
   // Function to handle the toggle of the sidebar
@@ -70,9 +71,9 @@ const NavigationMenu = ({ openSidebarToggle, toggleSidebar }) => {
           </Link>
         </li>
         <li className='sidebar-list-item'>
-          <a href="">
-            <BsFillGearFill className='icon'/> Setting
-          </a>
+         
+        <IoMdLogOut  className='icon'/>  <Link to='/Login'> Logout</Link>
+          
         </li>
       </ul>
     </aside>

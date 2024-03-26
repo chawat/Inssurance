@@ -8,7 +8,7 @@ body {
   grid-template-columns: auto 1fr;
   grid-template-rows: auto 1fr;
   grid-template-areas: "header header" "sidebar content";
-  min-height: 100vh; /* Set minimum height to fill the viewport */
+  min-height: 100%/* Set minimum height to fill the viewport */
 }
 
 .header {
@@ -80,6 +80,17 @@ body {
 }
 
 /* Adjust width of content area to accommodate sidebar */
-.main-containerhouse {
-  margin-left: 205px;
+
+/* Add a media query to adjust the margin-left for smaller screens */
+@media (max-width: 900px) {
+  .main-containerhouse {
+    margin-left: 0; /* Reset margin-left for smaller screens */
+  }
+}
+
+/* Adjust the width of the content area to accommodate sidebar for larger screens */
+@media (min-width: 646px) {
+  .main-containerhouse {
+    margin-left: 205px; /* Adjust margin-left to accommodate sidebar */
+  }
 }

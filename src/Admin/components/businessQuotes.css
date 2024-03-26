@@ -1,23 +1,25 @@
 /* businessQuotes.css */
 
+
+
+
 .grid-containerbus {
   display: grid;
   grid-template-columns: 260px 1fr;
-  grid-template-rows: auto 1fr;
+  grid-template-rows: auto auto; /* Adjust the grid template rows */
   grid-template-areas:
     'sidebar header'
     'sidebar main';
   height: 100vh;
+  overflow: hidden; /* Remove the scrollbars */
 }
 
 .main-containerbus {
   grid-area: main;
-  overflow-y: auto;
+  overflow: hidden; /* Remove the scrollbars */
   padding: 20px;
-  padding-top: 80px; /* Add padding from the top to avoid overlap with the header */
   color: rgba(5, 5, 5, 0.95);
   position: relative; /* Ensure the main container has a stacking context */
-  z-index: 100; /* Set a higher z-index than the sidebar */
 }
 
 .contentbus {
