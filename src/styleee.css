@@ -1,188 +1,189 @@
 @import url("https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;700&display=swap");
 
 * {
-	padding: 0;
-	margin: 0;
-	font-family: "Titillium Web", sans-serif;
-	box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: "Titillium Web", sans-serif;
+    box-sizing: border-box;
 }
 
 :root {
-	--main-color: #065a82;
-	--text-color: #232323;
-	--secondary-color: #0797b0;
+    --main-color: #065a82;
+    --text-color: #232323;
+    --secondary-color: #0797b0;
 }
 
 .App {
-	display: flex;
-	flex-direction: column;
+    display: flex;
+    flex-direction: column;
 }
 
-
-
 .btn {
-	border: none;
-	outline: none;
-	background: transparent;
-	cursor: pointer;
+    border: none;
+    outline: none;
+    background: transparent;
+    cursor: pointer;
     text-decoration: none;
     color: black;
 }
+
 .bodyyy {
-	background-color: #4CAF50; /* Green background */
-  }
-.shopping-cart-btn {
-	color: #fff;
-	display: flex;
+    background-color: #4CAF50; /* Green background */
 }
-.forp{
+
+.shopping-cart-btn {
+    color: #fff;
+    display: flex;
+}
+
+.forp {
     text-align: center;
     margin: 0;
     padding-bottom: 0;
 }
 
 .product-count {
-	margin-top: -5px;
-	width: 20px;
-	height: 20px;
-	border-radius: 12px;
-	background-color: var(--secondary-color);
-	overflow: hidden;
+    margin-top: -5px;
+    width: 20px;
+    height: 20px;
+    border-radius: 12px;
+    background-color: var(--secondary-color);
+    overflow: hidden;
 }
 
 main {
-	width: 100%;
-	margin: auto;
-	padding: 2rem 0;
+    width: 100%;
+    margin: auto;
+    padding: 2rem 0;
 }
+
 .titleee {
-	text-align: center;
+    text-align: center;
 }
+
 .title {
-	margin: 2rem 0;
+    margin: 2rem 0;
     font-size: 2rem;
     color: blue;
-	text-align: center;
-	border-bottom: 2px solid blue; /* Adjust the border style and color as needed */
-	padding-bottom: 10px; /* Add padding to create space between the text and the line */
-	display: inline-block;
-	
+    text-align: center;
+    border-bottom: 2px solid blue; /* Adjust the border style and color as needed */
+    padding-bottom: 10px; /* Add padding to create space between the text and the line */
+    display: inline-block;
 }
-.title h2 {
-	margin: 0; /* Remove default margin for the heading */
-	position: relative; /* Make the position relative to the container */
-  }
-  
-  .title h2::after {
-	content: ''; /* Add content for the pseudo-element */
-	position: absolute; /* Position the line relative to the heading */
-	left: 0; /* Align the line with the left edge of the heading */
-	bottom: -5px; /* Adjust the distance of the line from the bottom of the heading */
-	width: 100%; /* Set the width of the line to be the same as the heading */
-	height: 2px; /* Set the height of the line */
-	background-color: #333; /* Set the color of the line */
-  }
-.products {
-	display: flex;
-	align-items: center;
-	justify-content: flex-start;
-	flex-wrap: wrap;
-	width: 100%;
-	padding-left: 30px;
-}
-.product {
-	display: flex;
-	flex-direction: column;
-	justify-content: flex-end;
-	cursor: pointer;
-	height: 300px;
-	flex-basis: 25%;
-	/* padding: 10px; */
-	padding-right: 10px;
-	padding-top: 10px;
-	position: relative;
-	overflow: hidden;
-	transition: background-color 0.3s ease; 
-	 
-  }
-  .productt {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	cursor: pointer;
-	height: 300px;
-	flex-basis: 25%;
-	position: relative;
-	overflow: hidden;
-	transition: background-color 0.3s ease;
-	font-family: Arial, sans-serif; /* Choose a suitable font family */
-  }
-  
-  .productt span {
-	font-size: 28px; /* Adjust font size as needed */
-	color: #2c3e50; /* Dark gray color for better readability */
-	margin: 0 10px; /* Adjust margin between words */
-	text-transform: uppercase; /* Convert text to uppercase for emphasis */
-	font-weight: bold; /* Make text bold for better visibility */
-  }
-  
-  .productt::before {
-	content: "";
-	position: absolute;
-	top: 100%;
-	left: 0;
-	width: calc(100% - 10px);
-	height: 100%;
-	background-color: rgba(0, 0, 0, 0.5); /* Transparent dark color */
-	transition: top 0.5s ease; /* Smooth transition animation */
-	z-index: 1; /* Ensure the overlay appears above the product */
-  }
-  .productt:hover::before {
-	margin-top: 10px;
-	top: 0; /* Move the overlay to cover the product on hover */
-  }
 
+.title h2 {
+    margin: 0; /* Remove default margin for the heading */
+    position: relative; /* Make the position relative to the container */
+}
+
+.title h2::after {
+    content: ''; /* Add content for the pseudo-element */
+    position: absolute; /* Position the line relative to the heading */
+    left: 0; /* Align the line with the left edge of the heading */
+    bottom: -5px; /* Adjust the distance of the line from the bottom of the heading */
+    width: 100%; /* Set the width of the line to be the same as the heading */
+    height: 2px; /* Set the height of the line */
+    background-color: #333; /* Set the color of the line */
+}
+
+.products {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    width: 100%;
+    padding-left: 30px;
+}
+
+.product {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    cursor: pointer;
+    height: 300px;
+    flex-basis: 25%;
+    /* padding: 10px; */
+    padding-right: 10px;
+    padding-top: 10px;
+    position: relative;
+    overflow: hidden;
+    transition: background-color 0.3s ease;
+}
+
+.productt {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    height: 300px;
+    flex-basis: 25%;
+    position: relative;
+    overflow: hidden;
+    transition: background-color 0.3s ease;
+    font-family: Arial, sans-serif; /* Choose a suitable font family */
+}
+
+.productt span {
+    font-size: 28px; /* Adjust font size as needed */
+    color: #2c3e50; /* Dark gray color for better readability */
+    margin: 0 10px; /* Adjust margin between words */
+    text-transform: uppercase; /* Convert text to uppercase for emphasis */
+    font-weight: bold; /* Make text bold for better visibility */
+}
+
+.productt::before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: calc(100% - 10px);
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Transparent dark color */
+    transition: top 0.5s ease; /* Smooth transition animation */
+    z-index: 1; /* Ensure the overlay appears above the product */
+}
+
+.productt:hover::before {
+    margin-top: 10px;
+    top: 0; /* Move the overlay to cover the product on hover */
+}
 
 .product img {
-	width: 100%;
-	height: 100%; /* Make the image occupy the entire height of the container */
-	object-fit: cover;
-	
+    width: 100%;
+    height: 100%; /* Make the image occupy the entire height of the container */
+    object-fit: cover;
 }
 
 .product-image {
-	/* display: block; */
-	width: 100%;
-	height: 100%;
-	object-fit: contain;
-	background-color: #fff;
-	/* padding: 10px; */
-	/* padding-top: 10px; */
-	
+    /* display: block; */
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    background-color: #fff;
+    /* padding: 10px; */
+    /* padding-top: 10px; */
 }
+
 .overlayy {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 300px;
-	
-	background-color: rgba(0, 0, 0, 0.9);
-	
-  }
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 300px;
+    background-color: rgba(0, 0, 0, 0.9);
+}
 
+.ooverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 300px;
+    flex-basis: 25%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
 
-  .ooverlay {
-	position: absolute;
-	top: 0;
-	left: 0;
-	height:300px;
-	flex-basis: 25%;
-	background-color: rgba(0, 0, 0, 0.5);
-	/* z-index: 1000; */
-  }
-  .ooverlaybus {
+.ooverlaybus {
     position: absolute;
     top: 0;
     left: 0;
@@ -191,186 +192,222 @@ main {
     width: calc(100% - 10px); /* Ensure the overlay covers the entire product */
     background-color: rgba(0, 0, 0, 0.3);
 }
-  .product::before {
-	content: "";
-	position: absolute;
-	top: 100%;
-	left: 0;
-	width: calc(100% - 10px);
-	height: 100%;
-	background-color: rgba(0, 0, 0, 0.5); /* Transparent dark color */
-	transition: top 0.5s ease; /* Smooth transition animation */
-	z-index: 1; /* Ensure the overlay appears above the product */
-  }
-  .product:hover::before {
-	margin-top: 10px;
-	top: 0; /* Move the overlay to cover the product on hover */
-  }
-  
-  
-  .product:hover img {
-	filter: brightness(70%); /* Adjust brightness of image on hover */
-  }
+
+.product::before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: calc(100% - 10px);
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Transparent dark color */
+    transition: top 0.5s ease; /* Smooth transition animation */
+    z-index: 1; /* Ensure the overlay appears above the product */
+}
+
+.product:hover::before {
+    margin-top: 10px;
+    top: 0; /* Move the overlay to cover the product on hover */
+}
+
+.product:hover img {
+    filter: brightness(70%); /* Adjust brightness of image on hover */
+}
+
 .product-name {
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	font-size: 1rem;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    font-size: 1rem;
     color: rgb(247, 243, 243);
-	/* transform: translate(-50%, -50%);  */
-	/* overlay: ; */
-	/* background-color: rgba(255, 255, 255, 0.7);  */
-	background-color: transparent;
-	z-index: 1;
-	text-align: left; /* Center the text */
-  padding: 10px; 
-  margin-left: 10px;
-	/* padding: 5px 10px;  */
-  }
+    background-color: transparent;
+    z-index: 1;
+    text-align: left; /* Center the text */
+    padding: 10px;
+    margin-left: 10px;
+}
 
+.product:hover .product-name {
+    color: rgb(95, 209, 230); /* Change the color of the text when hovering over the product */
+}
 
-  
-  .product:hover .product-name {
-	color: rgb(95, 209, 230); /* Change the color of the text when hovering over the product */
-  }
 .rating {
-	display: flex;
+    display: flex;
 }
 
 .star {
-	width: 1.2rem;
-	height: 1.2rem;
-	position: relative;
+    width: 1.2rem;
+    height: 1.2rem;
+    position: relative;
 }
 
 .starEmpty,
 .starFull {
-	font-size: 1.2rem;
-	position: absolute;
-	overflow: hidden;
-	color: var(--secondary-color);
+    font-size: 1.2rem;
+    position: absolute;
+    overflow: hidden;
+    color: var(--secondary-color);
 }
 
 .product-price {
-	display: block;
-	margin: 10px 0;
-	justify-self: flex-end;
+    display: block;
+    margin: 10px 0;
+    justify-self: flex-end;
 }
 
+
+
+.product:hover .buttons {
+    opacity: 1;
+}
+
+.buttons .btn {
+    background-color: #dddddd;
+    padding: 10px 20px;
+    width: 50%;
+    font-size: 1.8rem;
+    border-radius: 3px;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Add transition */
+}
+
+.buttons .btn:hover {
+    background-color: var(--main-color);
+    color: #fff;
+}
+
+.buttons:hover {
+    opacity: 1; /* Ensure buttons remain visible when hovering over them */
+}
+
+.buttons .linkee {
+    background-color: #dddddd;
+    width: 50%;
+    font-size: 1rem;
+    border-radius: 3px;
+}
+
+/* Styles for the "About Us" section */
+.image-containerrr {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: 100vh; /* Example height; adjust as needed */
+}
+
+.product-imageee {
+    width: 50%;
+    height: 55%;
+    object-fit: contain;
+}
+
+.buttoon {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #191a1b;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    font-family: Arial, Helvetica, sans-serif;
+    z-index: 1;
+}
+
+.buttoon::before,
+.buttoon::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    height: 100%;
+    background-color: rgba(21, 117, 241, 0.5);
+    transition: width 0.3s ease; /* Smooth transition animation */
+    color: #333;
+    z-index: -1;
+}
+
+.buttoon::before {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.buttoon::after {
+    right: 50%;
+    transform: translateX(50%);
+}
+
+.buttoon:hover::before {
+    width: 0%; /* Shrink the left half of the background color on hover */
+}
+
+.buttoon:hover::after {
+    width: 0%; /* Shrink the right half of the background color on hover */
+}
+
+.buttons .buttoon {
+    background-color: #dddddd;
+    padding: 10px 20px;
+    width: 50%;
+    font-size: 1rem;
+    border-radius: 3px;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Add transition */
+    color: #000000;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.buttoon:hover {
+    color: blue; /* Change text color on hover */
+}
+
+@media only screen and (max-width: 768px) {
+    .title h2 {
+        font-size: 1.5rem; /* Adjust font size for smaller screens */
+    }
+
+    .products {
+        padding-left: 0; /* Remove left padding */
+        justify-content: center; /* Center products on smaller screens */
+    }
+
+    .product,
+    .productt {
+        flex-basis: 50%; /* Display two products per row on smaller screens */
+    }
+
+    .product-name {
+        padding: 5px 10px; /* Adjust padding for product name */
+        font-size: 0.9rem; /* Adjust font size for smaller screens */
+    }
+
+    .buttons {
+        width: 80%; /* Adjust width of buttons container */
+        left: 50%;
+        bottom: 20px; /* Position buttons at the bottom */
+        transform: translateX(-50%);
+    }
+
+    .buttons .btn,
+    .buttons .linkee {
+        width: 100%; /* Make buttons full width */
+        font-size: 1rem; /* Adjust font size for smaller screens */
+    }
+}
 .buttons {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	transition: opacity 0.5s;
-	opacity: 0;
-	width: 100%;
-	height: 100%;
-	background-color: transparent;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	gap: 10px;
-	z-index: 2;
-  }
-  
-  .product:hover .buttons {
-	opacity: 1;
-  }
-  
-  .buttons .btn {
-	background-color: #dddddd;
-	padding: 10px 20px;
-	width: 50%;
-	font-size: 1.8rem;
-	border-radius: 3px;
-	transition: background-color 0.3s ease, color 0.3s ease; /* Add transition */
-  }
-  
-  .buttons .btn:hover {
-	background-color: var(--main-color);
-	color: #fff;
-  }
-  
-  .buttons:hover {
-	opacity: 1; /* Ensure buttons remain visible when hovering over them */
-  }
-  
-.buttons .linkee{
-	background-color: #dddddd;
-	width: 50%;
-	font-size: 1rem;
-	border-radius: 3px;}
-
-	/* --------------------------- this for about us*/
-	.image-containerrr {
-		display: flex;
-		justify-content: center; /* Center horizontally */
-		align-items: center; /* Center vertically */
-		height: 100vh; /* Example height; adjust as needed */
-	  }
-	  
-	  .product-imageee {
-		width: 50%;
-		height: 55%;
-		object-fit: contain;
-	  }
-
-	  .buttoon {
-		display: inline-block;
-		padding: 10px 20px;
-		font-size: 18px;
-		background-color: #191a1b;
-		color: #fff;
-		border: none;
-		cursor: pointer;
-		position: relative;
-		overflow: hidden;
-		font-family: Arial, Helvetica, sans-serif;
-		z-index: 1;
-	  }
-	  
-	  .buttoon::before,
-	  .buttoon::after {
-		content: '';
-		position: absolute;
-		top: 0;
-		width: 100%;
-		font-family: Arial, Helvetica, sans-serif;
-		height: 100%;
-		background-color: rgba(21, 117, 241, 0.5);		transition: width 0.3s ease; /* Smooth transition animation */
-		color: #333;
-		z-index: -1;
-	  }
-	  
-	  .buttoon::before {
-		left: 50%;
-		transform: translateX(-50%);
-	  }
-	  
-	  .buttoon::after {
-		right: 50%;
-		transform: translateX(50%);
-	  }
-	  
-	  .buttoon:hover::before {
-		width: 0%; /* Shrink the left half of the background color on hover */
-	  }
-	  
-	  .buttoon:hover::after {
-		width: 0%; /* Shrink the right half of the background color on hover */
-	  }
-	  .buttons .buttoon {
-		background-color: #dddddd;
-		padding: 10px 20px;
-		width: 50%;
-		font-size: 1rem;
-		border-radius: 3px;
-		transition: background-color 0.3s ease, color 0.3s ease; /* Add transition */
-		color: #000000;
-		font-family: Arial, Helvetica, sans-serif;
-	  }
-	  .buttoon:hover {
-		color: blue; /* Change text color on hover */
-	}
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.5s;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    z-index: 2;
+}

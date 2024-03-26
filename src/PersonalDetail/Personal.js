@@ -58,7 +58,7 @@ and your Family from any unforeseen event that might occur.
           </ul> */}
           <div className='descdet'>
            <h2>PERSONAL INSURANCE</h2>
-            <div>Secure your happiness and peace of mind with NEXTGUARD's Personal Accident Insurance Plan. Offering guaranteed worldwide coverage, our plan protects you and your family from unexpected events that may arise. The basic cover includes protection against accidental death, while optional covers provide additional layers of security. These options include coverage for total or partial permanent disability resulting from an accident, passive war risk for death and disability, weekly indemnity for temporary disability following an accident, and medical expenses directly caused by a covered accident. To be eligible, applicants must be between 18 and 64 years old, and either Lebanese citizens or permanent residents in Lebanon.
+            <div className="motor-insurance-description">Secure your happiness and peace of mind with NEXTGUARD's Personal Accident Insurance Plan. Offering guaranteed worldwide coverage, our plan protects you and your family from unexpected events that may arise. The basic cover includes protection against accidental death, while optional covers provide additional layers of security. These options include coverage for total or partial permanent disability resulting from an accident, passive war risk for death and disability, weekly indemnity for temporary disability following an accident, and medical expenses directly caused by a covered accident. To be eligible, applicants must be between 18 and 64 years old, and either Lebanese citizens or permanent residents in Lebanon.
             </div>
 
 

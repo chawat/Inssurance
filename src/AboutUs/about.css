@@ -242,3 +242,26 @@
 	text-align: center;
 	margin: 10px;
   }
+  @media only screen and (max-width: 768px) {
+    .productsab {
+        padding-left: 10px; /* Adjust padding for smaller screens */
+        padding-right: 10px; /* Adjust padding for smaller screens */
+    }
+
+    .productab {
+        flex-basis: 100%; /* Make products full width on smaller screens */
+        margin: 2% 0; /* Add margin top and bottom */
+    }
+
+    .Container {
+        margin: 5%; /* Adjust margin for smaller screens */
+		 flex-direction: column;
+    }
+	.imgdesc, .desceab {
+        flex-basis: 100%;
+        max-width: 100%;
+    }
+    .image-sliderabout img {
+        height: 300px; /* Adjust image height for smaller screens */
+    }
+}

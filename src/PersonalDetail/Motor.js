@@ -81,7 +81,9 @@ This Insurance Plan covers Third Party Liability | Material Damages and/or Bodil
 
 <div className='descdet'>
            <h2>MOTOR INSURANCE</h2>
-<div>Drive confidently with NEXTGUARD's tailored Motor Insurance Plans, offering comprehensive coverage for your peace of mind. Our Motor All Risks plan covers own damage, fire, theft, and third-party liability, including material damage and bodily injuries. With essential features like compulsory insurance for bodily injuries and material damages, along with optional extras such as excess bodily injury coverage, we've got you covered. Extend your protection globally with the Motor Orange Card, providing liability coverage in countries like Syria, Jordan, and Egypt. Whether it's for private or commercial vehicles, NEXTGUARD offers flexible options to suit your needs. Drive with assurance and face the road ahead confidently with NEXTGUARD. </div>        
+<div className="motor-insurance-description">
+  Drive confidently with NEXTGUARD's tailored Motor Insurance Plans, offering comprehensive coverage for your peace of mind. Our Motor All Risks plan covers own damage, fire, theft, and third-party liability, including material damage and bodily injuries. With essential features like compulsory insurance for bodily injuries and material damages, along with optional extras such as excess bodily injury coverage, we've got you covered. Extend your protection globally with the Motor Orange Card. Whether it's for private or commercial vehicles, NEXTGUARD offers flexible options to suit your needs. Drive with assurance and face the road ahead confidently with NEXTGUARD.
+  </div>        
     <button className="buttoonper" onClick={() => window.location.href="/PQMDetail"}>
     <p className="forp">
         Request A Quote

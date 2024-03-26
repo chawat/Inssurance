@@ -63,12 +63,9 @@ const Cartabout = () => {
 				</h2>
 				
 				<div className="productsab">
-				
-					{products.map((product) => (
-						<div
-							className="productab"
-							key={product.id}>
-								<div class="image-containerrr">
+                    {products.map((product) => (
+                        <div className="productab" key={product.id}>
+                            <div className="image-containerrr">
 							<img
 								className="product-imageee"
 								src={
