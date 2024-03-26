@@ -1,70 +1,3 @@
-/* .grid-containerper {
-  display: grid;
-  grid-template-columns: 260px 1fr;
-  grid-template-rows: auto 1fr;
-  grid-template-areas:
-    'sidebar header'
-    'sidebar main';
-  height: 100vh;
-}
-
-.main-containerper {
-  grid-area: main;
-  overflow-y: auto;
-  padding: 20px;
-  padding-top: 80px; 
-  color: rgba(5, 5, 5, 0.95);
-  position: relative; 
-}
-
-.page-container {
-  display: flex;
-  height: 100%;
-}
-
-.menu {
-  width: 250px;
-  background-color: #333;
-  color: #fff;
-  position: fixed; 
-  top: 0; 
-  left: 0; 
-  bottom: 0;
-}
-
-.contentper {
-  grid-area: main;
-  overflow-y: auto;
-  padding: 20px;
-  color: rgba(5, 5, 5, 0.95);
-  position: relative; 
-  z-index: 100; 
-}
-
-.quote-box {
-  width: auto;
-  max-width: fit-content;
-  margin: 10px 0;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  background-color: #f9f9f9;
-  padding: 20px;
-  box-sizing: border-box;
-
-}
-
-.quote-box h2 {
-  margin-top: 0;
-}
-
-.quote-box ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-.quote-box ul li {
-  margin-bottom: 10px;
-} */
 /* Main Container */
 .main-containerper {
   grid-area: main;
@@ -100,8 +33,21 @@
   padding: 8px 15px;
   border-radius: 5px;
   height: 300px;
-  flex-basis: 25%; /* Adjust the width of each card */
+  flex-basis: 25%;
   background-color: rgb(255, 255, 255);
+  transition: background-color 0.3s, color 0.3s; /* Transition for smooth color change */
+}
+
+.cardeeper:hover {
+  background-color: #f0f0f0; /* Change background color on hover */
+}
+
+.cardeeper:hover h3 {
+  color: blue; /* Change text color of h3 on hover */
+}
+
+.cardeeper:hover h1 {
+  color: blue; /* Change text color of h1 on hover */
 }
 
 .card-innerper {
@@ -123,45 +69,61 @@
   height: 300px;
 }
 
-/* Media Queries */
-/* Medium <= 992px */
-@media screen and (max-width: 992px) {
+/* Media Queries for Responsive Design */
+
+/* Extra Small devices (portrait phones, less than 576px) */
+@media screen and (max-width: 576px) {
   .grid-containerper {
     grid-template-columns: 1fr;
-    grid-template-rows: 0.2fr 3fr;
+    grid-template-rows: auto auto;
     grid-template-areas: 'header' 'main';
   }
 
-  #sidebar {
-    display: none;
-  }
-
-  .menu-iconper {
-    display: inline;
-  }
-
-  .sidebar-titleper > span {
-    display: inline;
-  }
-}
-
-/* Small <= 768px */
-@media screen and (max-width: 768px) {
   .main-cardsper {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjust as needed */
     gap: 10px;
     margin-bottom: 0;
   }
 
-  .chartsper {
-    grid-template-columns: 1fr;
-    margin-top: 30px;
+  .cardeeper {
+    height: auto;
   }
 }
 
-/* Extra Small <= 576px */
-@media screen and (max-width: 576px) {
-  .hedaer-leftper {
-    display: none;
+/* Small devices (landscape phones, 576px and up) */
+@media screen and (min-width: 577px) and (max-width: 768px) {
+  .main-cardsper {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjust as needed */
+    gap: 10px;
+    margin-bottom: 0;
+  }
+  .grid-containerper {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas: 'header' 'main';
+  }
+  .cardeeper {
+    height: auto;
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media screen and (min-width: 769px) and (max-width: 992px) {
+  .main-cardsper {
+    grid-template-columns: repeat(2, 1fr); /* Two columns */
+    gap: 20px; /* Adjust as needed */
+  }
+  .grid-containerper {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas: 'header' 'main';
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media screen and (min-width: 993px) {
+  .main-cardsper {
+    grid-template-columns: repeat(3, 1fr); /* Three columns */
+    gap: 20px; /* Adjust as needed */
   }
 }

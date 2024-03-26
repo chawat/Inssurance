@@ -4,6 +4,7 @@ import axios from 'axios';
 import NavigationMenu from '../NavigationMenu';
 import './ViewsStyles.css'; // Import the CSS file
 import Header from '../Header';
+
 function Views() {
   const [statistics, setStatistics] = useState(null);
   const canvasRef = useRef(null);
@@ -30,7 +31,6 @@ function Views() {
         // If a Chart instance exists, destroy it before rendering the new chart
         chartInstanceRef.current.destroy();
       }
-      console.log("1");
       renderChart();
     }
   }, [statistics]); // Re-render the chart when statistics change
@@ -68,21 +68,23 @@ function Views() {
       console.error('Canvas element not found');
     }
   };
+
   const [openSidebarToggle, setOpenSidebarToggle] = useState(false);
 
   const toggleSidebar = () => {
     setOpenSidebarToggle(!openSidebarToggle);
   };
+
   return (
     <div className='grid-containervi'>
-    <Header toggleSidebar={toggleSidebar} /> {/* Pass toggleSidebar function */}
+      <Header toggleSidebar={toggleSidebar} /> {/* Pass toggleSidebar function */}
       <NavigationMenu openSidebarToggle={openSidebarToggle} toggleSidebar={toggleSidebar} />
       <main className='main-containervi'>
-      <div className="contentvi">
-        <h2>Insurance Views Statistics</h2>
-        <canvas ref={canvasRef} id="myChart" width="400" height="200"></canvas>
-      </div>
-    </main>
+        <div className="contentvi">
+          <h2>Insurance Views Statistics</h2>
+          <canvas ref={canvasRef} id="myChart"></canvas>
+        </div>
+      </main>
     </div>
   );
 }

@@ -1,267 +1,265 @@
 @import url("https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;700&display=swap");
 
 * {
-	padding: 0;
-	margin: 0;
-	font-family: "Titillium Web", sans-serif;
-	box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: "Titillium Web", sans-serif;
+    box-sizing: border-box;
 }
 
 :root {
-	--main-color: #065a82;
-	--text-color: #232323;
-	--secondary-color: #0797b0;
+    --main-color: #065a82;
+    --text-color: #232323;
+    --secondary-color: #0797b0;
 }
 
 .Appabout {
-	display: flex;
-	flex-direction: column;
+    display: flex;
+    flex-direction: column;
 }
 
-.forp{
+.forp {
     text-align: center;
     margin: 0;
     padding-bottom: 0;
 }
 
-
 .maineabout {
-	width: 100%;
-	margin: auto;
-	padding: 2rem 0;
+    width: 100%;
+    margin: auto;
+    padding: 2rem 0;
 }
-/* .body-div{
-	height: 700px;
-} */
+
 .titleab {
-	margin: 2rem 0;
+    margin: 2rem 0;
     font-size: 2rem;
     color: black;
     padding-left: 50px;
-	text-align: center;
+    text-align: center;
 }
 
 .productsab {
-	display: flex;
-	align-items: center;
-	justify-content: flex-start;
-	flex-wrap: wrap;
-	width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    width: 100%;
     padding-left: 50px;
     padding-right: 50px;
 }
-.productab {
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	cursor: pointer;
-	height: 400px;
-	flex-basis: 25%;
-	/* padding: 5px; */
-    padding-right: 3px;
-	border: 1px solid #fcfcfc;
-	background-color: #eee;
-	position: relative;
-	overflow: hidden;
-}
 
-/* .product {
-	background-color: #fff; 
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	cursor: pointer;
-	height: 550px;
-	flex-basis: 25%;
-	padding: 10px;
-	border: 4px solid #fff; 
-	position: relative;
-	overflow: hidden;
-  } */
+.productab {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    height: 400px;
+    flex-basis: 25%;
+    padding-right: 3px;
+    border: 1px solid #fcfcfc;
+    background-color: #eee;
+    position: relative;
+    overflow: hidden;
+}
 
 .productab > * {
-	color: var(--text-color);
+    color: var(--text-color);
 }
-
 
 .productab-name {
     margin: 0.5em;
     font-size: 1.5rem;
     color: black;
     text-align: center;
-    height: 20px; /* Set a fixed height for the product name */
- 
+    height: 20px;
 }
 
 .productab p {
     margin: 0;
-    padding: 0 5px; /* Adjust padding as needed */
-    height: 200px; /* Set a fixed height for the description container */
-    display: flex; /* Use flexbox */
-    text-align: center; /* Align text in the center */
-    overflow: hidden; /* Hide overflow if description is too long */
+    padding: 0 5px;
+    height: 200px;
+    display: flex;
+    text-align: center;
+    overflow: hidden;
 }
 
 .img-slider {
-	width: 100%;
-	height: 100%;
-	max-width: 6770px;
-	overflow: hidden;
-	border: 0px solid #ccc;
-	/* padding-top: 30px; */
-	display: flex;
-	justify-content: flex-end; /* Align to the right */
+    width: 100%;
+    height: 100%;
+    max-width: 6770px;
+    overflow: hidden;
+    border: 0px solid #ccc;
+    display: flex;
+    justify-content: flex-end;
 }
 
-  .image-container {
+.image-container {
     position: relative;
     width: 100%;
-	height: 100%;
-	
-	display: flex
-	
-  }
-  .image-containeer {
+    height: 100%;
+    display: flex;
+}
+
+.image-containeer {
     position: relative;
     width: 100%;
-	height: 100%;
-	
-	display: flex
-	
-  }
- 
+    height: 100%;
+    display: flex;
+}
 
-  .text {
-    position:absolute;
+.text {
+    position: absolute;
     width: 100%;
-	height:100%;
-	text-align: center;
-	background-color: rgba(0, 0, 0, 0.5);
-  }
-  .text h1{
-	position: relative;
-	top: 40%;
-	color: #ccc;
-  }
-  .text h2{
-	position: relative;
-	color: #ccc;
-	top:41%
-  }
-  .productab img{
-	width: 100%;
-	height: 100%; /* Maintain aspect ratio */
-	object-fit: cover; /* Ensure the image covers the entire container */
-	transition: transform 0.5s ease; /* Smooth transition effect */
-  }
-  .Container{
-	display: flex;
-	margin: 8%;
-	width: 80%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+}
 
-	
-  }
-  .borderline{
-	width: 400px;
-	height:400px;
-	margin-left: 42px;
-	margin-top: -98%;
-	margin-bottom: 10px;
-	border:1px solid rgb(219, 219, 219);
-	border-radius: 20px;
+.text h1 {
+    font-size: 2rem;
+    color: #ccc;
+    margin: 0;
+}
+
+.text h2 {
+    font-size: 1.5rem;
+    color: #ccc;
+    margin: 0;
+}
+
+.productab img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.Container {
+    display: flex;
+    margin: 8%;
+    width: 80%;
+}
+
+.borderline {
+    width: 400px;
+    height: 400px;
+    margin-left: 42px;
+    margin-top: -98%;
+    margin-bottom: 10px;
+    border: 1px solid rgb(219, 219, 219);
+    border-radius: 20px;
     z-index: 2;
-	position: relative;
+    position: relative;
 }
 
-.imgdesc img{
-	width: 100%;
-	height:100%;
-	border-radius: 20px;
-	z-index: 1;
-	position: relative;
+.imgdesc img {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    z-index: 1;
+    position: relative;
 }
-  .imgdesc{
-	width: 400px;
-	height:400px;
-	margin-left: 40px;
-	margin-top: 10px;
-	margin-bottom: 10px;
-  }
-  
 
-.desceab{
-	margin-left:100px;
+.imgdesc {
+    width: 400px;
+    height: 400px;
+    margin-left: 40px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.desceab {
+    margin-left: 100px;
     flex: 1;
-	width:300px;
-}
-.desceab span{
-	font-size: 45px;
-	color:black;
-	margin:0 0px;
-	
-	
-	font-weight:bold ;
+    width: 300px;
 }
 
-.texteab{
-	margin-top: 15px;
-	color: rgb(107, 102, 102);
+.desceab span {
+    font-size: 45px;
+    color: black;
+    margin: 0 0px;
+    font-weight: bold;
 }
-.product-imageee{
-		width: 100%;
-		height:100%;
-		object-fit: contain;
-	  }
 
-.image-containerrr img{
-	width:100%;
-	height: 200px;
+.texteab {
+    margin-top: 15px;
+    color: rgb(107, 102, 102);
 }
-.image-containerrr{
-	height: 200px;
+
+.product-imageee {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
+
+.image-containerrr img {
+    width: 100%;
+    height: 200px;
+}
+
+.image-containerrr {
+    height: 200px;
+}
+
 .image-sliderabout img {
-	width: 100%;
-	height: 700px; /* Maintain aspect ratio */
-	object-fit: cover; /* Ensure the image covers the entire container */
-	transition: transform 0.5s ease; /* Smooth transition effect */
-  }
-  .image-sliderabout {
-	width: 100%;
-	height: 100%;
-	max-width: 6770px;
-	margin: 0 auto;
-	overflow: hidden;
-	border: 0px solid #ccc;
-	/* padding-top: 30px; */
-	display: flex;
-	justify-content: flex-end; /* Align to the right */
-	padding-bottom: 30px;
-  }
-  h2{
-	text-align: center;
-	margin: 10px;
-  }
-  @media only screen and (max-width: 768px) {
-    .productsab {
-        padding-left: 10px; /* Adjust padding for smaller screens */
-        padding-right: 10px; /* Adjust padding for smaller screens */
-    }
+    width: 100%;
+    height: 700px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
 
+.image-sliderabout {
+    width: 100%;
+    height: 100%;
+    max-width: 6770px;
+    margin: 0 auto;
+    overflow: hidden;
+    border: 0px solid #ccc;
+    display: flex;
+    justify-content: flex-end;
+    padding-bottom: 30px;
+}
+
+h2 {
+    text-align: center;
+    margin: 10px;
+}
+
+@media only screen and (max-width: 768px) {
+    .productsab {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+	.borderline {
+        width: 80%; /* Adjust width to fit smaller screens */
+        max-width: 400px; /* Limit maximum width */
+        height: auto; /* Allow height to adjust accordingly */
+        margin: 20px auto; /* Center the element horizontally and adjust top margin */
+    }
     .productab {
-        flex-basis: 100%; /* Make products full width on smaller screens */
-        margin: 2% 0; /* Add margin top and bottom */
+        flex-basis: 100%;
+        margin: 2% 0;
     }
 
     .Container {
-        margin: 5%; /* Adjust margin for smaller screens */
-		 flex-direction: column;
+        margin: 5%;
+        flex-direction: column;
     }
-	.imgdesc, .desceab {
+
+    .imgdesc,
+    .desceab {
         flex-basis: 100%;
         max-width: 100%;
     }
+
     .image-sliderabout img {
-        height: 300px; /* Adjust image height for smaller screens */
+        height: 300px;
     }
+}
+.text h1 span {
+    font-size: 1.5rem;
+    color: #ccc;
+    margin-top: 10px;
 }

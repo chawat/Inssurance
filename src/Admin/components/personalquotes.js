@@ -446,7 +446,7 @@ const [healthCount, setHealthCount] = useState(null);
         </Link>
           </div>
           <div className='cardeeper'>
-          <Link to="/dashboard/quotes/Motor" className='cardeeper'>
+          <Link to="/dashboard/quotes/Motor" >
             <div className='card-innerper'>
               <h3>Motor Quotes</h3>
               <BsFillGrid3X3GapFill className='card_iconper'/>
@@ -455,7 +455,7 @@ const [healthCount, setHealthCount] = useState(null);
             </Link>
           </div>
           <div className='cardeeper'>
-          <Link to="/dashboard/quotes/travel" className='cardeeper'>
+          <Link to="/dashboard/quotes/travel">
             <div className='card-innerper'>
               <h3>Travel Quotes</h3>
               <BsPeopleFill className='card_iconper'/>
@@ -464,7 +464,7 @@ const [healthCount, setHealthCount] = useState(null);
             </Link>
           </div>
           <div className='cardeeper'>
-          <Link to="/dashboard/quotes/healthcare" className='cardeeper'>
+          <Link to="/dashboard/quotes/healthcare" >
             <div className='card-innerper'>
               <h3>Healthcare Quotes</h3>
               <BsPeopleFill className='card_iconper'/>
@@ -473,7 +473,7 @@ const [healthCount, setHealthCount] = useState(null);
             </Link>
           </div>
           <div className='cardeeper'>
-          <Link to="/dashboard/quotes/personalacc" className='cardeeper'>
+          <Link to="/dashboard/quotes/personalacc" >
             <div className='card-innerper'>
               <h3>Personal accident Quotes</h3>
               <BsPeopleFill className='card_iconper'/>
@@ -482,7 +482,7 @@ const [healthCount, setHealthCount] = useState(null);
             </Link>
           </div>
           <div className='cardeeper'>
-          <Link to="/dashboard/quotes/termlife" className='cardeeper'>
+          <Link to="/dashboard/quotes/termlife" >
             <div className='card-innerper'>
               <h3>Termlife Quotes</h3>
               <BsPeopleFill className='card_iconper'/>

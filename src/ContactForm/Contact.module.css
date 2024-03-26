@@ -16,15 +16,13 @@
   display: flex;
   flex-direction: column;
   gap: 24px;
+  margin-left: 20px; /* Add margin to create space between image and form */
 }
 
 .contact_image {
   margin-left: 20px;
   width: 600px;
   height: 555px;
-  /* display: flex;
-  flex-direction: column;
-  gap: 24px; */
 }
 
 .contact_form form {
@@ -64,4 +62,34 @@
   width: 100%;
   height: 100%; /* Ensure the image takes full height of its container */
   border-radius: 20px;
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .top_btn {
+    gap: 12px;
+  }
+
+  .contact_form {
+    width: 100%;
+    max-width: 400px; /* Limit form width on smaller screens */
+    margin: 20px 0; /* Add margin to create space between image and form/button */
+  }
+
+  .contact_image {
+    margin-top: 10px; /* Adjust margin-top for the desired distance */
+    margin-left: 0; /* Reset margin-left */
+    width: 100%;
+    max-width: 400px; /* Limit image width on smaller screens */
+  }
+
+  .submit_button_container {
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 20px; /* Add margin to create space between button and form */
+  }
 }

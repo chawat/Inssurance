@@ -25,7 +25,7 @@ const PersonalServices = () => {
   }, [images.length]);
 
   return (
-    <div className='body-div'>
+    <div className='home'>
     <div className="image-sliderabout">
       <div className="image-containeer">
         <img src={images[currentImageIndex]} alt={`Image ${currentImageIndex + 1}`} />

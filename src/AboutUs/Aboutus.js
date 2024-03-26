@@ -15,8 +15,7 @@ const Aboutus = () => {
       <div className="image-containeer">
         <img src={image1} alt="Thank you for your trust"/>
         <div className='text'>
-        <h1> Protecting Your Peace of Mind </h1>
-        <h2> At any cost</h2>
+        <h1> Protecting Your Peace of Mind <br/> <span>At any cost</span></h1>
         </div>
       </div>
     </div>

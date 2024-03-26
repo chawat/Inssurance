@@ -1,37 +1,23 @@
 .motor-insurance-quote-container {
-  width: 50%;
+  width: 90%;
+  max-width: 600px;
   margin: 0 auto;
   padding: 2rem;
   border: 1px solid #ccc;
   border-radius: 4px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-.container{
-  width: 100%;
-  margin: 0 auto;
-  padding: 2rem;
-  border: 0px solid #ccc;
-  border-radius: 4px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-.motor-insurance-quote-container h1 {
-  font-size: 2rem;
-  font-weight: bold;
-  margin-bottom: 2rem;
-  color: #3f51b5;
-}
 
-.motor-insurance-quote-container  {
+.motor-insurance-quote-container h2 {
   font-size: 1.5rem;
   font-weight: bold;
-  margin-top: 2rem;
   margin-bottom: 1rem;
   color: #3f51b5;
 }
 
 .motor-insurance-quote-container label {
   display: block;
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: bold;
   margin-bottom: 0.5rem;
   color: #333;
@@ -42,7 +28,7 @@
 .motor-insurance-quote-container input[type="date"],
 .motor-insurance-quote-container input[type="tel"],
 .motor-insurance-quote-container input[type="email"] {
-  width: calc(100% - 12px); /* Adjusted to accommodate borders */
+  width: 100%;
   padding: 0.5rem;
   font-size: 1rem;
   border: 1px solid #ccc;
@@ -81,23 +67,11 @@
   margin-right: 0;
 }
 
-/* Checkbox and Radio Button Styling */
-
-.input-row input[type="checkbox"],
-.input-row input[type="radio"] {
-  display: inline-block;
-  vertical-align: middle;
-}
-
-.input-row label {
-  display: inline-block;
-  vertical-align: middle;
-  margin-left: 0.5rem; /* Adjust the margin as needed */
-}
-.blackk{
+.blackk {
   color: black;
   font-size: 1rem;
 }
+
 .buttoonperQ {
   display: inline-block;
   padding: 10px 20px;
@@ -139,4 +113,19 @@
 
 .buttoonperQ:hover::after {
   width: 0%; /* Shrink the right half of the background color on hover */
+}
+@media only screen and (max-width: 768px) {
+  .motor-insurance-quote-container {
+    width: 90%;
+    padding: 1rem;
+  }
+
+  .input-row > div {
+    flex: 100%;
+    margin-right: 0;
+  }
+
+  .buttoonperQ {
+    width: 100%;
+  }
 }

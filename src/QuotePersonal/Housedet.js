@@ -218,7 +218,7 @@ const Housedet = () => {
 
         <div className="plan-details">
           <h2>PLAN DETAILS</h2>
-          <div className="motor-insurance-quote-container">
+          <div>
             <h2 className='blackk'>Basic Cover</h2>
             {BasicCover.map(checkbox => (
   <div key={checkbox.id}>

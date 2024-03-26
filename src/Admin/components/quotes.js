@@ -77,12 +77,12 @@ function Viewsquote() {
 
   return (
     <div className='grid-containerqu'>
-       <Header toggleSidebar={toggleSidebar} /> {/* Pass toggleSidebar function */}
+      <Header toggleSidebar={toggleSidebar} /> {/* Pass toggleSidebar function */}
       <NavigationMenu openSidebarToggle={openSidebarToggle} toggleSidebar={toggleSidebar} />
       <main className='main-containerqu'>
         <div className="contentquo">
-          <h2 style={{ marginBottom: '20px', fontSize: '24px' }}>Insurance quote Views Statistics</h2>
-          <canvas ref={canvasRef} id="myChart" width="400" height="200"></canvas>
+          <h2>Insurance quote Views Statistics</h2>
+          <canvas ref={canvasRef} id="myChart"></canvas>
         </div>
       </main>
     </div>

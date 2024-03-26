@@ -7,6 +7,7 @@ import './Houseadmin.css';
 
 const Messagesus = () => {
   const [messages, setMessages] = useState([]);
+  const [openSidebarToggle, setOpenSidebarToggle] = useState(false);
 
   useEffect(() => {
     const fetchMessages = async () => {
@@ -30,8 +31,6 @@ const Messagesus = () => {
       console.error('Error updating status:', error);
     }
   };
-
-  const [openSidebarToggle, setOpenSidebarToggle] = useState(false);
 
   const toggleSidebar = () => {
     setOpenSidebarToggle(!openSidebarToggle);

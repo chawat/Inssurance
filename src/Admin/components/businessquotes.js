@@ -188,7 +188,7 @@ useEffect(() => {
                </Link>
           </div>
           <div className='cardeeper'>
-          <Link to="/dashboard/quotes/grouphealth" className='cardeeper'>
+          <Link to="/dashboard/quotes/grouphealth">
             <div className='card-innerper'>
               <h3>Group Healthcare Quotes</h3>
               <BsFillGrid3X3GapFill className='card_iconper'/>
@@ -197,7 +197,7 @@ useEffect(() => {
             </Link>
           </div>
           <div className='cardeeper'>
-          <Link to="/dashboard/quotes/grouppersonal" className='cardeeper'>
+          <Link to="/dashboard/quotes/grouppersonal">
             <div className='card-innerper'>
               <h3>Group Personal Quotes</h3>
               <BsPeopleFill className='card_iconper'/>
@@ -206,7 +206,7 @@ useEffect(() => {
                </Link>
           </div>
           <div className='cardeeper'>
-          <Link to="/dashboard/quotes/machine" className='cardeeper'>
+          <Link to="/dashboard/quotes/machine">
             <div className='card-innerper'>
               <h3>Machinery Breakdown Quotes</h3>
               <BsPeopleFill className='card_iconper'/>
@@ -215,7 +215,7 @@ useEffect(() => {
                       </Link>
           </div>
           <div className='cardeeper'>
-          <Link to="/dashboard/quotes/money" className='cardeeper'>
+          <Link to="/dashboard/quotes/money">
             <div className='card-innerper'>
               <h3>Money Quotes</h3>
               <BsPeopleFill className='card_iconper'/>
@@ -224,7 +224,7 @@ useEffect(() => {
                         </Link>
           </div>
           <div className='cardeeper'>
-          <Link to="/dashboard/quotes/motorf" className='cardeeper'>
+          <Link to="/dashboard/quotes/motorf">
             <div className='card-innerper'>
               <h3>Motor Quotes</h3>
               <BsPeopleFill className='card_iconper'/>

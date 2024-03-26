@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './Navbar.css';
 import logo from '../images/logo.png';
@@ -6,6 +6,7 @@ import logo from '../images/logo.png';
 const Navbar = () => {
   const [activeLink, setActiveLink] = useState(null);
   const [navbarOpen, setNavbarOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   const handleClick = (link) => {
     setActiveLink(link);
@@ -16,8 +17,21 @@ const Navbar = () => {
     setNavbarOpen(!navbarOpen); // Toggle the navbar when the hamburger icon is clicked
   };
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const isScrolled = window.scrollY > 0;
+      setScrolled(isScrolled);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
-    <div className={`navbar ${navbarOpen ? 'open' : ''}`}>
+    <div className={`navbar ${navbarOpen ? 'open' : ''} ${scrolled ? 'scrolled' : ''}`}>
       <img src={logo} alt="Healthcare Insurance" className="logo-img" />
       <div className="hamburger" onClick={handleToggle}>
         <div className="bar"></div>

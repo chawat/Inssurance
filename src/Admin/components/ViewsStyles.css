@@ -5,34 +5,49 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-top: 20px; /* Add padding to the top */
+  padding-top: 20px;
 }
 
 .contentvi h2 {
-  margin-bottom: 20px; /* Add margin to the bottom of the h2 element */
-  font-size: 24px; /* Adjust the font size */
+  margin-bottom: 20px;
+  font-size: 24px;
 }
 
 .contentvi canvas {
-  max-width: 100%; /* Adjust the width of the canvas as needed */
+  max-width: 100%;
   height: auto;
 }
 
 .grid-containervi {
   display: grid;
   grid-template-columns: 260px 1fr;
-  grid-template-rows: auto auto; /* Adjust the grid template rows */
+  grid-template-rows: auto auto;
   grid-template-areas:
     'sidebar header'
     'sidebar main';
   height: 100vh;
-  overflow: hidden; /* Remove the scrollbars */
+  overflow: hidden;
 }
 
 .main-containervi {
   grid-area: main;
-  overflow: hidden; /* Remove the scrollbars */
+  overflow: auto;
   padding: 20px;
   color: rgba(5, 5, 5, 0.95);
-  position: relative; /* Ensure the main container has a stacking context */
+  position: relative;
+}
+
+/* Media Query for Responsive Design */
+@media screen and (max-width: 768px) {
+  .grid-containervi {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      'header'
+      'main'
+      'sidebar';
+  }
+
+  .main-containervi {
+    padding: 20px;
+  }
 }

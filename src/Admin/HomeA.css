@@ -38,8 +38,19 @@
     border-radius: 5px;
     height: 300px;
     flex-basis: 25%;
+    transition: transform 0.3s ease-in-out;
+  }
+  .cardee:hover {
+    transform: scale(1.05); /* Increase size on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow on hover */
+  }
+  .card-inner > h3, .card-inner > h1, .card-inner > svg {
+    transition: color 0.3s ease-in-out; /* Add transition effect */
   }
   
+  .cardee:hover .card-inner > h3, .cardee:hover .card-inner > h1, .cardee:hover .card-inner > svg {
+    color: blue; /* Change color to blue on hover */
+  }
   .cardee:first-child {
     background-color: rgb(255, 255, 255);
   }
@@ -102,25 +113,41 @@
   }
   /* Small <= 768px */
     
-  @media screen and (max-width: 768px) {
-    .main-cards {
-      grid-template-columns: 1fr;
-      gap: 10px;
-      margin-bottom: 0;
-    }
-  
-    .charts {
-      grid-template-columns: 1fr;
-      margin-top: 30px;
-    }
+ /* Small <= 768px */
+ /* Add your existing CSS styles here */
+
+/* Media Queries for Responsive Design */
+
+/* Small <= 768px */
+@media screen and (max-width: 768px) {
+  .main-cards {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+    margin-bottom: 0;
   }
-  
-  /* Extra Small <= 576px */
-  
-  @media screen and (max-width: 576px) {
-    .hedaer-left {
-      display: none;
-    }
+
+  .cardee {
+    height: auto;
   }
-  
-  
+
+  /* Show scroll bars when necessary */
+  .grid-containerhom {
+    overflow: auto;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+      'header'
+      'main';
+  }
+}
+
+/* Extra Small <= 576px */
+@media screen and (max-width: 576px) {
+  .grid-containerhom {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+      'header'
+      'main';
+  }
+}

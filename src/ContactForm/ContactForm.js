@@ -48,54 +48,49 @@ const [formData2, setFormData2] = useState({
 
   return (
     <section className={styles.container}>
-      <div className={styles.contact_form}>
-        <div className={styles.top_btn}>
-          <Button
-            text="VIA SUPPORT CHAT"
-            icon={<MdMessage fontSize="24px" />}
-          />
-          <Button text="VIA CALL" icon={<FaPhoneAlt fontSize="24px" />} />
-        </div>
+    <div className={styles.contact_image}>
+      <img src={Cont} alt="contact " />
+    </div>
+    <div className={styles.contact_form}>
+      <div className={styles.top_btn}>
         <Button
-          isOutline={true}
-          text="VIA EMAIL FORM"
-          icon={<HiMail fontSize="24px" />}
+          text="VIA SUPPORT CHAT"
+          icon={<MdMessage fontSize="24px" />}
         />
-
-        <form onSubmit={handleSubmit}>
-          
-          <div className={styles.form_control}>
+        <Button text="VIA CALL" icon={<FaPhoneAlt fontSize="24px" />} />
+      </div>
+      <Button
+        isOutline={true}
+        text="VIA EMAIL FORM"
+        icon={<HiMail fontSize="24px" />}
+      />
+  
+      <form onSubmit={handleSubmit}>
+        
+        <div className={styles.form_control}>
           <label htmlFor="firstName">Full Name*:</label>
-              <input type="text" id="fullName" name="FullName" value={formData2.FullName} onChange={handleInputChange2} required />
-            </div>
-          <div className={styles.form_control}>
-            <label htmlFor="email">Email</label>
-            <input type="email" name="Email" value={formData2.Email} onChange={handleInputChange2} required/>
-          </div>
-          <div className={styles.form_control}>
-            <label htmlFor="name">Mobile</label>
-            <input type="tel" name="Mobile" value={formData2.Mobile} onChange={handleInputChange2} required/>
-          </div>
-          <div className={styles.form_control}>
-            <label htmlFor="text">Message</label>
-            <textarea type="text" name="Message" rows="5"  value={formData2.Message} onChange={handleInputChange2}/>
-          </div>
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "end",
-            }}
-          >
-            <Button className="buttoon" text="SUBMIT" />
-          </div>
-
-   
-        </form>
-      </div>
-      <div className={styles.contact_image}>
-        <img src={Cont} alt="contact " />
-      </div>
-    </section>
+          <input type="text" id="fullName" name="FullName" value={formData2.FullName} onChange={handleInputChange2} required />
+        </div>
+        <div className={styles.form_control}>
+          <label htmlFor="email">Email</label>
+          <input type="email" name="Email" value={formData2.Email} onChange={handleInputChange2} required/>
+        </div>
+        <div className={styles.form_control}>
+          <label htmlFor="name">Mobile</label>
+          <input type="tel" name="Mobile" value={formData2.Mobile} onChange={handleInputChange2} required/>
+        </div>
+        <div className={styles.form_control}>
+          <label htmlFor="text">Message</label>
+          <textarea type="text" name="Message" rows="5"  value={formData2.Message} onChange={handleInputChange2}/>
+        </div>
+        <div
+          className="submit_button_container"
+        >
+          <Button className="buttoon" text="SUBMIT" />
+        </div>
+      </form>
+    </div>
+  </section>
   );
 };
 

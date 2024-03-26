@@ -28,7 +28,7 @@
 }
 #sidebar {
   grid-area: sidebar;
-  height: 100vh; /* Set height to 100% of viewport height */
+  height: 100%; /* Set height to 100% of viewport height */
   background-color: #263043;
   overflow-y: auto;
   transition: all 0.5s;
