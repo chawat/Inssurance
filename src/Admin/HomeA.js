@@ -57,44 +57,52 @@ const HomeA = () => {
       <NavigationMenu openSidebarToggle={openSidebarToggle} toggleSidebar={toggleSidebar} />
       <main className='main-containerhom'>
         <div className='main-cards'>
+        <Link to="/dashboard/quotes/personal">
           <div className='cardee'>
-          <Link to="/dashboard/quotes/personal">
+          
             <div className='card-inner'>
               <h3>Personal Quotes</h3>
               <BsFillArchiveFill className='card_icon'/>
             </div>
             <h1>{personalQuotesCount !== null ? personalQuotesCount : 'Loading...'}</h1>
-            </Link>
+           
           </div>
-          <div className='cardee'>
+          </Link>
           <Link to="/dashboard/quotes/business">
+          <div className='cardee'>
+          
             <div className='card-inner'>
               <h3>Business Quotes</h3>
               <BsFillGrid3X3GapFill className='card_icon'/>
             </div>
             <h1>{sumOfQuotes !== null ? sumOfQuotes : 'Loading...'}</h1>
-            </Link>
+           
           </div>
-          <div className='cardee'>
+          </Link>
           <Link to="/dashboard/views">
+          <div className='cardee'>
+          
 
             <div className='card-inner'>
               <h3>Views</h3>
               <BsPeopleFill className='card_icon'/>
             </div>
             <h1>{viewsCount !== null ? viewsCount : 'Loading...'}</h1>
-            </Link>
+            
           </div>
-          <div className='cardee'>
+          </Link>
           <Link to="/dashboard/messages">
+          <div className='cardee'>
+          
 
             <div className='card-inner'>
               <h3>Messages</h3>
               <BsFillBellFill className='card_icon'/>
             </div>
             <h1>{messageCount !== null ? messageCount : 'Loading...'}</h1>
-            </Link>
+            
           </div>
+          </Link>
         </div>
         <div className='charts'>
           {/* Charts will be added here */}

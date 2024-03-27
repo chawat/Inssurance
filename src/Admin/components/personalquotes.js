@@ -436,60 +436,72 @@ const [healthCount, setHealthCount] = useState(null);
       <NavigationMenu openSidebarToggle={openSidebarToggle} toggleSidebar={toggleSidebar} />
       <main className='main-containerper'>
         <div className='main-cardsper'>
+        <Link to="/dashboard/quotes/house">
           <div className='cardeeper'>
-          <Link to="/dashboard/quotes/house">
+         
             <div className='card-innerper'>
               <h3>House Quotes</h3>
               <BsFillArchiveFill className='card_iconper'/>
             </div>
             <h1>{houseLength !== null ? houseLength : 'Loading...'}</h1>
-        </Link>
+       
           </div>
-          <div className='cardeeper'>
+          </Link>
           <Link to="/dashboard/quotes/Motor" >
+          <div className='cardeeper'>
+          
             <div className='card-innerper'>
               <h3>Motor Quotes</h3>
               <BsFillGrid3X3GapFill className='card_iconper'/>
             </div>
             <h1>{sumOfQuotes !== null ? sumOfQuotes : 'Loading...'}</h1>
-            </Link>
+            
           </div>
-          <div className='cardeeper'>
+          </Link>
           <Link to="/dashboard/quotes/travel">
+          <div className='cardeeper'>
+          
             <div className='card-innerper'>
               <h3>Travel Quotes</h3>
               <BsPeopleFill className='card_iconper'/>
             </div>
             <h1>{viewsCount !== null ? viewsCount : 'Loading...'}</h1>
-            </Link>
+           
           </div>
-          <div className='cardeeper'>
+          </Link>
           <Link to="/dashboard/quotes/healthcare" >
+          <div className='cardeeper'>
+          
             <div className='card-innerper'>
               <h3>Healthcare Quotes</h3>
               <BsPeopleFill className='card_iconper'/>
             </div>
             <h1>{healthCount !== null ? healthCount : 'Loading...'}</h1>
-            </Link>
+            
           </div>
-          <div className='cardeeper'>
+          </Link>
           <Link to="/dashboard/quotes/personalacc" >
+          <div className='cardeeper'>
+          
             <div className='card-innerper'>
               <h3>Personal accident Quotes</h3>
               <BsPeopleFill className='card_iconper'/>
             </div>
             <h1>{personalCount !== null ? personalCount : 'Loading...'}</h1>
-            </Link>
+           
           </div>
-          <div className='cardeeper'>
+          </Link>
           <Link to="/dashboard/quotes/termlife" >
+          <div className='cardeeper'>
+          
             <div className='card-innerper'>
               <h3>Termlife Quotes</h3>
               <BsPeopleFill className='card_iconper'/>
             </div>
             <h1>{termCount !== null ? termCount : 'Loading...'}</h1>        
-                </Link>
+             
           </div>
+          </Link>
         </div>
         <div className='chartsper'></div>
       </main>

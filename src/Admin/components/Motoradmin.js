@@ -49,7 +49,7 @@ const Motoradmin = () => {
       <NavigationMenu openSidebarToggle={openSidebarToggle} toggleSidebar={toggleSidebar} />
       <main className='main-containerhouse'>
         <div className="contenthouse">
-          {quotes.Data.length > 0 && (
+          {quotes.Data.length > 0 ? (
             <div className="quote-boxhouse">
               <h2>Motor Insurance</h2>
               <table className="house-table">
@@ -79,7 +79,6 @@ const Motoradmin = () => {
                       <td>{quote.matchedPersonals && quote.matchedPersonals[0].DateOfBirth}</td>
                       <td>{quote.matchedPersonals && quote.matchedPersonals[0].Occupation}</td>
                       <td>{quote.PlanDetail}</td>
-                      
                       <td>
                         <button onClick={() => updateStatus('motor', quote._id)}>Done</button>
                       </td>
@@ -88,6 +87,8 @@ const Motoradmin = () => {
                 </tbody>
               </table>
             </div>
+          ) : (
+            <p className="empty-message">No motor insurance quotes available.</p>
           )}
         </div>
       </main>

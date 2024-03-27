@@ -49,7 +49,7 @@ const Traveladmin = () => {
       <NavigationMenu openSidebarToggle={openSidebarToggle} toggleSidebar={toggleSidebar} />
       <main className='main-containerhouse'>
         <div className="contenthouse">
-          {quotes.Data.length > 0 && (
+          {quotes.Data.length > 0 ? (
             <div className="quote-boxhouse">
               <h2>Travel Insurance</h2>
               <table className="house-table">
@@ -94,15 +94,15 @@ const Traveladmin = () => {
                       <td>{quote.GeographicalZone}</td>
                       <td>{quote.TripDuration}</td>
                       <td>
-                       
                         <button onClick={() => updateStatus('travel', quote._id)}>Done</button>
-                        
                       </td>
                     </tr>
                   ))}
                 </tbody>
               </table>
             </div>
+          ) : (
+            <p className="empty-message">No travel insurance quotes available.</p>
           )}
         </div>
       </main>

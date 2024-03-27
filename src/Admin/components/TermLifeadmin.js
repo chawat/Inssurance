@@ -49,7 +49,7 @@ const Termlifeadmin = () => {
       <NavigationMenu openSidebarToggle={openSidebarToggle} toggleSidebar={toggleSidebar} />
       <main className='main-containerhouse'>
         <div className="contenthouse">
-          {quotes.Data.length > 0 && (
+          {quotes.Data.length > 0 ? (
             <div className="quote-boxhouse">
               <h2>Term Life Insurance</h2>
               <table className="house-table">
@@ -85,8 +85,7 @@ const Termlifeadmin = () => {
                       <td>{quote.Currency}</td>
                       <td>{quote.SumInsured}</td>
                       <td>{quote.PolicyDuration}</td>
-                     
-                      <td>{quote.BasicCover }</td>
+                      <td>{quote.BasicCover}</td>
                       <td>
                         {quote.OptionalCover && quote.OptionalCover.length > 0 && (
                           <ul>
@@ -97,15 +96,15 @@ const Termlifeadmin = () => {
                         )}
                       </td>
                       <td>
-                       
                         <button onClick={() => updateStatus('termlife', quote._id)}>Done</button>
-                        
                       </td>
                     </tr>
                   ))}
                 </tbody>
               </table>
             </div>
+          ) : (
+            <p className="empty-message">No term life insurance quotes available.</p>
           )}
         </div>
       </main>

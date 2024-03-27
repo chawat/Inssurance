@@ -49,9 +49,9 @@ const Personalaccadmin = () => {
       <NavigationMenu openSidebarToggle={openSidebarToggle} toggleSidebar={toggleSidebar} />
       <main className='main-containerhouse'>
         <div className="contenthouse">
-          {quotes.Data.length > 0 && (
+          {quotes.Data.length > 0 ? (
             <div className="quote-boxhouse">
-              <h2>Personal accident Insurance</h2>
+              <h2>Personal Accident Insurance</h2>
               <table className="house-table">
                 <thead>
                   <tr>
@@ -107,6 +107,8 @@ const Personalaccadmin = () => {
                 </tbody>
               </table>
             </div>
+          ) : (
+            <p className="empty-message">No personal accident insurance quotes available.</p>
           )}
         </div>
       </main>

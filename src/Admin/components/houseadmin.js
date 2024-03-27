@@ -49,7 +49,7 @@ const Houseadmin = () => {
       <NavigationMenu openSidebarToggle={openSidebarToggle} toggleSidebar={toggleSidebar} />
       <main className='main-containerhouse'>
         <div className="contenthouse">
-          {quotes.houseData.length > 0 && (
+          {quotes.houseData.length > 0 ? (
             <div className="quote-boxhouse">
               <h2>House Insurance</h2>
               <table className="house-table">
@@ -104,15 +104,15 @@ const Houseadmin = () => {
                         )}
                       </td>
                       <td>
-                       
                         <button onClick={() => updateStatus('house', quote._id)}>Done</button>
-                        
                       </td>
                     </tr>
                   ))}
                 </tbody>
               </table>
             </div>
+          ) : (
+            <p className="empty-message">No quotes available.</p>
           )}
         </div>
       </main>

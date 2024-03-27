@@ -43,7 +43,7 @@ const Machineadmin = () => {
       <NavigationMenu openSidebarToggle={openSidebarToggle} toggleSidebar={toggleSidebar} />
       <main className='main-containerhouse'>
         <div className="contenthouse">
-          {quotes.length > 0 && (
+          {quotes.length > 0 ? (
             <div className="quote-boxhouse">
               <h2>Machine Insurance</h2>
               <table className="house-table">
@@ -77,6 +77,8 @@ const Machineadmin = () => {
                 </tbody>
               </table>
             </div>
+          ) : (
+            <p className="empty-message">No quotes available.</p>
           )}
         </div>
       </main>

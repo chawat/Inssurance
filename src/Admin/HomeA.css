@@ -52,7 +52,7 @@
     color: blue; /* Change color to blue on hover */
   }
   .cardee:first-child {
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(189, 189, 189);
   }
   
   .cardee:nth-child(2) {

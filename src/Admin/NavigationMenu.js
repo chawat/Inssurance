@@ -35,46 +35,58 @@ const NavigationMenu = ({ openSidebarToggle, toggleSidebar }) => {
       </div>
 
       <ul className='sidebar-list'>
+      <Link to="/HomeA" className="sidebar-link">
         <li className='sidebar-list-item'>
-          <Link to="/HomeA">
+          
             <BsGrid1X2Fill className='icon'/> Dashboard
-          </Link>         
+                
         </li>
+        </Link>
+        <Link to="/dashboard/quotes/personal" className="sidebar-link"> 
         <li className='sidebar-list-item'>
-          <Link to="/dashboard/quotes/personal">
+          
             <BsFillArchiveFill className='icon'/> Personal Quotes
-          </Link>
+         
         </li>
+        </Link>
+        <Link to="/dashboard/quotes/business"  className="sidebar-link">
         <li className='sidebar-list-item'>
-          <Link to="/dashboard/quotes/business">
+         
             <BsFillGrid3X3GapFill className='icon'/> Business Quotes
-          </Link>
+          
         </li>
+        </Link>
         {/* <li className='sidebar-list-item'>
           <Link to="/dashboard/quotes/house">
             <BsFillGrid3X3GapFill className='icon'/> House quotes
           </Link>
         </li> */}
-        <li className='sidebar-list-item'>
-          <Link to="/dashboard/views">
-            <BsPeopleFill className='icon'/> Views
-          </Link>
-        </li>
-        <li className='sidebar-list-item'>
-          <Link to="/dashboard/quoteviews">
-            <BsListCheck className='icon'/>Quotes Views
-          </Link>
-        </li>
-        <li className='sidebar-list-item'>
-          <Link to="/dashboard/messages">
-            <BsMenuButtonWideFill className='icon'/> Messages
-          </Link>
-        </li>
+         <Link to="/dashboard/views" className="sidebar-link">
         <li className='sidebar-list-item'>
          
-        <IoMdLogOut  className='icon'/>  <Link to='/Login'> Logout</Link>
+            <BsPeopleFill className='icon'/> Views
           
         </li>
+        </Link>
+        <Link to="/dashboard/quoteviews" className="sidebar-link">
+
+        <li className='sidebar-list-item'>
+            <BsListCheck className='icon'/>Quotes Views
+        </li>
+        </Link>
+        <Link to="/dashboard/messages" className="sidebar-link">
+
+        <li className='sidebar-list-item'>
+            <BsMenuButtonWideFill className='icon'/> Messages
+        </li>
+        </Link>
+        <Link to='/Login' className="sidebar-link">
+        <li className='sidebar-list-item'>
+         
+        <IoMdLogOut  className='icon'/>   Logout
+          
+        </li>
+        </Link>
       </ul>
     </aside>
   );

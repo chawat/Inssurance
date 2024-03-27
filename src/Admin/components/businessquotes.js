@@ -178,60 +178,72 @@ useEffect(() => {
       <NavigationMenu openSidebarToggle={openSidebarToggle} toggleSidebar={toggleSidebar} />
       <main className='main-containerper'>
         <div className='main-cardsper'>
+        <Link to="/dashboard/quotes/cargo">
           <div className='cardeeper'>
-          <Link to="/dashboard/quotes/cargo">
+          
             <div className='card-innerper'>
               <h3>Cargo Quotes</h3>
               <BsFillArchiveFill className='card_iconper'/>
             </div>
             <h1>{cargoLength !== null ? cargoLength : 'Loading...'}</h1>     
-               </Link>
+               
           </div>
-          <div className='cardeeper'>
+          </Link>
           <Link to="/dashboard/quotes/grouphealth">
+          <div className='cardeeper'>
+          
             <div className='card-innerper'>
               <h3>Group Healthcare Quotes</h3>
               <BsFillGrid3X3GapFill className='card_iconper'/>
             </div>
             <h1>{groupHealthLength !== null ? groupHealthLength : 'Loading...'}</h1>
-            </Link>
+           
           </div>
-          <div className='cardeeper'>
+          </Link>
           <Link to="/dashboard/quotes/grouppersonal">
+          <div className='cardeeper'>
+          
             <div className='card-innerper'>
               <h3>Group Personal Quotes</h3>
               <BsPeopleFill className='card_iconper'/>
             </div>
             <h1>{groupPersonalLength !== null ? groupPersonalLength : 'Loading...'}</h1>         
-               </Link>
+              
           </div>
-          <div className='cardeeper'>
+          </Link>
           <Link to="/dashboard/quotes/machine">
+          <div className='cardeeper'>
+         
             <div className='card-innerper'>
               <h3>Machinery Breakdown Quotes</h3>
               <BsPeopleFill className='card_iconper'/>
             </div>
             <h1>{machineCount !== null ? machineCount : 'Loading...'}</h1>  
-                      </Link>
+                    
           </div>
-          <div className='cardeeper'>
+          </Link>
           <Link to="/dashboard/quotes/money">
+          <div className='cardeeper'>
+          
             <div className='card-innerper'>
               <h3>Money Quotes</h3>
               <BsPeopleFill className='card_iconper'/>
             </div>
             <h1>{moneyCount !== null ? moneyCount : 'Loading...'}</h1>
-                        </Link>
+                        
           </div>
-          <div className='cardeeper'>
+          </Link>
           <Link to="/dashboard/quotes/motorf">
+          <div className='cardeeper'>
+          
             <div className='card-innerper'>
               <h3>Motor Quotes</h3>
               <BsPeopleFill className='card_iconper'/>
             </div>
             <h1>{motorCount !== null ? motorCount : 'Loading...'}</h1>
-                            </Link>
+                            
           </div>
+          </Link>
         </div>
         <div className='chartsper'></div>
       </main>

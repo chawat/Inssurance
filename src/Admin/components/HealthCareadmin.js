@@ -49,7 +49,7 @@ const Healthcareadmin = () => {
       <NavigationMenu openSidebarToggle={openSidebarToggle} toggleSidebar={toggleSidebar} />
       <main className='main-containerhouse'>
         <div className="contenthouse">
-          {quotes.Data.length > 0 && (
+          {quotes.Data.length > 0 ? (
             <div className="quote-boxhouse">
               <h2>Healthcare Insurance</h2>
               <table className="house-table">
@@ -111,6 +111,8 @@ const Healthcareadmin = () => {
                 </tbody>
               </table>
             </div>
+          ) : (
+            <p className="empty-message">No healthcare insurance quotes available.</p>
           )}
         </div>
       </main>
