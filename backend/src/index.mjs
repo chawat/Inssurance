@@ -1,5 +1,6 @@
 import express from 'express';
 import mongoose from 'mongoose';
+import jwt from 'jsonwebtoken';
 import {Personal} from '../src/mongoose/schemas/personal.mjs';
 import {PersonalInsurance} from '../src/mongoose/schemas/perosonalInsurance.mjs';
 import {TermLifeInsurance} from '../src/mongoose/schemas/termLife.mjs';
@@ -224,7 +225,10 @@ app.post('/login', async (req, res) => {
 
         const passwordMatch = await bcrypt.compare(Password, admin.Password); // Await the result of bcrypt.compare()
         if (passwordMatch) {
-            return res.json({ success: true, message: 'Login successful.' });
+            const token = jwt.sign({ id: admin._id, username: admin.Username }, 'your_secret_key', { expiresIn: '1h' });
+            return res.json({ success: true, message: 'Login successful.', token: token });
+            
+           
         } else {
             return res.status(401).json({ success: false, message: 'Invalid password.' });
         }
@@ -232,7 +236,9 @@ app.post('/login', async (req, res) => {
         console.error('Error logging in:', error);
         return res.status(500).json({ success: false, message: 'Error logging in.', error: error.message });
     }
-});
+     
+
+} );
 
 
 //get housequote
