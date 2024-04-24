@@ -52,7 +52,7 @@ import Grouppersonaladmin from './Admin/components/grouppersonaladmin';
 import Machineadmin from './Admin/components/machineadmin';
 import Motorfadmin from './Admin/components/motorfadmin';
 
-
+import Viewadmin from './Admin/viewadmins';
 
 function withNavbarFooter(Component) {
   return function WithNavbarFooter(props) {
@@ -145,6 +145,8 @@ function App() {
           <Route path="/dashboard/quotes/healthcare" element={<Healthcareadmin/>} />
           <Route path="/dashboard/quotes/termlife" element={<Termlifeadmin/>} />
           <Route path="/dashboard/quotes/personalacc" element={<Personalaccadmin/>} />
+         
+          <Route path="/Viewadmin" element={<Viewadmin/>}/>
 
           <Route path="/dashboard/quotes/money" element={<Moneyadmin/>} />
           <Route path="/dashboard/quotes/cargo" element={<Cargoadmin/>} />
@@ -152,7 +154,7 @@ function App() {
           <Route path="/dashboard/quotes/grouppersonal" element={<Grouppersonaladmin/>} />
           <Route path="/dashboard/quotes/machine" element={<Machineadmin/>} />
           <Route path="/dashboard/quotes/motorf" element={<Motorfadmin/>} />
-
+        
         </Routes>
       </div>
     </Router>

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./login.css";
-import backgroundImagee from "../images/baclog.png";
+
 import axios from 'axios';
 
 const Login = () => {

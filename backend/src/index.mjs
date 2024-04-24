@@ -13,7 +13,8 @@ import {ContactUs} from '../src/mongoose/schemas/ContactUs.mjs';
 import {Admin} from '../src/mongoose/schemas/admin.mjs';
 import {Nbviews} from '../src/mongoose/schemas/views.mjs';
 import { Nbquoteviews } from './mongoose/schemas/quoteview.mjs';
-
+import { Personaldesc } from './mongoose/schemas/personaldesc.mjs';
+import { Businessdesc } from './mongoose/schemas/businessdesc.mjs';
 import cors from  "cors";
 import bcrypt from "bcrypt"
 
@@ -1178,4 +1179,56 @@ app.put('/api/message/updatestatus/:id', async (req, res) => {
         console.error('Error fetching quote:', error);
         res.status(500).json({ success: false, message: 'Error fetching data.', error: error.message });
     }
+});
+app.get('/api/users', async (req, res) => {
+    try {
+        // Query all documents from the contact us collection
+        const admin = await Admin.find();
+        res.send(admin);
+    } catch (error) {
+        console.error('Error fetching quote:', error);
+        res.status(500).json({ success: false, message: 'Error fetching data.', error: error.message});}
+});
+
+app.delete("/api/users/:id", async (request, response) => {
+    const { id } = request.params;
+    try {
+        // Find the admin by id and delete it
+        const deletedAdmin = await Admin.findByIdAndDelete(id);
+        
+        if (!deletedAdmin) {
+            // If admin not found, send 404 status
+            return response.sendStatus(404);
+        }
+
+        return response.sendStatus(204); // Successful deletion
+    } catch (err) {
+        console.error("Error deleting admin:", err);
+        return response.sendStatus(500); // Internal server error
+    }
+});
+
+app.get('/api/personaldesc', async (req, res) => {
+     // Set the status to 'pending'
+
+    try {
+        // Query documents from the business collection with the status 'pending'
+        const personaldesc = await Personaldesc.find();
+        res.send(personaldesc);
+    } catch (error) {
+        console.error('Error fetching quote:', error);
+        res.status(500).json({ success: false, message: 'Error fetching data.', error: error.message });
+    }
+});
+app.get('/api/businessdesc', async (req, res) => {
+    // Set the status to 'pending'
+
+   try {
+       // Query documents from the business collection with the status 'pending'
+       const businessdesc = await Businessdesc.find();
+       res.send(businessdesc);
+   } catch (error) {
+       console.error('Error fetching quote:', error);
+       res.status(500).json({ success: false, message: 'Error fetching data.', error: error.message });
+   }
 });

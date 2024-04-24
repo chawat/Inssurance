@@ -1,9 +1,33 @@
 import React from 'react';
 import insuranceImage from '../images/mf.jpg';
 import './Bdetail.css';
-
+import axios from 'axios';
+import { useEffect,useState } from 'react';
 const MotorFleet = () => {
+  const [desc, setDesc] = useState([]);
 
+  useEffect(() => {
+    const fetch = async () => {
+      try {
+        const response = await axios.get('http://localhost:3003/api/businessdesc');
+        const data = response.data;
+  
+        // Filter data to get the description where name is "motor"
+        const motorDesc = data.find(item => item.name === "motorfleet");
+        
+        // If motorDesc is found, set the description in state
+        if (motorDesc) {
+          setDesc(motorDesc.description);
+        } else {
+          console.log('No description found for name "motor"');
+        }
+      } catch (error) {
+        console.error('Error fetching messages:', error);
+      }
+    };
+
+    fetch();
+  }, []);
   return (
     <div>
       <div className="ccoontainer">
@@ -14,7 +38,7 @@ const MotorFleet = () => {
         <div className="descdet">
           <h2>MOTOR FLEET INSURANCE</h2>
           <div>
-          Motor fleet insurance is essential for protecting the motor vehicles used in your business activities against unforeseen accidents that may cause material damages or bodily injuries to drivers or third parties. AROPE's Motor Fleet Insurance Plan offers a valuable solution for your business, which can be tailor-made to fit your specific needs. With a wide choice of covers and special discounts available, you can ensure comprehensive protection for your fleet while optimizing cost-effectiveness.
+            {desc}
           </div>
           <button className="buttoonbus" onClick={() => window.location.href=`/BQDetail?Type=${encodeURIComponent('MotorFleet')}`}>
     <p className="forp">

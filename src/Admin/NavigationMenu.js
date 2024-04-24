@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './navigationMenu.css'; 
 import { BsCart3, BsGrid1X2Fill, BsFillArchiveFill, BsFillGrid3X3GapFill, BsPeopleFill, 
-  BsListCheck, BsMenuButtonWideFill, BsFillGearFill, BsX } from 'react-icons/bs';
+  BsListCheck, BsMenuButtonWideFill, BsX } from 'react-icons/bs';
   import { IoMdLogOut } from "react-icons/io";
 
 const NavigationMenu = ({ openSidebarToggle, toggleSidebar }) => {
@@ -40,6 +40,13 @@ const NavigationMenu = ({ openSidebarToggle, toggleSidebar }) => {
           
             <BsGrid1X2Fill className='icon'/> Dashboard
                 
+        </li>
+        </Link>
+        <Link to="/Viewadmin" className="sidebar-link"> 
+        <li className='sidebar-list-item'>
+          
+            <BsFillArchiveFill className='icon'/> View  users
+         
         </li>
         </Link>
         <Link to="/dashboard/quotes/personal" className="sidebar-link"> 

@@ -1,6 +1,6 @@
 import React from 'react';
 import './Header.css';
-import { BsFillBellFill, BsFillEnvelopeFill, BsPersonCircle, BsJustify } from 'react-icons/bs';
+import {  BsPersonCircle, BsJustify } from 'react-icons/bs';
 
 const Header = ({ toggleSidebar, openSidebarToggle }) => {
   return (

@@ -1,9 +1,33 @@
 import React from 'react';
 import insuranceImage from '../images/gr.png';
-import './Bdetail.css';;
-
+import './Bdetail.css';
+import axios from 'axios';
+import { useEffect,useState } from 'react';
 const GroupPersonal = () => {
+  const [desc, setDesc] = useState([]);
 
+  useEffect(() => {
+    const fetch = async () => {
+      try {
+        const response = await axios.get('http://localhost:3003/api/businessdesc');
+        const data = response.data;
+  
+        // Filter data to get the description where name is "motor"
+        const motorDesc = data.find(item => item.name === "grouppersonalacc");
+        
+        // If motorDesc is found, set the description in state
+        if (motorDesc) {
+          setDesc(motorDesc.description);
+        } else {
+          console.log('No description found for name "motor"');
+        }
+      } catch (error) {
+        console.error('Error fetching messages:', error);
+      }
+    };
+
+    fetch();
+  }, []);
   return (
     <div >
       <div className="ccoontainer">
@@ -13,7 +37,7 @@ const GroupPersonal = () => {
         <div className="descdet">
           <h2>GROUP PERSONAL ACCIDENT INSURANCE</h2>
           <div>
-          Group personal accident insurance is essential for protecting your employees from unpredictable accidents that can occur anytime and anywhere. With AROPE Group PA Insurance Plan, you have the opportunity to secure your personnel and offer them a valuable benefit at a reasonable cost. By securing the future of your employees' dependents, you can increase their loyalty and attract and retain good members as a business owner. We provide tailor-made solutions that align with your business needs to ensure comprehensive coverage.
+            {desc}
             </div> 
           <button className="buttoonbus" onClick={() => window.location.href=`/BQDetail?Type=${encodeURIComponent('Group Personal')}`}>
     <p className="forp">

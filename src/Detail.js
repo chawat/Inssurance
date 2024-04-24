@@ -103,7 +103,7 @@ const insuranceTypes = [
   { name: "termlife", displayName: "Termlife Insurance", icon: "➜" },
   { name: "house", displayName: "House Insurance", icon: "➜" },
   { name: "healthcare", displayName: "Healthcare Insurance", icon: "➜" },
-  { name: "personalacc", displayName: "Personalacc Insurance", icon: "➜" },
+  { name: "personalacc", displayName: "Personal accident Insurance", icon: "➜" },
   { name: "travel", displayName: "Travel Insurance", icon: "➜" },
 ];
 

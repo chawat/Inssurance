@@ -6,8 +6,8 @@ import './MessagesusStyles.css'; // Import the CSS file
 import './Houseadmin.css';
 
 const Messagesus = () => {
-  const [messages, setMessages] = useState([]);
   const [openSidebarToggle, setOpenSidebarToggle] = useState(false);
+  const [messages, setMessages] = useState([]);
 
   useEffect(() => {
     const fetchMessages = async () => {

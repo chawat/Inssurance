@@ -1,9 +1,33 @@
 import React from 'react';
 import insuranceImage from '../images/mac.png';
 import './Bdetail.css';
-
+import axios from 'axios';
+import { useEffect,useState } from 'react';
 const Machine = () => {
+  const [desc, setDesc] = useState([]);
+
+  useEffect(() => {
+    const fetch = async () => {
+      try {
+        const response = await axios.get('http://localhost:3003/api/businessdesc');
+        const data = response.data;
   
+        // Filter data to get the description where name is "motor"
+        const motorDesc = data.find(item => item.name === "machinery");
+        
+        // If motorDesc is found, set the description in state
+        if (motorDesc) {
+          setDesc(motorDesc.description);
+        } else {
+          console.log('No description found for name "motor"');
+        }
+      } catch (error) {
+        console.error('Error fetching messages:', error);
+      }
+    };
+
+    fetch();
+  }, []);
   return (
     <div >
       <div className="ccoontainer">
@@ -13,7 +37,7 @@ const Machine = () => {
         <div className="descdet">
           <h2>MACHINERY BREAKDOWN INSURANCE</h2>
          <div className='bus-insurance-description'>
-         Machinery breakdown insurance is essential for safeguarding your machinery assets against failures and breakdowns that could disrupt your business cycle. With AROPE Machinery Breakdown Insurance Plan, you'll have the right solution to protect your business from potential losses resulting from mechanical failures or breakdowns in your equipment. Our insurance plan offers secured protection to help you mitigate any adverse impacts on your business operations. We provide tailor-made solutions that are customized to meet the specific needs of your business, ensuring comprehensive coverage and peace of mind.
+          {desc}
          </div>
           <button className="buttoonbus" onClick={() => window.location.href=`/BQDetail?Type=${encodeURIComponent('Machine')}`}>
     <p className="forp">

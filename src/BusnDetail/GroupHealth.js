@@ -1,8 +1,33 @@
 import React from 'react';
 import insuranceImage from '../images/gr.png';
 import './Bdetail.css';
-
+import axios from 'axios';
+import { useEffect,useState } from 'react';
 const GroupHealth = () => {
+  const [desc, setDesc] = useState([]);
+
+  useEffect(() => {
+    const fetch = async () => {
+      try {
+        const response = await axios.get('http://localhost:3003/api/businessdesc');
+        const data = response.data;
+  
+        // Filter data to get the description where name is "motor"
+        const motorDesc = data.find(item => item.name === "grouphealthcare");
+        
+        // If motorDesc is found, set the description in state
+        if (motorDesc) {
+          setDesc(motorDesc.description);
+        } else {
+          console.log('No description found for name "motor"');
+        }
+      } catch (error) {
+        console.error('Error fetching messages:', error);
+      }
+    };
+
+    fetch();
+  }, []);
    return (
     <div>
       <div className="ccoontainer">
@@ -12,7 +37,7 @@ const GroupHealth = () => {
         <div className="descdet">
         <h2>GROUP HEALTHCARE INSURANCE</h2>
         <div className='bus-insurance-description'>
-        Group healthcare insurance is designed to protect your employees and their family members by fulfilling their medical needs, whether or not they benefit from the National Social Security Fund (NSSF). With AROPE Group Healthcare Insurance Plan, you, as a business owner, can preserve a healthy team. Offering this valuable benefit serves as a powerful tool to motivate your personnel and enhance their retention. We provide tailor-made solutions that align with your business needs. Additionally, we offer a new Medicare plan for individuals who wish to remain insured with AROPE Insurance after leaving a group. For more information, please contact our Call Center at 1219.
+          {desc}
         </div>
           <button className="buttoonbus" onClick={() => window.location.href=`/BQDetail?Type=${encodeURIComponent('Group Health')}`}>
     <p className="forp">

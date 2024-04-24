@@ -1,9 +1,33 @@
 import React from 'react';
 import insuranceImage from '../images/bm.png';
 import './Bdetail.css';
-
+import axios from 'axios';
+import { useEffect,useState } from 'react';
 const Money = () => {
+  const [desc, setDesc] = useState([]);
+
+  useEffect(() => {
+    const fetch = async () => {
+      try {
+        const response = await axios.get('http://localhost:3003/api/businessdesc');
+        const data = response.data;
   
+        // Filter data to get the description where name is "motor"
+        const motorDesc = data.find(item => item.name === "money");
+        
+        // If motorDesc is found, set the description in state
+        if (motorDesc) {
+          setDesc(motorDesc.description);
+        } else {
+          console.log('No description found for name "motor"');
+        }
+      } catch (error) {
+        console.error('Error fetching messages:', error);
+      }
+    };
+
+    fetch();
+  }, []);
   return (
     <div >
       <div className="ccoontainer">
@@ -13,8 +37,8 @@ const Money = () => {
         <div className="descdet">
           <h2>MONEY INSURANCE</h2>
           <div>
-          Money insurance is crucial for safeguarding your money against potential risks such as burglary and employee fraudulent behavior. With AROPE Money Insurance Plan, you'll have a specialized solution designed to protect your most valuable assets, including cash, cheques, currency notes, and securities, whether they're stored in a safe or during transit. Taking action today to invest in money insurance can help preserve your business from any accidents that may negatively affect its success and growth. At AROPE Insurance, we're committed to offering you the best solutions tailored to meet your business needs.
-          </div>
+            {desc}
+         </div>
           <button className="buttoonbus" onClick={() => window.location.href=`/BQDetail?Type=${encodeURIComponent('Money')}`}>
     <p className="forp">
         Request A Quote
